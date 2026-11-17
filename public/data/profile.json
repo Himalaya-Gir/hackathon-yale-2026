@@ -1,0 +1,42 @@
+{
+  "name": "Maya Chen",
+  "classYear": "Yale '28",
+  "college": "Pierson College",
+  "majors": ["Computer Science", "Economics"],
+  "defaultGoal": "Break into the space industry",
+  "interests": ["rockets and propulsion", "embedded systems", "startups", "astronomy", "trail running"],
+  "clubs": ["Yale Undergraduate Aerospace Association", "Y/CS", "Yale Entrepreneurial Society"],
+  "home": { "name": "Pierson College", "lat": 41.309934, "lng": -72.932601 },
+  "courses": [
+    { "code": "CPSC 3230", "title": "Introduction to Systems Programming and Computer Organization", "professor": "Lin Zhong, Alan Weide", "building": "Watson Hall", "lat": 41.313087, "lng": -72.92485,
+      "meetings": [{ "day": "Mon", "start": "13:05", "end": "14:20" }, { "day": "Wed", "start": "13:05", "end": "14:20" }] },
+    { "code": "CPSC 3650", "title": "Algorithms", "professor": "Andre Wibisono, Nicole Immorlica", "building": "Dunham Laboratory", "lat": 41.312315, "lng": -72.924484,
+      "meetings": [{ "day": "Mon", "start": "14:35", "end": "15:50" }, { "day": "Wed", "start": "14:35", "end": "15:50" }] },
+    { "code": "ECON 2121", "title": "Intermediate Microeconomics", "professor": "Evangelia Chalioti", "building": "Sheffield-Sterling-Strathcona Hall", "lat": 41.311882, "lng": -72.925196,
+      "meetings": [{ "day": "Mon", "start": "11:35", "end": "12:50" }, { "day": "Wed", "start": "11:35", "end": "12:50" }] },
+    { "code": "MENG 2511", "title": "Thermodynamics for Mechanical Engineers", "professor": "Alessandro Gomez", "building": "Becton Engineering and Applied Science Center", "lat": 41.312605, "lng": -72.925136,
+      "meetings": [{ "day": "Tue", "start": "13:05", "end": "14:20" }, { "day": "Thu", "start": "13:05", "end": "14:20" }] },
+    { "code": "ASTR 3200", "title": "Physical Processes in Astronomy", "professor": "Frank van den Bosch", "building": "Kline Tower", "lat": 41.317327, "lng": -72.922629,
+      "meetings": [{ "day": "Tue", "start": "09:00", "end": "10:15" }, { "day": "Thu", "start": "09:00", "end": "10:15" }] }
+  ],
+  "contacts": [
+    { "id": "c-sam", "name": "Sam Okafor", "handle": "@samokafor_builds", "via": "x", "metWhen": "2 days ago", "metWhere": null, "relation": "new",
+      "persona": "Mechanical engineering junior who posts about hot-fire tests and injector design. Looking for people to build a small liquid engine with.", "interests": ["propulsion", "machining", "launch industry"] },
+    { "id": "c-priya", "name": "Priya Raman", "handle": null, "via": "linkedin", "metWhen": "4 days ago", "metWhere": null, "relation": "new",
+      "persona": "Yale SOM first-year who spent three years at an early-stage venture fund. Likes meeting undergrad founders before they have a deck.", "interests": ["venture capital", "deep tech", "founder stories"] },
+    { "id": "c-theo", "name": "Theo Lindqvist", "handle": null, "via": "whatsapp", "metWhen": "yesterday", "metWhere": "Tsai CITY", "relation": "new",
+      "persona": "Sophomore in physics who builds CubeSat radios for fun. New to campus clubs and wants a team.", "interests": ["satellites", "radio", "astronomy"] },
+    { "id": "c-prof", "name": "Prof. Alessandro Gomez", "handle": null, "via": "in person", "metWhen": "this semester", "metWhere": "MENG 2511", "relation": "professor",
+      "persona": "Teaches Maya's thermodynamics course. Works on combustion.", "interests": ["combustion", "energy"] },
+    { "id": "c-lena", "name": "Lena Park", "handle": null, "via": "in person", "metWhen": "first year", "metWhere": "Pierson", "relation": "friend",
+      "persona": "Suitemate and running partner. Studies cognitive science.", "interests": ["running", "improv", "design"] }
+  ],
+  "connected": [
+    { "name": "Canvas", "detail": "5 courses" },
+    { "name": "Yale Connect", "detail": "3 clubs" },
+    { "name": "Calendar", "detail": "14 events" },
+    { "name": "X", "detail": "38 new followers" },
+    { "name": "LinkedIn", "detail": "6 new connections" },
+    { "name": "WhatsApp", "detail": "4 new contacts" }
+  ]
+}
