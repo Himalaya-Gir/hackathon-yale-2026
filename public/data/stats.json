@@ -1,14 +1,18 @@
 {
- "total": 65,
+ "total": 76,
  "sources": [
   {
    "name": "yale-calendar",
    "count": 35
   },
   {
+   "name": "yaleconnect",
+   "count": 11
+  },
+  {
    "name": "sample",
    "count": 30
   }
  ],
- "bakedAt": "2026-11-17T23:52:59.084Z"
+ "bakedAt": "2026-11-17T23:57:58.298Z"
 }

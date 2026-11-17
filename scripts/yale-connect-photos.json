@@ -1,0 +1,13 @@
+{
+ "_": "Yale Connect's feed has no photos and building photos are all the same generic image: each kept event gets a real photograph from scripts/.cache/a1 chosen by eye (title regex → cache key). Events with no match are dropped.",
+ "Queer Tables": "trivia-0",
+ "Watch Me Walk": "film-0",
+ "Pie Day": "coffee-0",
+ "Rise of Climate": "npanel-2",
+ "Climate Change and Health": "npanel-1",
+ "Carbon Capture": "ncubesat-1",
+ "Breaking Ground": "treeplant-1",
+ "Light Fellowship": "nrobot-0",
+ "Sundance": "film-2",
+ "Build A Bot": "robotarm-2"
+}

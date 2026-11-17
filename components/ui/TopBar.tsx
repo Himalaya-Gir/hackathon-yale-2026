@@ -4,7 +4,7 @@ import Avatar from './Avatar';
 import { initialsOf } from './util';
 
 export default function TopBar() {
-  const name = useOrbit((s) => s.profile?.name) ?? 'Maya Chen';
+  const name = useOrbit((s) => s.profile?.name) ?? 'Maya Girard';
   return (
     <header className="glass pointer-events-auto flex h-12 items-center justify-between gap-4 px-4">
       <div className="flex min-w-0 items-center gap-4">
