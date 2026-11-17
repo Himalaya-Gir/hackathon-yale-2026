@@ -3,7 +3,7 @@ import { Map as MlMap, MercatorCoordinate, setWorkerUrl, type CustomLayerInterfa
 import circle from '@turf/circle';
 import { startPoint } from '@/lib/schedule';
 import { useOrbit } from '@/lib/store';
-import { fmtWhen, now } from '@/lib/time';
+import { fmtDay, now } from '@/lib/time';
 import type { Pick as OrbitPick, YaleEvent } from '@/lib/types';
 import { MarkerLayer, type MarkerFriend } from './markers';
 
@@ -43,9 +43,11 @@ function disc(lng: number, lat: number, r: number): number[][] {
   return circle([lng, lat], r, { steps: 24, units: 'meters' }).geometry.coordinates[0];
 }
 
-/** "Thu 5:30" / "Tonight 7:30" — the marker keeps the day word and drops AM/PM. */
+/** "Thu 5:30" / "Tonight 7:30". Minutes stay, AM/PM goes. */
 function shortWhen(iso: string): string {
-  return fmtWhen(iso).replace(/\s?(AM|PM)$/i, '');
+  const time = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' })
+    .format(new Date(iso)).replace(/\s?(AM|PM)$/i, '');
+  return `${fmtDay(iso)} ${time}`;
 }
 
 const fc = (features: unknown[]) => ({ type: 'FeatureCollection', features }) as unknown as GeoData;
@@ -324,11 +326,11 @@ export function createScene(container: HTMLDivElement): () => void {
     } catch { /* optional */ }
 
     const existing = (map.getStyle().layers ?? []).find((l) => l.type === 'fill-extrusion');
-    const height = ['coalesce', ['get', 'render_height'], 8];
-    const bColor = ['interpolate', ['linear'], height, 0, '#17243f', 25, '#1f3157', 80, '#2b4577'];
+    const heightOf = () => ['coalesce', ['get', 'render_height'], 8];
+    const bColor = ['interpolate', ['linear'], heightOf(), 0, '#17243f', 25, '#1f3157', 80, '#2b4577'];
     if (existing) {
       paint(existing.id, 'fill-extrusion-color', bColor);
-      paint(existing.id, 'fill-extrusion-height', height);
+      paint(existing.id, 'fill-extrusion-height', heightOf());
       paint(existing.id, 'fill-extrusion-base', ['coalesce', ['get', 'render_min_height'], 0]);
       paint(existing.id, 'fill-extrusion-opacity', 0.94);
       if (existing.id !== 'building') paint('building', 'fill-opacity', 0);
@@ -338,7 +340,7 @@ export function createScene(container: HTMLDivElement): () => void {
         id: 'orbit-buildings', type: 'fill-extrusion' as const, source: 'openmaptiles', 'source-layer': 'building', minzoom: 13,
         paint: {
           'fill-extrusion-color': bColor as never,
-          'fill-extrusion-height': height as never,
+          'fill-extrusion-height': heightOf() as never,
           'fill-extrusion-base': ['coalesce', ['get', 'render_min_height'], 0] as never,
           'fill-extrusion-opacity': 0.94,
           'fill-extrusion-vertical-gradient': true,

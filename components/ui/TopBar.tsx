@@ -23,7 +23,7 @@ export default function TopBar() {
           <span className="font-medium">{name}</span>
           <span className="text-ink-dim"> · Yale NetID</span>
         </span>
-        <Avatar initials={initialsOf(name)} color="#EEF2F8" size={32} />
+        <Avatar initials={initialsOf(name)} color="#EEF2F8" size={40} />
       </div>
     </header>
   );

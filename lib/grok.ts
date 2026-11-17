@@ -1,8 +1,10 @@
-// Grok client (xAI, OpenAI-compatible chat/completions, SSE streaming) and the parser of its JSON lines.
-// Server only: the key is read from process.env and never leaves this file.
+// Grok client (xAI via the OpenAI SDK, chat/completions, SSE) and the parser of its JSON lines.
+// Server only: the key is read from process.env inside the call and never leaves this file.
+// Model ids come only from XAI_MODEL_FAST and XAI_MODEL_SMART. Nothing is hard-coded.
+import OpenAI from 'openai';
 import { z } from 'zod';
 
-const BASE = 'https://api.x.ai/v1';
+const BASE_URL = 'https://api.x.ai/v1';
 
 export type GrokCall = {
   model: string; system: string; user: string;
@@ -10,72 +12,79 @@ export type GrokCall = {
   onFirstToken?: () => void;
 };
 
-export function fastModel(): string {
-  return process.env.XAI_MODEL_FAST || process.env.XAI_MODEL_SMART || 'grok-4.20-0309-non-reasoning';
+export function fastModel(): string | null {
+  const m = process.env.XAI_MODEL_FAST?.trim();
+  return m || null;
+}
+
+export function smartModel(): string | null {
+  const m = process.env.XAI_MODEL_SMART?.trim();
+  return m || null;
+}
+
+function client(): OpenAI {
+  const apiKey = process.env.XAI_API_KEY;
+  if (!apiKey) throw new Error('XAI_API_KEY missing');
+  return new OpenAI({ apiKey, baseURL: BASE_URL });
 }
 
 const sleep = (ms: number, signal?: AbortSignal) =>
   new Promise<void>((resolve, reject) => {
+    if (signal?.aborted) { reject(new Error('aborted')); return; }
     const t = setTimeout(resolve, ms);
     signal?.addEventListener('abort', () => { clearTimeout(t); reject(new Error('aborted')); }, { once: true });
   });
 
-/** Streams the answer and yields it one complete text line at a time. Throws on failure. */
+function statusOf(e: unknown): number {
+  if (e instanceof OpenAI.APIError) return e.status ?? 0;
+  if (typeof e === 'object' && e && 'status' in e && typeof (e as { status: unknown }).status === 'number') {
+    return (e as { status: number }).status;
+  }
+  return 0;
+}
+
+/** Streams the answer and yields it one complete text line at a time. Throws on failure. Retries HTTP 429. */
 export async function* grokLines(call: GrokCall): AsyncGenerator<string> {
-  const key = process.env.XAI_API_KEY;
-  if (!key) throw new Error('XAI_API_KEY missing');
-  const body = JSON.stringify({
-    model: call.model,
-    stream: true,
-    temperature: call.temperature ?? 0.5,
-    max_tokens: call.maxTokens ?? 1600,
-    messages: [{ role: 'system', content: call.system }, { role: 'user', content: call.user }],
-  });
-  let res: Response | null = null;
+  if (!call.model) throw new Error('model missing');
+  const openai = client();
+  let stream: AsyncIterable<OpenAI.Chat.Completions.ChatCompletionChunk> | null = null;
+  let lastStatus = 0;
   for (const wait of [0, 1000, 2000, 4000]) {
     if (wait) await sleep(wait, call.signal);
-    res = await fetch(`${BASE}/chat/completions`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${key}` },
-      body,
-      signal: call.signal,
-    });
-    if (res.status !== 429) break;
+    try {
+      stream = await openai.chat.completions.create({
+        model: call.model,
+        stream: true,
+        temperature: call.temperature ?? 0.4,
+        max_tokens: call.maxTokens ?? 1800,
+        messages: [
+          { role: 'system', content: call.system },
+          { role: 'user', content: call.user },
+        ],
+      }, { signal: call.signal });
+      break;
+    } catch (e) {
+      lastStatus = statusOf(e);
+      if (lastStatus === 429) continue;
+      throw e;
+    }
   }
-  if (!res || !res.ok || !res.body) throw new Error(`Grok HTTP ${res?.status ?? 'no response'}`);
+  if (!stream) throw new Error(`Grok HTTP ${lastStatus || 429}`);
 
-  const reader = res.body.getReader();
-  const decoder = new TextDecoder();
-  let sse = '';
   let text = '';
   let first = true;
-  try {
-    for (;;) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      sse += decoder.decode(value, { stream: true });
-      let nl: number;
-      while ((nl = sse.indexOf('\n')) >= 0) {
-        const raw = sse.slice(0, nl).trim();
-        sse = sse.slice(nl + 1);
-        if (!raw.startsWith('data:')) continue;
-        const data = raw.slice(5).trim();
-        if (!data || data === '[DONE]') continue;
-        let delta = '';
-        try { delta = JSON.parse(data)?.choices?.[0]?.delta?.content ?? ''; } catch { continue; }
-        if (!delta) continue;
-        if (first) { first = false; call.onFirstToken?.(); }
-        text += delta;
-        let tn: number;
-        while ((tn = text.indexOf('\n')) >= 0) {
-          const line = text.slice(0, tn).trim();
-          text = text.slice(tn + 1);
-          if (line) yield line;
-        }
-      }
+  for await (const chunk of stream) {
+    const content = chunk.choices[0]?.delta?.content;
+    const delta = typeof content === 'string' ? content : '';
+    if (!delta) continue;
+    if (first) { first = false; call.onFirstToken?.(); }
+    text += delta;
+    let nl: number;
+    while ((nl = text.indexOf('\n')) >= 0) {
+      const line = text.slice(0, nl).trim();
+      text = text.slice(nl + 1);
+      if (line) yield line;
     }
-  } finally {
-    reader.cancel().catch(() => {});
   }
   if (text.trim()) yield text.trim();
 }
@@ -94,6 +103,7 @@ const pickSchema = z.object({
   lane: z.string().optional(),
   mechanismId: nullableText,
   why: z.string().min(3),
+  friendLine: nullableText,
   withContactId: nullableText,
   withWhy: nullableText,
   invite: nullableText,
@@ -105,13 +115,18 @@ export type ParsedLine = { kind: 'pick'; pick: RawPick } | { kind: 'trajectory';
 
 /** Keeps only lines that start with `{` and pass zod. Everything else is ignored. */
 export function parseGrokLine(line: string): ParsedLine {
-  const t = line.trim().replace(/,$/, '');
+  let t = line.trim().replace(/^\uFEFF/, '');
+  if (t.startsWith('```')) return null;
+  t = t.replace(/,$/, '').replace(/`+$/, '').trim();
   if (!t.startsWith('{')) return null;
   let obj: unknown;
   try { obj = JSON.parse(t); } catch { return null; }
+  if (obj && typeof obj === 'object' && 'eventId' in obj) {
+    const pk = pickSchema.safeParse(obj);
+    if (pk.success) return { kind: 'pick', pick: pk.data };
+    return null;
+  }
   const tr = trajectorySchema.safeParse(obj);
   if (tr.success) return { kind: 'trajectory', text: tr.data.trajectory.trim() };
-  const pk = pickSchema.safeParse(obj);
-  if (pk.success) return { kind: 'pick', pick: pk.data };
   return null;
 }

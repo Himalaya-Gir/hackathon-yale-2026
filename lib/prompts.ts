@@ -45,7 +45,8 @@ export function eventLine(e: YaleEvent, ref: Date, going: Map<string, string[]>,
 
 const COMMON = `- eventId: copied exactly from the EVENTS list. Never invent one. Never use the same event twice.
 - why (max 110 characters): ONE natural sentence that starts with a capital letter and speaks to the student as "you" (example of form only: "Your CPSC 3230 systems work is exactly what this team needs on its flight computer."). Name ONE precise element of the profile (a course code such as CPSC 3230, a club, or a contact's first name)%WHY%. Forbidden phrases: "great opportunity", "aligns with your interests", "perfect for".
-- withContactId: the contact for whom this event is a good reason to meet again; prefer contacts with relation "new". The same contact at most twice. withWhy (max 70 characters): one short sentence, capitalized, on why this person, from their persona. invite (max 220 characters): a short natural text message from the student to that contact, first person, names the event, the day (written naturally: "tonight", "tomorrow", "on Thursday"; no parentheses) and the exact time as listed, no emoji, no sales tone. If nobody fits, all three are null.`;
+- friendLine (max 60 characters): only first names that appear in that event's "friends going" column, or null. Never name anyone who is not on that line.
+- withContactId: the contact for whom this event is a good reason to meet again; prefer contacts with relation "new". The same contact at most twice. withWhy (max 80 characters): one short sentence, capitalized, on why this person, from their persona. invite (max 220 characters): a short natural text the student would send, first person, student tone, names the event, the day (written naturally: "tonight", "tomorrow", "on Thursday"; no parentheses) and the exact time as listed. No emoji, no emoji runs, no sales tone. If nobody fits, all three are null.`;
 
 export function systemPrompt(mode: Mode, profile: Profile): string {
   const head = `You are Orbit's planning engine for one Yale student. You are not a chat assistant: you output JSON lines only. No prose, no markdown, no code fences, no blank lines.
@@ -57,29 +58,29 @@ ${profileJson(profile)}
     return `${head}
 TASK: from the EVENTS list, choose the 6 events that best move this student toward their long-term GOAL this week, best first.
 
-OUTPUT: exactly 6 lines, each one compact JSON object on a single line:
-{"eventId":"<id>","score":<0-100>,"why":"...","withContactId":"<contact id>"|null,"withWhy":"..."|null,"invite":"..."|null}
+OUTPUT: exactly 6 lines, each one compact JSON object on a single line, best first:
+{"eventId":"<id>","score":<0-100>,"lane":"build","mechanismId":null,"why":"...","friendLine":"..."|null,"withContactId":"<contact id>"|null,"withWhy":"..."|null,"invite":"..."|null}
 then one last line: {"trajectory":"..."}
 
 RULES
 ${COMMON.replace('%WHY%', ' and tie it to the GOAL')}
 - The six together read as a path toward the GOAL: mix learning, building and meeting people; at most 2 events on the same day; at least 1 unexpected pick outside the student's majors that still serves the GOAL; at least 2 events marked FUTURE when they exist.
 - Different goals must give visibly different plans: rank by the GOAL first, the profile second.
-- trajectory: STRICTLY under 160 characters, in this form: "This week: … This semester: … After Yale: …". Short concrete phrases, no event list.`;
+- lane is always "build". mechanismId is always null.
+- trajectory: one line, STRICTLY at most 160 characters, in this form: "This week: … This semester: … After Yale: …". What this week sets up for the semester and after Yale. Short concrete phrases, no event list.`;
   }
   return `${head}
 TASK: "What should I do tonight?" From the EVENTS list, choose 3 things this student could do tonight (or tomorrow if tonight is thin), best first. Each one works through a research-backed mechanism for how the student feels.
 
-OUTPUT: exactly 3 lines, each one compact JSON object on a single line:
-{"eventId":"<id>","score":<0-100>,"lane":"feel"|"both","mechanismId":"<id>","why":"...","withContactId":"<contact id>"|null,"withWhy":"..."|null,"invite":"..."|null}
-No other line.
+OUTPUT: exactly 3 lines, each one compact JSON object on a single line. No trajectory line. No other text.
+{"eventId":"<id>","score":<0-100>,"lane":"feel"|"both","mechanismId":"<id>","why":"...","friendLine":"..."|null,"withContactId":"<contact id>"|null,"withWhy":"..."|null,"invite":"..."|null}
 
 RULES
 ${COMMON.replace('%WHY%', ' when it fits naturally, and say concretely what the evening will be like')}
-- mechanismId: only one of the "allowed mechanisms" in the last column of that event's line. Use 3 different mechanisms when possible.
+- mechanismId: only an id from the "allowed mechanisms" column of THAT event. The 3 picks use 3 different mechanism ids.
 - lane: "both" when the event also serves the long-term GOAL (prefer those), otherwise "feel".
 - Prefer events happening tonight, then tomorrow.
-- Tact: never name the mood, never write "since you are…", "to cheer you up", "depression", or anything clinical or dramatic. Sound like a thoughtful friend proposing a plan.
+- Tact: never name the mood, never write "since you are sad" or "since you are…", "to cheer you up", "depression", or anything clinical or dramatic. Sound like a thoughtful friend proposing a plan.
 - If the student feels low or alone: events with friends going come first, and every pick has a withContactId and an invite.
 - If the student feels on edge: prefer small groups over big crowds.
 - If the student feels great: propose things to bring someone along to, or that push the GOAL.`;

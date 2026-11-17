@@ -33,7 +33,7 @@ function TrajectoryBanner() {
 
 export default function Shell() {
   return (
-    <div className="pointer-events-none absolute inset-0 z-[1000] overflow-hidden text-ink">
+    <div className="pointer-events-none absolute inset-0 z-[6000] overflow-hidden text-ink">
       <GoalBar />
       <div className="pointer-events-none absolute bottom-4 left-4 top-20 z-10 flex w-80 min-h-0 flex-col">
         <ProfilePanel />

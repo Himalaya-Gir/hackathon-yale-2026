@@ -67,7 +67,7 @@ export default function FriendsRows() {
                     onClick={() => { if (e) select(e.id); }}
                     className={`btn-press rounded-full ${focusId && focusId !== f.id ? 'opacity-50' : ''}`}
                   >
-                    <Avatar initials={f.initials} color={f.color} size={32} />
+                    <Avatar initials={f.initials} color={f.color} size={40} />
                   </button>
                 );
               })}
@@ -94,7 +94,7 @@ export default function FriendsRows() {
           <ul className="space-y-4">
             {fresh.map((c) => (
               <li key={c.id} className="flex gap-2">
-                <Avatar initials={initialsOf(c.name)} color={colorFor(c.id)} size={32} />
+                <Avatar initials={initialsOf(c.name)} color={colorFor(c.id)} size={40} />
                 <div className="min-w-0 flex-1">
                   <div className="text-sm font-medium leading-5">{c.name}</div>
                   <div className="text-sm leading-5 text-ink-dim">via {VIA[c.via] ?? c.via} · {c.metWhen}</div>
@@ -112,7 +112,7 @@ export default function FriendsRows() {
           <ul className="space-y-2">
             {suggested.slice(0, 6).map((f) => (
               <li key={f.id} className="flex items-center gap-2">
-                <Avatar initials={f.initials} color={f.color} size={32} />
+                <Avatar initials={f.initials} color={f.color} size={40} />
                 <div className="min-w-0 flex-1">
                   <div className="text-sm font-medium leading-5">{f.name}</div>
                   <div className="text-sm leading-5 text-ink-dim">{f.reason ?? `${f.college} ${f.classYear}`}</div>
