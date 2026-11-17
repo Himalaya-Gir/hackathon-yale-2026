@@ -1,33 +1,48 @@
-// Pure matching rules (PLAN.md §5 and §9 package C): mood rules, pre-selection, and the code-only safety net.
+// Mood and goal matching for /api/plan (PLAN.md §5 and §9 package C, steps 3–4).
+// Exports: allowedMechanisms, moodExcluded, validPick, friendsGoing, friendLine,
+// goalTracks, goalSlug, goalScore, servesGoal, rank, preselect,
+// codeInvite, codeTrajectory, codeOnlyPicks.
 import { MECHANISMS } from './science';
-import { candidates, conflict, startMs } from './schedule';
+import { candidates, conflict, endMs, startMs } from './schedule';
 import { TZ, fmtDay, fmtTime, nyParts } from './time';
 import type { Contact, Friend, GrokPick, Mode, Mood, Profile, Track, YaleEvent } from './types';
 
 /** "Great": nothing to counter, so only these three mechanisms (PLAN.md §5). */
 const GREAT_IDS = ['progress', 'kindness', 'weak-ties'];
 
-/** Mechanism ids valid for this event and this mood, in table order. */
-export function allowedMechanisms(event: YaleEvent, mood: Mood): string[] {
-  return MECHANISMS.filter((m) => {
-    const kindOk = m.kinds === 'all' || m.kinds.some((k) => event.kinds.includes(k));
-    if (!kindOk) return false;
-    if (mood === 'great') return GREAT_IDS.includes(m.id);
-    return m.moods.includes(mood);
-  }).map((m) => m.id);
+/** Length in minutes: `durationMin` when set, otherwise the start–end span. */
+function durationMinutes(event: YaleEvent): number {
+  if (typeof event.durationMin === 'number' && event.durationMin > 0) return event.durationMin;
+  const s = startMs(event);
+  const e = endMs(event);
+  if (Number.isFinite(s) && Number.isFinite(e) && e > s) return Math.round((e - s) / 60000);
+  return 0;
 }
 
-/** Hard exclusions per mood. */
+/** Hard exclusions per mood. Tired: longer than 2h, or a start after 21:00 New York. Sad/lonely: no online, no solo. */
 export function moodExcluded(event: YaleEvent, mood: Mood): boolean {
   if (mood === 'tired') {
-    const p = nyParts(new Date(event.start));
-    if ((event.durationMin ?? 0) > 120) return true;
+    if (durationMinutes(event) > 120) return true;
+    const ms = startMs(event);
+    if (!Number.isFinite(ms)) return false;
+    const p = nyParts(new Date(ms));
     if (p.hh * 60 + p.mm > 21 * 60) return true;
   }
   if (mood === 'sad' || mood === 'lonely') {
     if (event.online || event.solo) return true;
   }
   return false;
+}
+
+/** Mechanism ids valid for this event and this mood, in table order. Empty when a mood rule excludes the event. */
+export function allowedMechanisms(event: YaleEvent, mood: Mood): string[] {
+  if (moodExcluded(event, mood)) return [];
+  return MECHANISMS.filter((m) => {
+    const kindOk = m.kinds === 'all' || m.kinds.some((k) => event.kinds.includes(k));
+    if (!kindOk) return false;
+    if (mood === 'great') return GREAT_IDS.includes(m.id);
+    return m.moods.includes(mood);
+  }).map((m) => m.id);
 }
 
 export function validPick(pick: { lane: string; mechanismId: string | null }, event: YaleEvent, mode: Mode, mood?: Mood): boolean {
@@ -116,10 +131,44 @@ export function goalScore(event: YaleEvent, goal: string): number {
   return trackHits * 3 + hits + (event.future ? 1.5 : 0);
 }
 
+/** One matching track (3), or the same weight from keywords and `future`. The route sets lane `both` from this. */
+export function servesGoal(event: YaleEvent, goal: string): boolean {
+  return goalScore(event, goal) >= 3;
+}
+
+const dayKey = (e: YaleEvent) => {
+  const ms = startMs(e);
+  if (!Number.isFinite(ms)) return '';
+  const p = nyParts(new Date(ms));
+  return `${p.y}-${p.m}-${p.d}`;
+};
+
+/**
+ * Higher is a better candidate. Week: goal overlap, then friends.
+ * Tonight: same, plus tonight-first. Sad and lonely: any event with friends outranks the rest.
+ * Anxious: `social-small` above `social-big`.
+ */
+export function rank(event: YaleEvent, input: { mode: Mode; goal: string; mood?: Mood; friends?: number; ref?: Date }): number {
+  const friends = input.friends ?? 0;
+  const g = goalScore(event, input.goal);
+  const mood = input.mood;
+  if (input.mode !== 'tonight') return g + Math.min(friends, 3) * 0.5;
+  let s = g * 0.5 + Math.min(friends, 3) * (mood === 'sad' || mood === 'lonely' ? 2 : 0.7);
+  if (input.ref && dayKey(event) === dayKeyOf(input.ref)) s += 4;
+  if ((mood === 'sad' || mood === 'lonely') && friends > 0) s += 1000;
+  if (mood === 'anxious') s += event.kinds.includes('social-small') ? 8 : event.kinds.includes('social-big') ? -8 : 0;
+  return s;
+}
+
+function dayKeyOf(d: Date): string {
+  const p = nyParts(d);
+  return `${p.y}-${p.m}-${p.d}`;
+}
+
 // ---------- pre-selection before Grok ----------
 
 /** Candidates Grok may choose from: in the window, no class conflict, mood rules applied. Real events first. */
-export function preselect(mode: Mode, events: YaleEvent[], ref: Date, profile: Pick_<Profile, 'courses'>, mood?: Mood): YaleEvent[] {
+export function preselect(mode: Mode, events: YaleEvent[], ref: Date, profile: Pick<Profile, 'courses'>, mood?: Mood): YaleEvent[] {
   const free = (list: YaleEvent[]) => list.filter((e) => !conflict(e, profile.courses));
   let pool: YaleEvent[];
   if (mode === 'week') {
@@ -134,11 +183,9 @@ export function preselect(mode: Mode, events: YaleEvent[], ref: Date, profile: P
   pool = pool.slice(0, 150);
   return [...pool.filter((e) => !e.sample), ...pool.filter((e) => e.sample)];
 }
-type Pick_<T, K extends keyof T> = { [P in K]: T[P] };
 
 // ---------- code-only picks (safety net when Grok and the recording are both unavailable) ----------
 
-const dayKey = (e: YaleEvent) => { const p = nyParts(new Date(e.start)); return `${p.y}-${p.m}-${p.d}`; };
 const shortName = (s: string) => s.replace(/^Yale Undergraduate /, '').replace(/^Yale /, '');
 
 const GOAL_PHRASE: Record<string, string> = {
@@ -183,8 +230,9 @@ function profileElement(event: YaleEvent, profile: Profile, i: number): string {
 /** A short first-person message, built by code from real facts. */
 export function codeInvite(contact: Contact, event: YaleEvent, ref: Date): string {
   const d = fmtDay(event.start, ref);
+  const instant = new Date(startMs(event));
   const day = d === 'Tonight' ? 'tonight' : d === 'Today' ? 'today' : d === 'Tomorrow' ? 'tomorrow'
-    : `on ${new Intl.DateTimeFormat('en-US', { timeZone: TZ, weekday: 'long' }).format(new Date(event.start))}`;
+    : `on ${new Intl.DateTimeFormat('en-US', { timeZone: TZ, weekday: 'long' }).format(instant)}`;
   return `Hey ${contact.name.split(' ')[0]}, "${event.title}" is ${day} at ${fmtTime(event.start)}. Want to go together?`;
 }
 
@@ -206,27 +254,16 @@ export function codeOnlyPicks(args: {
   const exclude = args.exclude ?? new Set<string>();
   const usedMech = new Set(args.usedMechanisms ?? []);
   const slug = goalSlug(goal);
-  const today = (() => { const p = nyParts(ref); return `${p.y}-${p.m}-${p.d}`; })();
   const scored = pool
     .filter((e) => !exclude.has(e.id))
-    .map((e) => {
-      const g = goalScore(e, goal);
-      const friends = going.get(e.id)?.length ?? 0;
-      let s = g + Math.min(friends, 3) * 0.5;
-      if (mode === 'tonight') {
-        s = g * 0.5 + Math.min(friends, 3) * (mood === 'sad' || mood === 'lonely' ? 2 : 0.7);
-        if (dayKey(e) === today) s += 4;
-        if (mood === 'anxious') s += e.kinds.includes('social-small') ? 1.5 : e.kinds.includes('social-big') ? -2 : 0;
-      }
-      return { e, s, g };
-    })
+    .map((e) => ({ e, s: rank(e, { mode, goal, mood, friends: going.get(e.id)?.length ?? 0, ref }) }))
     .sort((a, b) => b.s - a.s || startMs(a.e) - startMs(b.e));
 
   const contacts = [...profile.contacts.filter((c) => c.relation === 'new'), ...profile.contacts.filter((c) => c.relation !== 'new')];
   const perDay = new Map<string, number>();
   const out: GrokPick[] = [];
   // Two passes: first at most 2 events per day, then (if still short) without that limit.
-  for (const relaxed of [false, true]) for (const { e, g } of scored) {
+  for (const relaxed of [false, true]) for (const { e } of scored) {
     if (out.length >= want) break;
     if (out.some((p) => p.eventId === e.id)) continue;
     let mechanismId: string | null = null;
@@ -248,7 +285,7 @@ export function codeOnlyPicks(args: {
     out.push({
       eventId: e.id,
       score: Math.max(55, 94 - i * 6),
-      lane: mode === 'week' ? 'build' : g >= 3 ? 'both' : 'feel',
+      lane: mode === 'week' ? 'build' : servesGoal(e, goal) ? 'both' : 'feel',
       mechanismId,
       why: mode === 'week'
         ? `Builds on ${profileElement(e, profile, i)}: a concrete step toward ${GOAL_PHRASE[slug] && goalTracks(goal).length ? GOAL_PHRASE[slug] : 'your goal'}.`

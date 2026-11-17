@@ -17,8 +17,8 @@ type RecognitionCtor = new () => Recognition;
 
 function recognitionCtor(): RecognitionCtor | null {
   if (typeof window === 'undefined') return null;
-  const w = window as unknown as { webkitSpeechRecognition?: RecognitionCtor; SpeechRecognition?: RecognitionCtor };
-  return w.webkitSpeechRecognition ?? w.SpeechRecognition ?? null;
+  const w = window as unknown as { webkitSpeechRecognition?: RecognitionCtor };
+  return w.webkitSpeechRecognition ?? null;
 }
 const noopSubscribe = () => () => {};
 
@@ -169,9 +169,8 @@ export default function GoalBar() {
                 <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-full bg-gold/15 text-gold ${thinking && mode === 'week' ? 'animate-pulse' : ''}`}>
                   <Target size={18} aria-hidden />
                 </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block text-sm leading-4 text-ink-dim">Building toward</span>
-                  <span className="block truncate text-base font-semibold leading-6">{goal}</span>
+                <span className="min-w-0 flex-1 truncate text-base font-semibold leading-6">
+                  Building toward: {goal}
                 </span>
                 <ChevronUp size={18} aria-hidden className={`shrink-0 text-ink-dim transition duration-150 group-hover:text-ink group-disabled:opacity-0 ${shown === 'goal' ? 'rotate-180' : ''}`} />
               </button>
@@ -181,7 +180,7 @@ export default function GoalBar() {
                 disabled={thinking}
                 onClick={() => setOpen(open === 'tonight' ? null : 'tonight')}
                 aria-expanded={shown === 'tonight'}
-                className={`inline-flex h-12 shrink-0 items-center gap-2 rounded-xl border px-4 text-base font-medium transition duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky active:scale-95 disabled:opacity-50 ${mode === 'tonight' || shown === 'tonight' ? 'border-sky/60 bg-sky/15 text-sky' : 'border-white/10 text-ink hover:border-sky/60 hover:bg-sky/10 hover:text-sky'}`}
+                className={`inline-flex h-12 shrink-0 items-center gap-2 rounded-xl border px-4 text-base font-medium transition duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky active:scale-95 disabled:opacity-50 ${mode === 'tonight' || shown === 'tonight' ? 'border-[#63AAFF]/70 bg-sky/15 text-sky hover:bg-sky/25' : 'border-white/10 text-ink hover:border-[#63AAFF]/70 hover:bg-sky/10 hover:text-sky'}`}
               >
                 <Moon size={18} aria-hidden /> Tonight?
               </button>

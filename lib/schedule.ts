@@ -1,5 +1,6 @@
-// Pure schedule logic (PLAN.md §9, package C). No Grok here: these are the facts code asserts.
-import { TZ, fmtTime, nyParts, toNyIso } from './time';
+// Schedule facts for /api/plan (PLAN.md §9 package C, steps 2 and 4). Times are America/New_York.
+// Exports: HACKATHON_ID, StartPoint, Fit, nyWeekday, startMs, endMs, candidates, conflict, walkMin, startPoint, leaveBy, fit.
+import { TZ, fmtTime, nyDate, nyParts, toNyIso } from './time';
 import type { Course, Profile, YaleEvent } from './types';
 
 /** The event the student is sitting in right now: never proposed as a pick. */
@@ -20,14 +21,29 @@ function toMin(hhmm: string): number {
   return h * 60 + (m || 0);
 }
 
+/**
+ * Instant of an event timestamp. Strings that already carry Z or an offset use that offset.
+ * Strings with no offset are New York wall time — never the host zone (Vercel is UTC).
+ */
+function parseInstant(iso: string | null | undefined): Date {
+  if (!iso) return new Date(NaN);
+  if (/[zZ]|[+-]\d\d:?\d\d$/.test(iso)) {
+    const d = new Date(iso);
+    return Number.isFinite(d.getTime()) ? d : new Date(NaN);
+  }
+  const m = iso.match(/^(\d{4})-(\d\d)-(\d\d)T(\d\d):(\d\d)(?::(\d\d))?$/);
+  if (!m) return new Date(NaN);
+  return nyDate(+m[1], +m[2], +m[3], +m[4], +m[5]);
+}
+
 export function startMs(event: YaleEvent): number {
-  return new Date(event.start).getTime();
+  return parseInstant(event.start).getTime();
 }
 
 export function endMs(event: YaleEvent): number {
   const s = startMs(event);
   if (event.end) {
-    const e = new Date(event.end).getTime();
+    const e = parseInstant(event.end).getTime();
     if (Number.isFinite(e) && e > s) return e;
   }
   return s + (event.durationMin ?? 60) * 60000;
@@ -53,7 +69,7 @@ export function candidates(events: YaleEvent[], now: Date, hours: number, opts: 
 
 /** The class this event overlaps, if any. */
 export function conflict(event: YaleEvent, courses: Course[]): { courseCode: string } | null {
-  const s = new Date(event.start);
+  const s = parseInstant(event.start);
   if (!Number.isFinite(s.getTime())) return null;
   const p = nyParts(s);
   const day = nyWeekday(s);
@@ -81,7 +97,10 @@ export function walkMin(a: Point, b: Point): number {
 
 /** Where the student leaves from: the last class ending within 90 min before the event, else home. */
 export function startPoint(event: YaleEvent, profile: Pick<Profile, 'courses' | 'home'>): StartPoint {
-  const s = new Date(event.start);
+  const s = parseInstant(event.start);
+  if (!Number.isFinite(s.getTime())) {
+    return { name: profile.home.name, lat: profile.home.lat, lng: profile.home.lng, courseCode: null };
+  }
   const p = nyParts(s);
   const day = nyWeekday(s);
   const at = p.hh * 60 + p.mm;

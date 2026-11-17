@@ -6,21 +6,21 @@ function utcStamp(d: Date): string {
   return `${d.getUTCFullYear()}${p(d.getUTCMonth() + 1)}${p(d.getUTCDate())}T${p(d.getUTCHours())}${p(d.getUTCMinutes())}${p(d.getUTCSeconds())}Z`;
 }
 
-/** Google Calendar "create event" link. End = start + 1 h when the event has no end. */
+/** Google Calendar template. End = start + 1 h when `end` is null. Dates stay UTC stamps with a literal slash. */
 export function calendarLink(event: YaleEvent): string {
   const start = new Date(event.start);
-  const endRaw = event.end ? new Date(event.end) : null;
-  const end = endRaw && endRaw.getTime() > start.getTime() ? endRaw : new Date(start.getTime() + 3600000);
+  const parsedEnd = event.end ? new Date(event.end) : null;
+  const end = parsedEnd && !Number.isNaN(parsedEnd.getTime()) ? parsedEnd : new Date(start.getTime() + 3600000);
   const details = [event.summary, event.host ? `Hosted by ${event.host}` : '', event.sourceUrl].filter(Boolean).join('\n');
   const q = new URLSearchParams({
     action: 'TEMPLATE',
     text: event.title,
-    dates: `${utcStamp(start)}/${utcStamp(end)}`,
     location: event.locationName,
     details,
     ctz: 'America/New_York',
   });
-  return `https://calendar.google.com/calendar/render?${q.toString()}`;
+  const dates = `${utcStamp(start)}/${utcStamp(end)}`;
+  return `https://calendar.google.com/calendar/render?${q.toString()}&dates=${dates}`;
 }
 
 /** Opens Messages with the text ready (no recipient: the student picks the thread). */

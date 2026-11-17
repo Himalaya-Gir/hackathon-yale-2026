@@ -7,6 +7,8 @@ import { currentPicks, useOrbit } from '@/lib/store';
 import PickCard from './PickCard';
 import { MOOD_META } from './util';
 
+export { default as TrajectoryBanner } from './TrajectoryBanner';
+
 function SkeletonCard() {
   return (
     <li className="overflow-hidden rounded-2xl border border-white/10 bg-[rgba(12,19,34,0.9)]" aria-hidden>
@@ -45,16 +47,16 @@ export default function WeekRail() {
   const expected = tonight ? 3 : 6;
   const skeletons = thinking ? Math.max(0, expected - rows.length) : 0;
   const idle = phase === 'idle' && !tonight && rows.length === 0;
-  const total = stats?.total ?? events.length;
 
   if (idle) {
     return (
       <aside className="glass pointer-events-auto p-5">
-        {total > 0 ? (
+        {stats ? (
           <>
-            <div className="text-[56px] font-semibold leading-none tracking-tight tabular-nums">{total.toLocaleString('en-US')}</div>
-            <p className="mt-2 text-xl font-semibold leading-snug">events this week.</p>
-            <p className="mt-1 text-base text-ink-dim">Tell Orbit where you&apos;re going.</p>
+            <p className="text-xl font-semibold leading-[46px]">
+              <span className="text-[40px] leading-none tracking-tight tabular-nums">{stats.total.toLocaleString('en-US')}</span>
+              {' '}events this week. Tell Orbit where you&apos;re going.
+            </p>
             {profile && (
               <p className="mt-4 border-t border-white/10 pt-3 text-sm text-ink-dim">
                 Each one is checked against your {profile.courses.length} courses, {profile.clubs.length} clubs and {friendCount} friends.
@@ -73,7 +75,7 @@ export default function WeekRail() {
   }
 
   const Mood = tonight && mood ? MOOD_META[mood] : null;
-  const showSafety = tonight && !thinking && rows.length > 0 && mood !== null && (SAFETY_MOODS as readonly string[]).includes(mood);
+  const showSafety = tonight && mood !== null && (SAFETY_MOODS as readonly string[]).includes(mood);
   const empty = !thinking && rows.length === 0;
 
   return (
@@ -102,7 +104,7 @@ export default function WeekRail() {
             <span className="truncate">Research-backed ideas for tonight</span>
           </div>
         ) : (
-          <p className="mt-2 truncate text-sm text-ink-dim">Toward: <span className="text-gold">{goal}</span></p>
+          <p className="mt-2 line-clamp-2 text-base leading-snug text-gold">{goal}</p>
         )}
       </header>
 

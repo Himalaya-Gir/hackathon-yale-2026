@@ -4,29 +4,27 @@ import Avatar from './Avatar';
 import { initialsOf } from './util';
 
 export default function TopBar() {
-  const profile = useOrbit((s) => s.profile);
+  const name = useOrbit((s) => s.profile?.name) ?? 'Maya Chen';
   return (
-    <header className="pointer-events-auto absolute inset-x-0 top-0 z-20 flex h-12 items-center justify-between bg-gradient-to-b from-[rgba(7,11,20,0.92)] to-transparent px-4">
-      <div className="flex items-center gap-3">
-        <span aria-hidden className="relative grid h-6 w-6 place-items-center">
-          <span className="absolute inset-0 rounded-full border border-white/40" />
-          <span className="h-2 w-2 rounded-full bg-ink" />
-          <span className="absolute -right-0.5 top-0.5 h-1.5 w-1.5 rounded-full bg-sky" />
+    <header className="glass pointer-events-auto flex h-12 items-center justify-between gap-4 px-4">
+      <div className="flex min-w-0 items-center gap-4">
+        <span aria-hidden className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#00356B]">
+          <span className="h-2 w-2 rounded-full bg-white" />
         </span>
-        <span className="text-base font-semibold tracking-tight">
+        <span className="whitespace-nowrap text-base font-semibold tracking-tight">
           Orbit <span className="font-normal text-ink-dim">· for Yale</span>
         </span>
-        <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-sm text-ink-dim">Preview · sample data</span>
+        <span className="inline-flex h-8 shrink-0 items-center whitespace-nowrap rounded-full border border-white/15 bg-[#00356B] px-4 text-sm font-medium text-white">
+          Preview · sample data
+        </span>
       </div>
-      {profile && (
-        <div className="flex items-center gap-2.5 text-sm">
-          <span>
-            <span className="font-medium">{profile.name}</span>
-            <span className="text-ink-dim"> · Yale NetID</span>
-          </span>
-          <Avatar initials={initialsOf(profile.name)} color="#EEF2F8" size={28} />
-        </div>
-      )}
+      <div className="flex shrink-0 items-center gap-2 text-sm">
+        <span className="whitespace-nowrap">
+          <span className="font-medium">{name}</span>
+          <span className="text-ink-dim"> · Yale NetID</span>
+        </span>
+        <Avatar initials={initialsOf(name)} color="#EEF2F8" size={32} />
+      </div>
     </header>
   );
 }

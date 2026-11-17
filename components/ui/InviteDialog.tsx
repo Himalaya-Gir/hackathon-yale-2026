@@ -19,7 +19,7 @@ function Dialog({ pick, event, contact, tonight }: { pick: OrbitPick; event: Yal
   const [message, setMessage] = useState(
     pick.invite ?? `${who ? `Hey ${who}, ` : ''}"${event.title}" is ${fmtWhen(event.start)} at ${event.locationName}. Want to go together?`,
   );
-  const label = who ? `Sent to ${who}` : 'Invite sent';
+  const label = who ? `Sent to ${who} ✓` : 'Invite sent ✓';
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') close(); };

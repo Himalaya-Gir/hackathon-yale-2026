@@ -1,11 +1,19 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { allowedMechanisms, codeOnlyPicks, friendLine, friendsGoing, goalSlug, moodExcluded, preselect, validPick } from './match';
+import { allowedMechanisms, codeOnlyPicks, friendLine, friendsGoing, goalSlug, moodExcluded, preselect, rank, servesGoal, validPick } from './match';
 import { MECHANISM_BY_ID } from './science';
-import { ev } from './schedule.test';
 import { nyDate, toNyIso } from './time';
 import { MOODS } from './types';
-import type { Friend, Profile } from './types';
+import type { Friend, Profile, YaleEvent } from './types';
+
+function ev(over: Partial<YaleEvent>): YaleEvent {
+  return {
+    id: 'e1', title: 'T', start: '', end: null, dayOffset: null, time: null, locationName: 'X', building: null,
+    lat: 41.3124, lng: -72.9249, source: 'sample', sourceUrl: '', host: null, summary: 's', tracks: ['space'], kinds: ['build'],
+    future: false, free: true, food: false, rsvpUrl: null, photoUrl: '/img/events/a.jpg', sample: true, online: false, solo: false, durationMin: 60,
+    ...over,
+  };
+}
 
 const at = (d: number, hh: number, mm = 0) => toNyIso(nyDate(2026, 11, d, hh, mm));
 const now = nyDate(2026, 11, 17, 18, 30);
@@ -28,11 +36,16 @@ test('allowedMechanisms follows the table', () => {
 
 test('mood exclusions', () => {
   assert.equal(moodExcluded(ev({ start: at(17, 19), durationMin: 150 }), 'tired'), true);
+  assert.equal(moodExcluded(ev({ start: at(17, 19), durationMin: null, end: at(17, 22) }), 'tired'), true);
+  assert.equal(moodExcluded(ev({ start: at(17, 19), durationMin: 120 }), 'tired'), false);
   assert.equal(moodExcluded(ev({ start: at(17, 21, 30) }), 'tired'), true);
   assert.equal(moodExcluded(ev({ start: at(17, 21) }), 'tired'), false);
   assert.equal(moodExcluded(ev({ start: at(17, 19), online: true }), 'sad'), true);
   assert.equal(moodExcluded(ev({ start: at(17, 19), solo: true }), 'lonely'), true);
   assert.equal(moodExcluded(ev({ start: at(17, 19), solo: true }), 'stressed'), false);
+  assert.deepEqual(allowedMechanisms(ev({ start: at(17, 22), kinds: ['move'] }), 'tired'), []);
+  assert.deepEqual(allowedMechanisms(ev({ start: at(17, 19), kinds: ['social-small'], online: true }), 'sad'), []);
+  assert.deepEqual(allowedMechanisms(ev({ kinds: ['social-small'] }), 'great'), ['weak-ties']);
 });
 
 test('validPick', () => {
@@ -96,4 +109,26 @@ test('preselect and codeOnlyPicks: valid, no conflict, never crash on few or no 
   }
   assert.deepEqual(preselect('week', [], now, profile), []);
   assert.deepEqual(codeOnlyPicks({ mode: 'tonight', pool: [], goal: '', mood: 'sad', profile, going: new Map(), ref: now, want: 3 }), []);
+});
+
+test('friends rank first for sad and lonely; anxious prefers small groups; goal sets lane both', () => {
+  const goal = 'Break into the space industry';
+  const withFriends = ev({ id: 'friends', start: at(19, 18), kinds: ['social-small'], tracks: ['social'], title: 'College dinner' });
+  const rocket = ev({ id: 'rocket', start: at(17, 19), kinds: ['social-small', 'build'], tracks: ['space'], future: true, title: 'Rocket build night' });
+  const going = new Map([['friends', ['Lena']]]);
+  assert.equal(servesGoal(rocket, goal), true);
+  assert.equal(servesGoal(withFriends, goal), false);
+  for (const mood of ['sad', 'lonely'] as const) {
+    assert.ok(rank(withFriends, { mode: 'tonight', goal, mood, friends: 1, ref: now }) > rank(rocket, { mode: 'tonight', goal, mood, friends: 0, ref: now }));
+    const picks = codeOnlyPicks({ mode: 'tonight', pool: [rocket, withFriends], goal, mood, profile, going, ref: now, want: 2 });
+    assert.equal(picks[0].eventId, 'friends', mood);
+    assert.equal(picks.find((p) => p.eventId === 'rocket')?.lane, 'both');
+    assert.equal(picks.find((p) => p.eventId === 'friends')?.lane, 'feel');
+  }
+  const small = ev({ id: 'small', start: at(18, 19), kinds: ['social-small'], tracks: ['social'] });
+  const big = ev({ id: 'big', start: at(17, 19), kinds: ['social-big'], tracks: ['social'] });
+  assert.ok(rank(small, { mode: 'tonight', goal: 'zzz', mood: 'anxious', ref: now }) > rank(big, { mode: 'tonight', goal: 'zzz', mood: 'anxious', ref: now }));
+  const anxious = codeOnlyPicks({ mode: 'tonight', pool: [big, small], goal: 'zzz', mood: 'anxious', profile, going: new Map(), ref: now, want: 2 });
+  assert.equal(anxious[0].eventId, 'small');
+  assert.ok(anxious.every((p) => validPick(p, [big, small].find((e) => e.id === p.eventId)!, 'tonight', 'anxious')));
 });

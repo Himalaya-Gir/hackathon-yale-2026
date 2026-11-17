@@ -27,7 +27,24 @@ html, body {
   background: var(--night);
   color: var(--ink);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
 }
+
+/* Chrome actions. Yale blue only — gold stays on the goal, light blue on Tonight. */
+.btn-yale {
+  background: #00356b;
+  color: #fff;
+  transition: filter 150ms ease, transform 150ms ease;
+}
+.btn-yale:hover { filter: brightness(1.5); }
+.btn-yale:active { filter: brightness(0.82); transform: scale(0.96); }
+.btn-yale:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+.btn-press { transition: filter 150ms ease, transform 150ms ease; }
+.btn-press:hover { filter: brightness(1.12); transform: scale(1.08); }
+.btn-press:active { filter: brightness(0.9); transform: scale(0.94); }
+.btn-press:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 
 /* Interface motion (package D). A card slides in 300 ms (PLAN.md §8.1). */
 @keyframes orbit-slide-in { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
@@ -46,6 +63,7 @@ html, body {
 }
 @media (prefers-reduced-motion: reduce) {
   .slide-in, .fade-up, .slide-up, .slide-down, .skeleton { animation: none; }
+  .btn-yale:active, .btn-press:hover, .btn-press:active { transform: none; }
 }
 
 /* Thin scrollbar inside the glass panels. */

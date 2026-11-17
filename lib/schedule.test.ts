@@ -45,6 +45,19 @@ test('walkMin: distance × 1.3 ÷ 80, rounded up', () => {
   assert.ok(w >= 10 && w <= 13, `got ${w}`);
 });
 
+test('offset-less instants are New York wall time', () => {
+  const plain = [
+    ev({ id: 'tonight', start: '2026-11-17T19:00:00' }),
+    ev({ id: 'thu', start: '2026-11-19T20:00:00' }),
+  ];
+  assert.deepEqual(candidates(plain, now, 48).map((e) => e.id), ['tonight']);
+  assert.deepEqual(candidates(plain, now, 48, { minCount: 30, widenHours: 96 }).map((e) => e.id), ['tonight', 'thu']);
+  assert.equal(leaveBy(ev({ start: '2026-11-18T19:00:00' }), 10), at(18, 18, 45));
+  assert.deepEqual(conflict(ev({ start: '2026-11-18T13:30:00' }), courses), { courseCode: 'CPSC 3230' });
+  assert.equal(conflict(ev({ start: '2026-11-17T13:30:00' }), courses), null);
+  assert.equal(startPoint(ev({ start: '2026-11-18T15:00:00' }), profile).courseCode, 'CPSC 3230');
+});
+
 test('startPoint, leaveBy, fit', () => {
   const afterClass = ev({ start: at(18, 15) }); // Wed 3:00 PM, class ended 2:20 PM
   assert.equal(startPoint(afterClass, profile).courseCode, 'CPSC 3230');
