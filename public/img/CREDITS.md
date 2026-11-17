@@ -18,3 +18,24 @@ Every image in `public/img/events/` is a real photograph. Origins:
 ## Real Yale events (yale-*.jpg)
 
 Each `yale-*.jpg` is the event's own photo from the official Yale calendar (events.yale.edu, Localist API), resized to 1200 x 675 by `scripts/yale-calendar.mjs`. The event's `sourceUrl` links to its page.
+
+## More sample events (s-*.jpg, scripts/sample-plus.mjs)
+
+- `s-launch-watch.jpg` → CLPS Firefly Blue Ghost Mission 1 Launch Streak. NASA/Cory S Huston NASA, public domain. https://images.nasa.gov/details/KSC-20250115-PH-CSH01_0001
+- `s-hotfire.jpg` → SSC20210116_GR6387. Michael Badon NASA, public domain. https://images.nasa.gov/details/SSC20210116_GR6387
+- `s-mission-sim.jpg` → Artemis II Science Officers -- jsc2026e000841. James Blair - NASA - JSC NASA, public domain. https://images.nasa.gov/details/jsc2026e000841
+- `s-cubesat-review.jpg` → Electric Sail (E-Sail) Tether Team. Emmett Given NASA, public domain. https://images.nasa.gov/details/MSFC-1701160
+- `s-balloon.jpg` → GSFC2024HASP0202. Sophia Roberts NASA, public domain. https://images.nasa.gov/details/GSFC2024HASP0202
+- `s-orbit-econ.jpg` → The Search for Life Beyond Earth. NASA/Joel Kowsky NASA, public domain. https://images.nasa.gov/details/201407140016HQ
+- `s-space-global.jpg` → BIRDS-5. BIRDS-5 NASA, public domain. https://images.nasa.gov/details/jsc2022e072953
+- `s-hardware-hack.jpg` → 2017 Robotic Mining Competition. NASA/Kim Shiflett NASA, public domain. https://images.nasa.gov/details/KSC-20170524-PH_KLS01_0022
+- `s-demo-night.jpg` → KSC-2014-3541. KSC NASA, public domain. https://images.nasa.gov/details/KSC-2014-3541
+- `s-cofounder-match.jpg` → File:Monikos Quiz Night in Nairobi.jpg. Hilary Murugu CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Monikos_Quiz_Night_in_Nairobi.jpg
+- `s-robot-lab.jpg` → File:ISEAUTO, the Lab for Self-Driving Vehicles in TalTech.jpg. Lauri Veerde CC BY 4.0. https://commons.wikimedia.org/wiki/File:ISEAUTO,_the_Lab_for_Self-Driving_Vehicles_in_TalTech.jpg
+- `s-paper-club.jpg` → File:University of Washington - Bill and Melinda Gates Center for CSE - robotics lab grad student offices.jpg. Joe Mabel CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:University_of_Washington_-_Bill_and_Melinda_Gates_Center_for_CSE_-_robotics_lab_grad_student_offices.jpg
+- `s-gpu-tour.jpg` → File:BalticServers data center.jpg. BalticServers.com CC BY-SA 3.0. https://commons.wikimedia.org/wiki/File:BalticServers_data_center.jpg
+- `s-scifi-film.jpg` → File:Tengis Movie Theater - Screen.jpg. Fred Cherrygarden CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Tengis_Movie_Theater_-_Screen.jpg
+- `s-greenhouse.jpg` → File:RO Bucharest Botanical Garden new greenhouse 02.jpg. Whitepixels CC0. https://commons.wikimedia.org/wiki/File:RO_Bucharest_Botanical_Garden_new_greenhouse_02.jpg
+- `s-meditation.jpg` → File:A group meditation session in a park in a yoga asana.jpg. Konstantin Stepanov from Moscow, Россия CC BY 2.0. https://commons.wikimedia.org/wiki/File:A_group_meditation_session_in_a_park_in_a_yoga_asana.jpg
+- `s-trivia.jpg` → File:Pub quiz Finnish championships in March 2025 starting.jpg. JIP CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Pub_quiz_Finnish_championships_in_March_2025_starting.jpg
+- `s-tree-planting.jpg` → File:DUSAFO planting trees.jpg. Christian Anold Mosha CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:DUSAFO_planting_trees.jpg
