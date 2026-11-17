@@ -38,8 +38,8 @@ export default function Shell() {
       <div className="pointer-events-none absolute bottom-4 left-4 top-20 z-10 flex w-80 min-h-0 flex-col">
         <ProfilePanel />
       </div>
-      <div className="pointer-events-none absolute bottom-4 right-4 top-20 z-10 flex w-[380px] min-h-0 flex-col">
-        <div className="min-h-0 flex-1">
+      <div className="pointer-events-none absolute bottom-4 right-4 top-20 z-10 w-[380px]">
+        <div className="h-full min-h-0">
           <WeekRail />
         </div>
       </div>

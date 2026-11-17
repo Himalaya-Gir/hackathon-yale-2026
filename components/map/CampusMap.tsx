@@ -8,13 +8,20 @@ import { MARKER_CSS } from './markers';
 
 export default function CampusMap() {
   const ref = useRef<HTMLDivElement | null>(null);
+  const once = useRef(false);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    // One map per mount. Cleanup clears the guard so React strict mode can create the replacement.
+    if (!el || once.current) return;
+    once.current = true;
     let destroy: (() => void) | null = null;
-    try { destroy = createScene(el); } catch (err) { console.error('orbit map: init', err); el.style.opacity = '1'; }
-    return () => { destroy?.(); };
+    try { destroy = createScene(el); } catch (err) {
+      once.current = false;
+      console.error('orbit map: init', err);
+      el.style.opacity = '1';
+    }
+    return () => { once.current = false; destroy?.(); };
   }, []);
 
   return (
