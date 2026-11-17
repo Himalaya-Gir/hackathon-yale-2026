@@ -1,5 +1,35 @@
 [
  {
+  "id": "f-himalaya",
+  "name": "Himalaya Girard",
+  "initials": "HG",
+  "color": "#63AAFF",
+  "classYear": "PhD",
+  "college": "Psychology",
+  "status": "friend",
+  "reason": null,
+  "goingTo": [
+   "grokathon-yale-2026",
+   "sample-launch-watch",
+   "sample-paper-club"
+  ]
+ },
+ {
+  "id": "f-marceau",
+  "name": "Marceau",
+  "initials": "M",
+  "color": "#9BB4D6",
+  "classYear": "Visiting",
+  "college": "Tsai CITY",
+  "status": "friend",
+  "reason": null,
+  "goingTo": [
+   "grokathon-yale-2026",
+   "sample-hardware-hack",
+   "sample-demo-night"
+  ]
+ },
+ {
   "id": "f-lena",
   "name": "Lena Park",
   "initials": "LP",
