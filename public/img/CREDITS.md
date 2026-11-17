@@ -14,3 +14,7 @@ Every image in `public/img/events/` is a real photograph. Origins:
 - `volunteer.jpg` — Wikimedia Commons, File:CIWT Site Fort Meade Volunteers at Food Bank 161020-N-XX082-002.jpg, Public domain, by Oct. 20, 2016. https://commons.wikimedia.org/wiki/File:CIWT_Site_Fort_Meade_Volunteers_at_Food_Bank_161020-N-XX082-002.jpg
 - `board-games.jpg` — Wikimedia Commons, File:People playing board game during session 'Play Wikeys, the board game to discover Wikipedia' at Wikimania 2026, day 3.jpg, CC0, by Tohaomg. https://commons.wikimedia.org/wiki/File:People_playing_board_game_during_session_%27Play_Wikeys,_the_board_game_to_discover_Wikipedia%27_at_Wikimania_2026,_day_3.jpg
 - `yoga.jpg` — Wikimedia Commons, File:Outdoor Yoga At the Park.jpg, CC BY-SA 2.0, by Vuemobi Media. https://commons.wikimedia.org/wiki/File:Outdoor_Yoga_At_the_Park.jpg
+
+## Real Yale events (yale-*.jpg)
+
+Each `yale-*.jpg` is the event's own photo from the official Yale calendar (events.yale.edu, Localist API), resized to 1200 x 675 by `scripts/yale-calendar.mjs`. The event's `sourceUrl` links to its page.
