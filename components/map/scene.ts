@@ -1,27 +1,33 @@
 // The imperative MapLibre scene (PLAN.md §9, package B). One map, created once; the store drives it.
+import { circle } from '@turf/circle';
+import { point } from '@turf/helpers';
 import { Map as MlMap, MercatorCoordinate, setWorkerUrl, type CustomLayerInterface, type GeoJSONSource } from 'maplibre-gl';
-import { currentPicks, useOrbit } from '@/lib/store';
-import { fmtWhen, now, nyParts } from '@/lib/time';
+import { startPoint } from '@/lib/schedule';
+import { useOrbit } from '@/lib/store';
+import { fmtDay, now, nyParts } from '@/lib/time';
 import type { Pick as OrbitPick, Profile, YaleEvent } from '@/lib/types';
 import { MarkerLayer, type MarkerFriend } from './markers';
 
 type State = ReturnType<typeof useOrbit.getState>;
 type GeoData = Parameters<GeoJSONSource['setData']>[0];
 
-const GOLD = '#FFC857', GOLD_HOT = '#FFDA8C';
-const SKY = '#63AAFF', SKY_HOT = '#B4D6FF';
+const GOLD = '#FFC857', GOLD_HOT = '#FFF3CC';
+const SKY = '#63AAFF', SKY_HOT = '#E7F2FF';
 const STYLE_URL = 'https://tiles.openfreemap.org/styles/dark';
 const HOME_VIEW = { center: [-72.9265, 41.3115] as [number, number], zoom: 15.6, pitch: 60, bearing: -20 };
 const OVERVIEW: [number, number] = [-72.9262, 41.3146];
 const PAD = { left: 340, right: 400, top: 60, bottom: 120 };
-const PAD_WIDE = { left: 340, right: 400, top: 170, bottom: 90 }; // overview: tall beams must clear the trajectory banner
+const PAD_WIDE = { left: 340, right: 400, top: 170, bottom: 90 };
 const HERE_ID = 'grokathon-yale-2026';
+const BEAM_M = 9;
+const BEAM_M_SELECTED = 13;
 
 type Beam = {
   key: string; eventId: string; kind: 'week' | 'tonight';
-  lng: number; lat: number; color: string; hot: string; halo: string;
+  lng: number; lat: number; color: string; hot: string; halo: string; haloScale: number;
   from: number; to: number; cur: number; t0: number; dur: number; full: number;
   state: 0 | 1 | 2; // 0 normal, 1 hovered, 2 selected
+  dim: boolean;
 };
 
 let workerSet = false;
@@ -36,64 +42,75 @@ function ensureWorker() {
 
 const easeOut = (k: number) => 1 - Math.pow(1 - k, 3);
 
-/** Closed ring of a disc of `r` meters around a point (24 steps). */
-function disc(lng: number, lat: number, r: number): number[][] {
-  const dLat = r / 110540, dLng = r / (111320 * Math.cos((lat * Math.PI) / 180));
-  const ring: number[][] = [];
-  for (let i = 0; i <= 24; i++) {
-    const a = (i / 24) * Math.PI * 2;
-    ring.push([lng + Math.cos(a) * dLng, lat + Math.sin(a) * dLat]);
-  }
-  return ring;
+function rgba(hex: string, a: number): string {
+  const n = Number.parseInt(hex.slice(1), 16);
+  const alpha = Math.max(0, Math.min(1, a));
+  return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${alpha.toFixed(3)})`;
+}
+
+/** Disc of `meters` radius, 24 steps, from @turf/circle. */
+function disc(lng: number, lat: number, meters: number): number[][] {
+  const ring = circle(point([lng, lat]), meters, { steps: 24, units: 'meters' }).geometry.coordinates[0];
+  return ring.map((c) => [c[0], c[1]]);
 }
 
 const fc = (features: unknown[]) => ({ type: 'FeatureCollection', features }) as unknown as GeoData;
-const okPos = (e: { lat: number; lng: number } | undefined | null): e is { lat: number; lng: number } =>
-  !!e && Number.isFinite(e.lat) && Number.isFinite(e.lng);
+function okPos<T extends { lat: number; lng: number }>(e: T | undefined | null): e is T {
+  return !!e && Number.isFinite(e.lat) && Number.isFinite(e.lng);
+}
 
 function initialsOf(name: string | undefined): string {
   return (name ?? 'Me').split(/\s+/).map((w) => w[0] ?? '').join('').slice(0, 2).toUpperCase();
 }
 
-/** Where the student comes from: the last class that ends before the event that day, else home. */
+/** "Thu 5:30" / "Tonight 7:30" — minutes always shown, no am/pm. */
+function shortWhen(iso: string): string {
+  const day = fmtDay(iso);
+  const p = nyParts(new Date(iso));
+  if (!Number.isFinite(p.hh)) return day;
+  const h = p.hh % 12 || 12;
+  return `${day} ${h}:${String(p.mm).padStart(2, '0')}`;
+}
+
+/** Last class that ends within 90 minutes before the event, otherwise home. */
 function originFor(ev: YaleEvent, profile: Profile | null): [number, number] | null {
   if (!profile) return null;
-  const p = nyParts(new Date(ev.start));
-  const at = p.hh * 60 + p.mm;
-  let best: { end: number; lng: number; lat: number } | null = null;
-  for (const c of profile.courses ?? []) {
-    if (!okPos(c)) continue;
-    for (const m of c.meetings ?? []) {
-      if (m.day !== p.weekday) continue;
-      const [h, mi] = m.end.split(':').map(Number);
-      const end = h * 60 + mi;
-      if (end <= at && (!best || end > best.end)) best = { end, lng: c.lng, lat: c.lat };
-    }
-  }
-  if (best) return [best.lng, best.lat];
-  return okPos(profile.home) ? [profile.home.lng, profile.home.lat] : null;
+  const from = startPoint(ev, profile);
+  return Number.isFinite(from.lat) && Number.isFinite(from.lng) ? [from.lng, from.lat] : null;
 }
 
 export function createScene(container: HTMLDivElement): () => void {
   ensureWorker();
   const map = new MlMap({
     container, style: STYLE_URL, ...HOME_VIEW,
-    maxPitch: 70, minZoom: 12.5, maxZoom: 19,
+    maxPitch: 72, minZoom: 12.5, maxZoom: 19,
+    bearingSnap: 0, renderWorldCopies: false,
     canvasContextAttributes: { antialias: true },
     attributionControl: { compact: true },
     fadeDuration: 0,
   });
+  // The dark style asks for a wood sprite that this host does not ship. Supply a blank image
+  // before the style needs it, so the console stays quiet.
+  const blank = { width: 1, height: 1, data: new Uint8Array(4) };
+  map.setMissingStyleImageResolver((id) => { if (!map.hasImage(id)) map.addImage(id, blank); });
   const store = useOrbit;
-  const markers = new MarkerLayer(container, (id) => { if (id) store.getState().select(id); }, (id) => store.getState().hover(id));
+  const markers = new MarkerLayer(
+    container,
+    (id) => { if (id) store.getState().select(id); },
+    (id) => store.getState().hover(id),
+  );
   const beams = new Map<string, Beam>();
   let ready = false, dead = false, raf = 0;
   let matrix: ArrayLike<number> | null = null;
   let here: [number, number] | null = null;
-  let trajPts: number[][] = [], trajShown = 0, trajLast = 0;
+  let trajPts: number[][] = [], trajShown = 0, trajLast = 0, trajSig = '';
+  let riseAt = 0;
+  let phaseSeen: State['phase'] = store.getState().phase;
   let eventsRef: YaleEvent[] | null = null;
   let byId = new Map<string, YaleEvent>();
+  let loggedError = false;
 
-  // ---------- idle rotation (2° per second, stops at the first input) ----------
+  // Idle rotation: 2°/s, stopped by the first mousedown, wheel, or touch.
   let idle = true, idleRaf = 0, idleLast = 0;
   const spin = (t: number) => {
     if (!idle || dead) return;
@@ -105,14 +122,16 @@ export function createScene(container: HTMLDivElement): () => void {
     if (!idle) return;
     idle = false;
     cancelAnimationFrame(idleRaf);
-    for (const n of ['mousedown', 'wheel', 'touchstart', 'keydown'] as const) window.removeEventListener(n, stopIdle, true);
+    for (const n of ['mousedown', 'wheel', 'touchstart'] as const) window.removeEventListener(n, stopIdle, true);
   };
-  for (const n of ['mousedown', 'wheel', 'touchstart', 'keydown'] as const) window.addEventListener(n, stopIdle, { capture: true, passive: true });
+  for (const n of ['mousedown', 'wheel', 'touchstart'] as const) window.addEventListener(n, stopIdle, { capture: true, passive: true });
 
-  // ---------- projection of a 3D point to the screen ----------
   function project(lng: number, lat: number, alt: number): { x: number; y: number; ok: boolean } {
     const m = matrix;
-    if (!m) return { x: 0, y: 0, ok: false };
+    if (!m) {
+      const p = map.project([lng, lat]);
+      return { x: p.x, y: p.y, ok: true };
+    }
     const c = MercatorCoordinate.fromLngLat({ lng, lat }, alt);
     const x = m[0] * c.x + m[4] * c.y + m[8] * c.z + m[12];
     const y = m[1] * c.x + m[5] * c.y + m[9] * c.z + m[13];
@@ -124,7 +143,6 @@ export function createScene(container: HTMLDivElement): () => void {
   function placeMarkers() {
     for (const b of beams.values()) {
       const p = project(b.lng, b.lat, b.cur);
-      // Close-up: the top of a tall beam leaves the screen, so the marker slides down the beam to stay visible.
       const minY = 190;
       if (p.ok && p.y < minY) {
         const g = project(b.lng, b.lat, 0);
@@ -137,11 +155,10 @@ export function createScene(container: HTMLDivElement): () => void {
   }
 
   const probe: CustomLayerInterface = {
-    id: 'orbit-probe', type: 'custom', renderingMode: '2d',
-    render: (_gl, opts) => { matrix = opts.defaultProjectionData.mainMatrix as ArrayLike<number>; placeMarkers(); },
+    id: 'orbit-probe', type: 'custom', renderingMode: '3d',
+    render: (_gl, opts) => { if (dead) return; matrix = opts.defaultProjectionData.mainMatrix; placeMarkers(); },
   };
 
-  // ---------- drawing ----------
   const src = (id: string) => map.getSource(id) as GeoJSONSource | undefined;
 
   function draw() {
@@ -149,13 +166,16 @@ export function createScene(container: HTMLDivElement): () => void {
     const polys: unknown[] = [], halos: unknown[] = [];
     for (const b of beams.values()) {
       if (b.cur < 0.4) continue;
-      const r = b.state === 2 ? 14 : b.state === 1 ? 11.5 : 9;
+      const r = b.state === 2 ? BEAM_M_SELECTED : BEAM_M;
+      const rise = Math.min(1, b.to === 0 ? b.cur / Math.max(1, b.from) : b.cur / Math.max(1, b.to));
+      const glow = (b.state === 2 ? 0.9 : b.state === 1 ? 0.7 : 0.5) * (b.dim ? 0.45 : 1);
       polys.push({
         type: 'Feature', properties: { kind: b.kind, h: b.cur, c: b.state ? b.hot : b.color },
         geometry: { type: 'Polygon', coordinates: [disc(b.lng, b.lat, r)] },
       });
       halos.push({
-        type: 'Feature', properties: { kind: b.kind, c: b.halo, o: Math.min(1, b.cur / Math.max(1, b.full)) * (b.state === 2 ? 1 : b.state === 1 ? 0.85 : 0.6), s: b.state === 2 ? 1.6 : 1 },
+        type: 'Feature',
+        properties: { c: rgba(b.halo, rise * glow), s: b.state === 2 ? Math.max(b.haloScale, 1.45) : b.haloScale },
         geometry: { type: 'Point', coordinates: [b.lng, b.lat] },
       });
     }
@@ -189,18 +209,19 @@ export function createScene(container: HTMLDivElement): () => void {
     const target = Math.max(0, trajPts.length - 1);
     const dt = trajLast ? Math.min(100, t - trajLast) : 16;
     trajLast = t;
-    if (trajShown < target) { trajShown = Math.min(target, trajShown + dt / 320); busy = true; }
+    if (trajShown < target) { trajShown = Math.min(target, trajShown + dt / 280); busy = true; }
     else if (trajShown > target) trajShown = target;
     draw();
     if (busy) raf = requestAnimationFrame(frame); else trajLast = 0;
   }
   const kick = () => { if (!raf && !dead) raf = requestAnimationFrame(frame); };
 
-  // ---------- store → scene ----------
   function sync(s: State) {
     if (!ready || dead) return;
     if (s.events !== eventsRef) { eventsRef = s.events; byId = new Map(s.events.map((e) => [e.id, e])); }
     const t = performance.now();
+    if (s.phase === 'thinking' && phaseSeen !== 'thinking') riseAt = t + 900;
+    phaseSeen = s.phase;
     const tonight = s.mode === 'tonight';
     const tonightIds = new Set(tonight ? s.tonightPicks.map((p) => p.eventId) : []);
     const me: MarkerFriend | null = s.profile ? { initials: initialsOf(s.profile.name), color: 'me' } : { initials: 'ME', color: 'me' };
@@ -212,7 +233,7 @@ export function createScene(container: HTMLDivElement): () => void {
     const wanted = new Set<string>();
     const want = (p: OrbitPick, i: number, kind: 'week' | 'tonight') => {
       const ev = byId.get(p.eventId);
-      if (!okPos(ev)) return; // a pick whose event is unknown is simply not drawn
+      if (!okPos(ev)) return;
       const key = `${kind}:${ev.id}`;
       if (wanted.has(key)) return;
       wanted.add(key);
@@ -220,18 +241,27 @@ export function createScene(container: HTMLDivElement): () => void {
       const full = 40 + score * 1.6;
       const dim = kind === 'week' && tonight;
       const to = dim ? full / 2 : full;
-      const state: Beam['state'] = dim ? 0 : s.selectedEventId === ev.id ? 2 : s.hoveredEventId === ev.id ? 1 : 0;
+      const state: Beam['state'] = s.selectedEventId === ev.id ? 2 : s.hoveredEventId === ev.id ? 1 : 0;
       const color = kind === 'week' ? GOLD : SKY;
+      const both = kind === 'tonight' && p.lane === 'both';
       let b = beams.get(key);
       if (!b) {
-        b = { key, eventId: ev.id, kind, lng: ev.lng, lat: ev.lat, color, hot: color, halo: color, from: 0, to, cur: 0, t0: t, dur: 600, full, state };
+        b = {
+          key, eventId: ev.id, kind, lng: ev.lng, lat: ev.lat, color, hot: color, halo: color, haloScale: 1,
+          from: 0, to, cur: 0, t0: Math.max(t, riseAt), dur: 600, full, state, dim,
+        };
         beams.set(key, b);
-      } else if (b.to !== to) { b.from = b.cur; b.to = to; b.t0 = t; b.dur = 600; }
-      b.lng = ev.lng; b.lat = ev.lat; b.full = full; b.state = state;
+      } else if (b.to !== to) {
+        const wasGone = b.to === 0;
+        b.from = b.cur; b.to = to; b.t0 = wasGone ? Math.max(t, riseAt) : t; b.dur = 600;
+      }
+      b.lng = ev.lng; b.lat = ev.lat; b.full = full; b.state = state; b.dim = dim;
+      b.color = color;
       b.hot = kind === 'week' ? GOLD_HOT : SKY_HOT;
-      b.halo = kind === 'tonight' && p.lane === 'both' ? GOLD : color;
+      b.halo = both ? GOLD : color;
+      b.haloScale = state === 2 ? 1.6 : both ? 1.35 : 1;
       markers.upsert(key, {
-        eventId: ev.id, kind, color, rank: i + 1, label: fmtWhen(ev.start).replace(/\s?PM$/, ''), photoUrl: ev.photoUrl ?? '', title: ev.title,
+        eventId: ev.id, kind, color, rank: i + 1, label: shortWhen(ev.start), photoUrl: ev.photoUrl ?? '', title: ev.title,
         friends: friendsOf(ev.id), dim, selected: state === 2, hot: state === 1,
       });
     };
@@ -241,15 +271,19 @@ export function createScene(container: HTMLDivElement): () => void {
       if (!wanted.has(b.key) && b.to !== 0) { b.from = b.cur; b.to = 0; b.t0 = t; b.dur = 250; b.state = 0; }
     }
 
-    // trajectory: the week's picks in time order
     const pts = s.weekPicks.map((p) => byId.get(p.eventId)).filter(okPos) as YaleEvent[];
     const seen = new Set<string>();
     trajPts = pts.filter((e) => (seen.has(e.id) ? false : (seen.add(e.id), true)))
       .sort((a, b) => a.start.localeCompare(b.start)).map((e) => [e.lng, e.lat]);
+    const nextSig = trajPts.map((p) => `${p[0].toFixed(5)},${p[1].toFixed(5)}`).join(';') + (trajPts.length ? ';' : '');
+    if (nextSig !== trajSig) {
+      if (!(trajSig && nextSig.startsWith(trajSig))) trajShown = 0;
+      trajSig = nextSig;
+    }
     if (trajPts.length < 2) trajShown = 0;
 
-    // all events of the next 7 days, minus the ones that already have a beam
-    const t0 = now().getTime() - 3 * 3600_000, t1 = t0 + 7 * 86400_000 + 3 * 3600_000;
+    const tRef = now().getTime();
+    const t0 = tRef - 18 * 3600_000, t1 = tRef + 7 * 86400_000;
     const dots: unknown[] = [];
     for (const e of s.events) {
       if (!okPos(e) || wanted.has(`week:${e.id}`) || wanted.has(`tonight:${e.id}`)) continue;
@@ -260,20 +294,19 @@ export function createScene(container: HTMLDivElement): () => void {
     }
     void src('orbit-dots')?.setData(fc(dots));
 
-    // route to the selected event
     const sel = s.selectedEventId ? byId.get(s.selectedEventId) : undefined;
-    const from = okPos(sel) ? originFor(sel as YaleEvent, s.profile) : null;
+    const from = okPos(sel) ? originFor(sel, s.profile) : null;
     void src('orbit-route')?.setData(fc(from && okPos(sel) ? [{ type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: [from, [sel.lng, sel.lat]] } }] : []));
 
-    // "You are here"
     const venue = byId.get(HERE_ID);
-    here = okPos(venue) ? [venue.lng, venue.lat] : okPos(s.profile?.home) ? [s.profile!.home.lng, s.profile!.home.lat] : null;
+    const home = s.profile?.home;
+    here = okPos(venue) ? [venue.lng, venue.lat] : okPos(home) ? [home.lng, home.lat] : null;
 
-    // week layers step back in tonight mode
     try {
       map.setPaintProperty('orbit-beams-week', 'fill-extrusion-opacity', tonight ? 0.3 : 0.85);
-      map.setPaintProperty('orbit-traj-glow', 'line-opacity', tonight ? 0.1 : 0.35);
-      map.setPaintProperty('orbit-traj', 'line-opacity', tonight ? 0.25 : 0.95);
+      map.setPaintProperty('orbit-beams-tonight', 'fill-extrusion-opacity', 0.85);
+      map.setPaintProperty('orbit-traj-glow', 'line-opacity', tonight ? 0 : 0.7);
+      map.setPaintProperty('orbit-traj', 'line-opacity', tonight ? 0 : 1);
     } catch { /* style not ready */ }
     kick();
   }
@@ -281,62 +314,60 @@ export function createScene(container: HTMLDivElement): () => void {
   function camera(s: State, p: State) {
     if (!ready) return;
     if (s.phase === 'thinking' && p.phase !== 'thinking') {
-      stopIdle();
       map.easeTo({ center: OVERVIEW, zoom: 14.6, pitch: 60, duration: 900, padding: PAD_WIDE, essential: true });
     }
     if (s.selectedEventId && s.selectedEventId !== p.selectedEventId) {
       const ev = byId.get(s.selectedEventId) ?? s.events.find((e) => e.id === s.selectedEventId);
-      if (okPos(ev)) {
-        stopIdle();
-        map.flyTo({ center: [ev.lng, ev.lat], zoom: 17.2, pitch: 65, duration: 1800, padding: PAD, essential: true });
-      }
+      if (okPos(ev)) map.flyTo({ center: [ev.lng, ev.lat], zoom: 17.2, pitch: 65, duration: 1800, padding: PAD, essential: true });
     }
   }
 
   const unsub = store.subscribe((s, p) => {
     if (dead) return;
     if (s.events !== p.events || s.weekPicks !== p.weekPicks || s.tonightPicks !== p.tonightPicks || s.mode !== p.mode
-      || s.selectedEventId !== p.selectedEventId || s.hoveredEventId !== p.hoveredEventId || s.friends !== p.friends
-      || s.going !== p.going || s.profile !== p.profile) sync(s);
+      || s.phase !== p.phase || s.selectedEventId !== p.selectedEventId || s.hoveredEventId !== p.hoveredEventId
+      || s.friends !== p.friends || s.going !== p.going || s.profile !== p.profile) sync(s);
     camera(s, p);
   });
 
-  // ---------- style ----------
   function paint(layer: string, prop: string, value: unknown) {
-    try { if (map.getLayer(layer)) map.setPaintProperty(layer, prop as never, value as never); } catch { /* layer differs in this style version */ }
+    try { if (map.getLayer(layer)) map.setPaintProperty(layer, prop as never, value as never); } catch { /* this style build differs */ }
   }
 
   function night() {
     for (const l of map.getStyle().layers ?? []) {
       const id = l.id;
       if (l.type === 'background') paint(id, 'background-color', '#070b14');
-      else if (id === 'water') paint(id, 'fill-color', '#0a1526');
-      else if (id === 'waterway') paint(id, 'line-color', '#0a1526');
-      else if (l.type === 'fill' && /park|wood|landcover|landuse/.test(id)) paint(id, 'fill-color', '#0a141d');
-      else if (id === 'building') { paint(id, 'fill-color', '#111c31'); paint(id, 'fill-outline-color', '#18263f'); }
-      else if (l.type === 'line' && /casing/.test(id)) paint(id, 'line-color', 'rgba(52,74,116,0.55)');
-      else if (l.type === 'line' && /highway_path/.test(id)) paint(id, 'line-color', '#16233a');
-      else if (l.type === 'line' && /highway|road/.test(id)) paint(id, 'line-color', '#131d31');
-      else if (l.type === 'line' && /rail/.test(id)) paint(id, 'line-color', '#141d2e');
+      else if (id === 'water') paint(id, 'fill-color', '#0c141e');
+      else if (id === 'waterway') paint(id, 'line-color', '#0c141e');
+      else if (l.type === 'fill' && /park|wood|landcover|landuse/.test(id)) paint(id, 'fill-color', '#101820');
+      else if (l.type === 'line' && /casing/.test(id)) paint(id, 'line-color', 'rgba(48,62,84,0.45)');
+      else if (l.type === 'line' && /highway_path/.test(id)) paint(id, 'line-color', '#162033');
+      else if (l.type === 'line' && /highway|road/.test(id)) paint(id, 'line-color', '#141c2c');
+      else if (l.type === 'line' && /rail/.test(id)) paint(id, 'line-color', '#141c2a');
       else if (l.type === 'symbol' && /highway_name/.test(id)) { paint(id, 'text-color', '#5d7096'); paint(id, 'text-halo-color', 'rgba(7,11,20,0.9)'); }
       else if (l.type === 'symbol' && /place|water_name/.test(id)) { paint(id, 'text-color', '#7286ad'); paint(id, 'text-halo-color', 'rgba(7,11,20,0.9)'); }
     }
-    try { map.setLight({ anchor: 'viewport', color: '#a9c1ff', intensity: 0.4, position: [1.3, 215, 38] }); } catch { /* optional */ }
+    try { if (map.getLayer('landcover_wood')) map.setPaintProperty('landcover_wood', 'fill-pattern', null as never); } catch { /* this style's wood sprite is missing */ }
+    try { map.setLight({ anchor: 'viewport', color: '#b7c6da', intensity: 0.32, position: [1.3, 210, 36] }); } catch { /* optional */ }
     try {
-      map.setSky({ 'sky-color': '#070b14', 'horizon-color': '#101d38', 'fog-color': '#070b14', 'sky-horizon-blend': 0.8, 'horizon-fog-blend': 0.8, 'fog-ground-blend': 0.55, 'atmosphere-blend': 0 });
+      map.setSky({ 'sky-color': '#070b14', 'horizon-color': '#121c30', 'fog-color': '#070b14', 'sky-horizon-blend': 0.8, 'horizon-fog-blend': 0.8, 'fog-ground-blend': 0.55, 'atmosphere-blend': 0 });
     } catch { /* optional */ }
 
-    const existing = (map.getStyle().layers ?? []).find((l) => l.type === 'fill-extrusion');
-    const bColor = ['interpolate', ['linear'], ['coalesce', ['get', 'render_height'], 8], 0, '#17243f', 25, '#1f3157', 80, '#2b4577'];
+    const heightExpr = ['case', ['>', ['to-number', ['coalesce', ['get', 'render_height'], 0]], 0], ['to-number', ['get', 'render_height']], 10] as never;
+    const bColor = ['interpolate', ['linear'], ['to-number', ['coalesce', ['get', 'render_height'], 8]], 0, '#1a2330', 18, '#2c3c4e', 55, '#45586e'] as never;
+    const existing = (map.getStyle().layers ?? []).find((l) => l.type === 'fill-extrusion' && l.id !== 'orbit-beams-week' && l.id !== 'orbit-beams-tonight');
     if (existing) {
       paint(existing.id, 'fill-extrusion-color', bColor);
       paint(existing.id, 'fill-extrusion-opacity', 0.94);
+      try { if (map.getLayer('building')) map.setLayoutProperty('building', 'visibility', 'none'); } catch { /* flat footprint */ }
     } else if (map.getSource('openmaptiles')) {
+      try { if (map.getLayer('building')) map.setLayoutProperty('building', 'visibility', 'none'); } catch { /* flat footprint */ }
       map.addLayer({
-        id: 'orbit-buildings', type: 'fill-extrusion', source: 'openmaptiles', 'source-layer': 'building', minzoom: 13,
+        id: 'orbit-buildings', type: 'fill-extrusion', source: 'openmaptiles', 'source-layer': 'building', minzoom: 14,
         paint: {
-          'fill-extrusion-color': bColor as never,
-          'fill-extrusion-height': ['coalesce', ['get', 'render_height'], 8],
+          'fill-extrusion-color': bColor,
+          'fill-extrusion-height': heightExpr,
           'fill-extrusion-base': ['coalesce', ['get', 'render_min_height'], 0],
           'fill-extrusion-opacity': 0.94,
           'fill-extrusion-vertical-gradient': true,
@@ -348,40 +379,38 @@ export function createScene(container: HTMLDivElement): () => void {
   function layers() {
     const empty = fc([]);
     for (const id of ['orbit-dots', 'orbit-traj', 'orbit-route', 'orbit-halos', 'orbit-beams']) {
-      map.addSource(id, { type: 'geojson', data: empty, ...(id === 'orbit-traj' || id === 'orbit-route' ? { lineMetrics: false } : {}) });
+      if (!map.getSource(id)) map.addSource(id, { type: 'geojson', data: empty });
     }
-    // meters → pixels at this latitude, so discs keep their ground size while zooming
-    const meters = (m: number, k: unknown = 1) => ['interpolate', ['exponential', 2], ['zoom'], 12, ['*', k, m / 14.35], 20, ['*', k, m / 0.05606]];
     map.addLayer({
       id: 'orbit-dots', type: 'circle', source: 'orbit-dots',
       paint: {
-        'circle-color': '#9CC4FF',
-        'circle-radius': ['interpolate', ['linear'], ['zoom'], 13, ['case', ['>', ['get', 'n'], 0], 4, 2.5], 17, ['case', ['>', ['get', 'n'], 0], 8, 5]],
-        'circle-opacity': ['case', ['>', ['get', 'n'], 0], 0.6, 0.35],
-        'circle-stroke-color': '#9CC4FF',
-        'circle-stroke-width': ['case', ['>', ['get', 'n'], 0], 5, 0],
-        'circle-stroke-opacity': 0.22,
-        'circle-pitch-alignment': 'map',
+        'circle-color': '#B7D4FF',
+        'circle-radius': ['interpolate', ['linear'], ['zoom'], 13, ['case', ['>', ['get', 'n'], 0], 5.5, 3.2], 17, ['case', ['>', ['get', 'n'], 0], 9, 5]],
+        'circle-opacity': 0.35,
+        'circle-stroke-color': '#E4EFFF',
+        'circle-stroke-width': ['case', ['>', ['get', 'n'], 0], 1.75, 0],
+        'circle-stroke-opacity': 0.9,
+        'circle-pitch-alignment': 'viewport',
       },
     });
     map.addLayer({
       id: 'orbit-traj-glow', type: 'line', source: 'orbit-traj', layout: { 'line-cap': 'round', 'line-join': 'round' },
-      paint: { 'line-color': GOLD, 'line-width': 12, 'line-blur': 10, 'line-opacity': 0.35 },
+      paint: { 'line-color': GOLD, 'line-width': 18, 'line-blur': 5, 'line-opacity': 0.7 },
     });
     map.addLayer({
       id: 'orbit-traj', type: 'line', source: 'orbit-traj', layout: { 'line-cap': 'round', 'line-join': 'round' },
-      paint: { 'line-color': '#FFE0A0', 'line-width': 2.2, 'line-opacity': 0.95 },
+      paint: { 'line-color': '#FFE7B8', 'line-width': 3.4, 'line-opacity': 1 },
     });
     map.addLayer({
       id: 'orbit-route', type: 'line', source: 'orbit-route', layout: { 'line-cap': 'butt' },
-      paint: { 'line-color': '#FFFFFF', 'line-width': 2.5, 'line-opacity': 0.8, 'line-dasharray': [1.6, 1.6] },
+      paint: { 'line-color': '#F7F9FF', 'line-width': 2.5, 'line-opacity': 0.85, 'line-dasharray': [1.4, 1.5] },
     });
     map.addLayer({
       id: 'orbit-halos', type: 'circle', source: 'orbit-halos',
       paint: {
-        'circle-color': ['get', 'c'], 'circle-blur': 0.85, 'circle-pitch-alignment': 'map',
-        'circle-radius': meters(34, ['get', 's']) as never,
-        'circle-opacity': ['get', 'o'],
+        'circle-color': ['get', 'c'], 'circle-blur': 0.75, 'circle-opacity': 1, 'circle-pitch-alignment': 'map',
+        // zoom has to be the top-level interpolate input; the stop values carry the per-beam scale.
+        'circle-radius': ['interpolate', ['exponential', 2], ['zoom'], 13, ['*', ['get', 's'], 16], 18, ['*', ['get', 's'], 70]] as never,
       },
     });
     for (const kind of ['week', 'tonight'] as const) {
@@ -393,23 +422,32 @@ export function createScene(container: HTMLDivElement): () => void {
         },
       });
     }
-    map.addLayer(probe);
+    if (!map.getLayer('orbit-probe')) map.addLayer(probe);
   }
+
+  const ro = new ResizeObserver(() => { if (!dead) map.resize(); });
+  ro.observe(container);
 
   map.on('load', () => {
     if (dead) return;
     try { night(); layers(); } catch (err) { console.error('orbit map: style', err); }
     ready = true;
+    map.resize();
     container.style.opacity = '1';
     sync(store.getState());
     idleRaf = requestAnimationFrame(spin);
   });
-  map.on('error', (e) => { console.warn('orbit map:', e?.error?.message ?? e); });
+  map.on('error', (e) => {
+    if (loggedError || ready) return;
+    loggedError = true;
+    console.warn('orbit map:', e.error?.message ?? e.error);
+  });
 
   return () => {
     dead = true;
     unsub();
     stopIdle();
+    ro.disconnect();
     cancelAnimationFrame(raf);
     cancelAnimationFrame(idleRaf);
     markers.destroy();
