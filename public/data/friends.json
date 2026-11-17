@@ -1,5 +1,35 @@
 [
  {
+  "id": "f-himalaya",
+  "name": "Himalaya Girard",
+  "initials": "HG",
+  "color": "#63AAFF",
+  "classYear": "PhD",
+  "college": "Psychology",
+  "status": "friend",
+  "reason": null,
+  "goingTo": [
+   "grokathon-yale-2026",
+   "sample-launch-watch",
+   "sample-paper-club"
+  ]
+ },
+ {
+  "id": "f-marceau",
+  "name": "Marceau",
+  "initials": "M",
+  "color": "#9BB4D6",
+  "classYear": "Visiting",
+  "college": "Tsai CITY",
+  "status": "friend",
+  "reason": null,
+  "goingTo": [
+   "grokathon-yale-2026",
+   "sample-hardware-hack",
+   "sample-demo-night"
+  ]
+ },
+ {
   "id": "f-lena",
   "name": "Lena Park",
   "initials": "LP",
@@ -11,7 +41,12 @@
   "goingTo": [
    "sample-boardgames",
    "sample-yoga",
-   "sample-stargazing"
+   "sample-stargazing",
+   "sample-launch-watch",
+   "sample-balloon",
+   "sample-scifi-film",
+   "sample-meditation",
+   "sample-trivia"
   ]
  },
  {
@@ -26,7 +61,12 @@
   "goingTo": [
    "sample-teststand",
    "sample-sat-sprint",
-   "sample-stargazing"
+   "sample-stargazing",
+   "sample-launch-watch",
+   "sample-hotfire",
+   "sample-mission-sim",
+   "sample-cubesat-review",
+   "sample-scifi-film"
   ]
  },
  {
@@ -40,7 +80,12 @@
   "reason": null,
   "goingTo": [
    "sample-launch-careers",
-   "sample-teststand"
+   "sample-teststand",
+   "sample-hotfire",
+   "sample-cubesat-review",
+   "sample-space-global",
+   "sample-scifi-film",
+   "sample-tree-planting"
   ]
  },
  {
@@ -54,7 +99,11 @@
   "reason": null,
   "goingTo": [
    "sample-founder-dinner",
-   "sample-pitch"
+   "sample-pitch",
+   "sample-orbit-econ",
+   "sample-demo-night",
+   "sample-cofounder-match",
+   "sample-trivia"
   ]
  },
  {
@@ -68,7 +117,10 @@
   "reason": null,
   "goingTo": [
    "sample-ai-mixer",
-   "sample-wright-open"
+   "sample-wright-open",
+   "sample-space-global",
+   "sample-robot-lab",
+   "sample-paper-club"
   ]
  },
  {
@@ -83,7 +135,12 @@
   "goingTo": [
    "sample-launch-careers",
    "sample-sat-sprint",
-   "sample-boardgames"
+   "sample-boardgames",
+   "sample-launch-watch",
+   "sample-mission-sim",
+   "sample-balloon",
+   "sample-hardware-hack",
+   "sample-trivia"
   ]
  },
  {
@@ -97,7 +154,11 @@
   "reason": null,
   "goingTo": [
    "sample-kitchen",
-   "sample-yoga"
+   "sample-yoga",
+   "sample-cofounder-match",
+   "sample-greenhouse",
+   "sample-meditation",
+   "sample-tree-planting"
   ]
  },
  {
@@ -112,7 +173,12 @@
   "goingTo": [
    "sample-ai-mixer",
    "sample-founder-dinner",
-   "sample-stargazing"
+   "sample-stargazing",
+   "sample-mission-sim",
+   "sample-hardware-hack",
+   "sample-demo-night",
+   "sample-robot-lab",
+   "sample-gpu-tour"
   ]
  },
  {
