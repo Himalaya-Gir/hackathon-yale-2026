@@ -1,12 +1,13 @@
 // The imperative MapLibre scene (PLAN.md §9, package B). One map, created once; the store drives it.
 import { circle } from '@turf/circle';
 import { point } from '@turf/helpers';
-import { Map as MlMap, MercatorCoordinate, setWorkerUrl, type CustomLayerInterface, type GeoJSONSource } from 'maplibre-gl';
+import { Map as MlMap, MercatorCoordinate, Popup, setWorkerUrl, type CustomLayerInterface, type GeoJSONSource } from 'maplibre-gl';
 import { startPoint } from '@/lib/schedule';
 import { useOrbit } from '@/lib/store';
 import { fmtDay, now, nyParts } from '@/lib/time';
 import type { Pick as OrbitPick, Profile, YaleEvent } from '@/lib/types';
 import { MarkerLayer, type MarkerFriend } from './markers';
+import { addNavigation } from './navigation';
 
 type State = ReturnType<typeof useOrbit.getState>;
 type GeoData = Parameters<GeoJSONSource['setData']>[0];
@@ -93,6 +94,7 @@ export function createScene(container: HTMLDivElement): () => void {
   // before the style needs it, so the console stays quiet.
   const blank = { width: 1, height: 1, data: new Uint8Array(4) };
   map.setMissingStyleImageResolver((id) => { if (!map.hasImage(id)) map.addImage(id, blank); });
+  try { addNavigation(map, HOME_VIEW, PAD); } catch (err) { console.warn('orbit map: navigation', err); }
   const store = useOrbit;
   const markers = new MarkerLayer(
     container,
@@ -432,6 +434,24 @@ export function createScene(container: HTMLDivElement): () => void {
     if (!map.getLayer('orbit-probe')) map.addLayer(probe);
   }
 
+  // Hover an unpicked event dot: its title and time, like a place name on a map.
+  const tip = new Popup({ closeButton: false, closeOnClick: false, offset: 10, anchor: 'bottom' });
+  function tips() {
+    map.on('mousemove', 'orbit-dots', (e) => {
+      const id = e.features?.[0]?.properties?.id as string | undefined;
+      const ev = id ? byId.get(id) : undefined;
+      if (!okPos(ev)) return;
+      map.getCanvas().style.cursor = 'default';
+      const box = document.createElement('div');
+      box.textContent = ev.title;
+      const when = document.createElement('small');
+      when.textContent = shortWhen(ev.start);
+      box.appendChild(when);
+      tip.setLngLat([ev.lng, ev.lat]).setDOMContent(box).addTo(map);
+    });
+    map.on('mouseleave', 'orbit-dots', () => { map.getCanvas().style.cursor = ''; tip.remove(); });
+  }
+
   const ro = new ResizeObserver(() => { if (!dead) map.resize(); });
   ro.observe(container);
 
@@ -442,7 +462,7 @@ export function createScene(container: HTMLDivElement): () => void {
 
   map.on('load', () => {
     if (dead) return;
-    try { night(); layers(); } catch (err) { console.error('orbit map: style', err); }
+    try { night(); layers(); tips(); } catch (err) { console.error('orbit map: style', err); }
     ready = true;
     map.resize();
     container.style.opacity = '1';
@@ -463,6 +483,7 @@ export function createScene(container: HTMLDivElement): () => void {
     cancelAnimationFrame(raf);
     cancelAnimationFrame(idleRaf);
     markers.destroy();
+    tip.remove();
     map.remove();
   };
 }
