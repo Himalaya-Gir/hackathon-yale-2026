@@ -1171,19 +1171,6 @@
  },
  {
   "reason": "no-matching-photo",
-  "source": "luma",
-  "title": "Build a Website with Claude",
-  "start": "2026-11-18T01:00:00.000Z",
-  "end": "2026-11-18T02:30:00.000Z",
-  "locationRaw": "New Haven",
-  "sourceUrl": "https://luma.com/iyrpcs98",
-  "host": null,
-  "lat": 41.31296334316566,
-  "lng": -72.92268620421336,
-  "summary": "New Haven"
- },
- {
-  "reason": "no-matching-photo",
   "source": "hand-checked",
   "title": "Schwarzman Session: accessibility from idea to opening night, with DJ Kurs…",
   "start": "2026-11-18T12:00:00-05:00",
