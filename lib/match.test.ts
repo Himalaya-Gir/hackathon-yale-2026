@@ -114,7 +114,7 @@ test('preselect and codeOnlyPicks: valid, no conflict, never crash on few or no 
 test('friends rank first for sad and lonely; anxious prefers small groups; goal sets lane both', () => {
   const goal = 'Break into the space industry';
   const withFriends = ev({ id: 'friends', start: at(19, 18), kinds: ['social-small'], tracks: ['social'], title: 'College dinner' });
-  const rocket = ev({ id: 'rocket', start: at(17, 19), kinds: ['social-small', 'build'], tracks: ['space'], future: true, title: 'Rocket build night' });
+  const rocket = ev({ id: 'rocket', start: at(17, 19), kinds: ['social-small', 'build'], tracks: ['space'], future: true, title: 'Rocket build night', durationMin: 90 });
   const going = new Map([['friends', ['Lena']]]);
   assert.equal(servesGoal(rocket, goal), true);
   assert.equal(servesGoal(withFriends, goal), false);
@@ -125,8 +125,8 @@ test('friends rank first for sad and lonely; anxious prefers small groups; goal 
     assert.equal(picks.find((p) => p.eventId === 'rocket')?.lane, 'both');
     assert.equal(picks.find((p) => p.eventId === 'friends')?.lane, 'feel');
   }
-  const small = ev({ id: 'small', start: at(18, 19), kinds: ['social-small'], tracks: ['social'] });
-  const big = ev({ id: 'big', start: at(17, 19), kinds: ['social-big'], tracks: ['social'] });
+  const small = ev({ id: 'small', start: at(18, 19), kinds: ['social-small', 'calm'], tracks: ['social'] });
+  const big = ev({ id: 'big', start: at(17, 19), kinds: ['social-big', 'calm'], tracks: ['social'] });
   assert.ok(rank(small, { mode: 'tonight', goal: 'zzz', mood: 'anxious', ref: now }) > rank(big, { mode: 'tonight', goal: 'zzz', mood: 'anxious', ref: now }));
   const anxious = codeOnlyPicks({ mode: 'tonight', pool: [big, small], goal: 'zzz', mood: 'anxious', profile, going: new Map(), ref: now, want: 2 });
   assert.equal(anxious[0].eventId, 'small');

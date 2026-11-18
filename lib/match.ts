@@ -19,7 +19,8 @@ function durationMinutes(event: YaleEvent): number {
   return 0;
 }
 
-/** Hard exclusions per mood. Tired: longer than 2h, or a start after 21:00 New York. Sad/lonely: no online, no solo. */
+/** Hard exclusions per mood. Tired: longer than 2h, or a start after 21:00 New York. Sad/lonely: no online, no solo.
+ *  Anxious/lonely: no long technical build night (a build event over 90 minutes). */
 export function moodExcluded(event: YaleEvent, mood: Mood): boolean {
   if (mood === 'tired') {
     if (durationMinutes(event) > 120) return true;
@@ -31,6 +32,7 @@ export function moodExcluded(event: YaleEvent, mood: Mood): boolean {
   if (mood === 'sad' || mood === 'lonely') {
     if (event.online || event.solo) return true;
   }
+  if ((mood === 'anxious' || mood === 'lonely') && event.kinds.includes('build') && durationMinutes(event) > 90) return true;
   return false;
 }
 

@@ -25,12 +25,9 @@ Rule: Marceau owns the interface and everything that needs the xAI key or Vercel
 4. **Pitch**: rehearse §11 of `PLAN.md` twice. On the science, say: "each pick is matched to a type of activity that research links to that feeling, not a cure".
 5. **Rehearsal on the Vercel URL** once it exists: run the full flow three times, then record a backup screen video.
 
-## To decide together (5 minutes)
+## Done: mood to event matching
 
-**Mood to event matching** (`lib/science.ts`, `lib/match.ts`, Marceau's files). Proposed small fixes, safe to make:
-- remove `anxious` from the `strangers` row (the study was on ordinary commuters, not anxious people) and `sad` from the `laugh` row (the study measured pain tolerance, not mood);
-- for Anxious and Lonely, exclude big crowds (`social-big`) and long technical build nights.
-Say yes or no here, and who makes the change.
+`anxious` removed from the `strangers` row (the study was on ordinary commuters, not anxious people), `sad` removed from the `laugh` row (the study measured pain tolerance, not mood), and long build nights (build events over 90 minutes) excluded for Anxious and Lonely. Tests updated, 12/12 pass. Anxious now gets chess and tea (calm) instead of the rocket test stand. **Re-bake the fallbacks after pulling.**
 
 ## Clock
 
