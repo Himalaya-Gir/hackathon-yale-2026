@@ -1,19 +1,17 @@
 'use client';
-// After package 0, only the lead edits this file (PLAN.md §7.1).
+// The campus map, with Orbit's interface over it. Onboarding stays in front until the demo starts.
 import dynamic from 'next/dynamic';
-import { useEffect } from 'react';
-import Shell from '@/components/ui/Shell';
-import { useOrbit } from '@/lib/store';
+import Orbit from '@/components/orbit/Orbit';
+import Onboarding from '@/components/ui/Onboarding';
 
 const CampusMap = dynamic(() => import('@/components/map/CampusMap'), { ssr: false });
 
 export default function Home() {
-  const load = useOrbit((s) => s.load);
-  useEffect(() => { void load(); }, [load]);
   return (
-    <div className="relative h-screen w-screen overflow-hidden bg-night text-ink">
-      <CampusMap />
-      <Shell />
+    <div className="relative h-screen w-screen overflow-hidden bg-background text-foreground">
+      <div className="absolute inset-0 isolate z-0"><CampusMap /></div>
+      <Orbit />
+      <Onboarding />
     </div>
   );
 }

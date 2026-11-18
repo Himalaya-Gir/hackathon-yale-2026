@@ -10,27 +10,27 @@ type Padding = { left: number; right: number; top: number; bottom: number };
 // The controls sit at the right edge of the free strip between the two panels
 // (left 16 + 320, right 16 + 380), below the trajectory banner.
 export const NAV_CSS = `
-.maplibregl-ctrl-top-right{position:absolute;z-index:4;top:196px;right:412px;display:flex;flex-direction:column;align-items:flex-end;gap:8px;pointer-events:none}
+.maplibregl-ctrl-top-right{position:absolute;z-index:4;top:72px;left:436px;right:auto;display:flex;flex-direction:column;align-items:flex-end;gap:8px;pointer-events:none}
 .maplibregl-ctrl-top-right>*{pointer-events:auto}
 .maplibregl-ctrl-top-right .maplibregl-ctrl{margin:0;float:none;clear:none}
-.maplibregl-ctrl-group{background:rgba(10,16,28,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.1);
-  border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.45);display:flex;flex-direction:column}
-.maplibregl-ctrl-group button{width:36px;height:36px;display:grid;place-items:center;background:transparent;border:0;padding:0;cursor:pointer;color:#dfe8f7}
+.maplibregl-ctrl-group{background:#fff;border:1px solid rgba(23,26,32,.1);
+  border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(23,26,32,.12);display:flex;flex-direction:column}
+.maplibregl-ctrl-group button{width:36px;height:36px;display:grid;place-items:center;background:transparent;border:0;padding:0;cursor:pointer;color:#171a20}
 .maplibregl-ctrl-group button+button{border-top:1px solid rgba(255,255,255,.08)}
 .maplibregl-ctrl-group button:hover,.maplibregl-ctrl button:not(:disabled):hover{background:rgba(255,255,255,.08)}
 .maplibregl-ctrl-group button:active{background:rgba(255,255,255,.14)}
 .maplibregl-ctrl-group button:focus-visible{outline:2px solid #FFC857;outline-offset:-2px}
 .maplibregl-ctrl-group button:disabled{opacity:.35;cursor:default}
-.maplibregl-ctrl-icon{display:block;width:20px;height:20px;background-repeat:no-repeat;background-position:center;filter:invert(1) brightness(.92)}
+.maplibregl-ctrl-icon{display:block;width:20px;height:20px;background-repeat:no-repeat;background-position:center}
 .maplibregl-ctrl-zoom-in .maplibregl-ctrl-icon{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 29 29'%3E%3Cpath d='M14.5 8.5c-.75 0-1.5.75-1.5 1.5v3h-3c-.75 0-1.5.75-1.5 1.5S9.25 16 10 16h3v3c0 .75.75 1.5 1.5 1.5S16 19.75 16 19v-3h3c.75 0 1.5-.75 1.5-1.5S19.75 13 19 13h-3v-3c0-.75-.75-1.5-1.5-1.5z'/%3E%3C/svg%3E")}
 .maplibregl-ctrl-zoom-out .maplibregl-ctrl-icon{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 29 29'%3E%3Cpath d='M10 13c-.75 0-1.5.75-1.5 1.5S9.25 16 10 16h9c.75 0 1.5-.75 1.5-1.5S19.75 13 19 13h-9z'/%3E%3C/svg%3E")}
 .maplibregl-ctrl-compass .maplibregl-ctrl-icon{filter:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 29 29'%3E%3Cpath fill='%23FFC857' d='M10.5 14l4-8 4 8h-8z'/%3E%3Cpath fill='%23dfe8f7' d='M10.5 16l4 8 4-8h-8z'/%3E%3C/svg%3E")}
-.orbit-nav-home svg,.orbit-nav-find svg{width:18px;height:18px;stroke:#dfe8f7;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.orbit-nav-home svg,.orbit-nav-find svg{width:18px;height:18px;stroke:#171a20;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .orbit-find{position:relative}
 .orbit-find-box{position:absolute;right:44px;top:0;width:260px;display:none;font-family:var(--font-geist-sans),ui-sans-serif,system-ui,sans-serif}
 .orbit-find.is-open .orbit-find-box{display:block}
-.orbit-find-box input{width:100%;height:36px;padding:0 12px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:rgba(10,16,28,.92);
-  color:#eef3fb;font-size:14px;outline:none;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.orbit-find-box input{width:100%;height:36px;padding:0 12px;border-radius:12px;border:1px solid rgba(23,26,32,.12);background:#fff;
+  color:#171a20;font-size:14px;outline:none;box-shadow:0 8px 24px rgba(23,26,32,.12)}
 .orbit-find-box input:focus{border-color:rgba(255,200,87,.7);box-shadow:0 0 0 4px rgba(255,200,87,.12)}
 .orbit-find-box input::placeholder{color:#8393ad}
 .orbit-find-list{margin:6px 0 0;padding:4px;list-style:none;border-radius:12px;background:rgba(10,16,28,.94);border:1px solid rgba(255,255,255,.1);

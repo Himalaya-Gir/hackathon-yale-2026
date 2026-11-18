@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// Geist (Vercel, SIL Open Font License 1.1), the free typeface closest to Tesla's Universal Sans:
+// same clean grotesque shapes, large x-height, open letters. Served from this app by next/font.
+const sans = Geist({ variable: "--font-geist", subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "Orbit · for Yale",
@@ -19,10 +15,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className={cn("h-full antialiased", sans.variable)}>
       <body className="h-full overflow-hidden">{children}</body>
     </html>
   );

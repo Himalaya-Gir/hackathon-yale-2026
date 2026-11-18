@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 
 /* Orbit design tokens (PLAN.md §8.1). Night map, two meaningful colors. */
 :root {
@@ -10,6 +14,38 @@
   --gold: #ffc857;     /* your long-term goal. Nothing else is gold. */
   --glass: rgba(10, 16, 28, 0.72);
   --glass-border: rgba(255, 255, 255, 0.08);
+  --background: #f4f4f4;         /* Tesla screen grey */
+  --foreground: #171a20;         /* Tesla ink */
+  --card: #ffffff;
+  --card-foreground: #171a20;
+  --popover: #ffffff;
+  --popover-foreground: #171a20;
+  --primary: #286dc0;            /* Yale Blue tint: the active pill, like the blue control on the Tesla screen */
+  --primary-foreground: #ffffff;
+  --secondary: #e8e9eb;          /* grey tiles */
+  --secondary-foreground: #171a20;
+  --muted: #eeeff1;
+  --muted-foreground: #5c5e62;
+  --accent: #e3ecf7;
+  --accent-foreground: #00356b;  /* Yale Blue */
+  --destructive: #d83b3b;
+  --border: rgba(23, 26, 32, 0.10);
+  --input: rgba(23, 26, 32, 0.14);
+  --ring: #286dc0;
+  --chart-1: #00356b;
+  --chart-2: #286dc0;
+  --chart-3: #63aaff;
+  --chart-4: #e8932a;
+  --chart-5: #5c5e62;
+  --radius: 0.75rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #171a20;
+  --sidebar-primary: #286dc0;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e8e9eb;
+  --sidebar-accent-foreground: #171a20;
+  --sidebar-border: rgba(23, 26, 32, 0.10);
+  --sidebar-ring: #286dc0;
 }
 
 @theme inline {
@@ -19,31 +55,58 @@
   --color-yale: var(--yale);
   --color-sky: var(--sky);
   --color-gold: var(--gold);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Typefaces copied from the reference sites, none of our own:
+     sans and telemetry = D-DIN, as on spacex.com (open licence, served from app/fonts);
+     serif = the exact stack of yale.edu (the Yale typeface where installed, else Baskerville / Times). */
+  --font-sans: var(--font-geist), -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-geist), -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-geist), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; /* no serif in the UI (owner, 2026-11-17) */
+  --font-heading: var(--font-geist), -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
 html, body {
-  background: var(--night);
-  color: var(--ink);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
-  font-size: 16px;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist), -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
 }
-
-/* Chrome actions. Yale blue only — gold stays on the goal, light blue on Tonight. */
-.btn-yale {
-  background: #00356b;
-  color: #fff;
-  transition: filter 150ms ease, transform 150ms ease;
-}
-.btn-yale:hover { filter: brightness(1.5); }
-.btn-yale:active { filter: brightness(0.82); transform: scale(0.96); }
-.btn-yale:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
-
-.btn-press { transition: filter 150ms ease, transform 150ms ease; }
-.btn-press:hover { filter: brightness(1.12); transform: scale(1.08); }
-.btn-press:active { filter: brightness(0.9); transform: scale(0.94); }
-.btn-press:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 
 /* Interface motion (package D). A card slides in 300 ms (PLAN.md §8.1). */
 @keyframes orbit-slide-in { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
@@ -62,7 +125,6 @@ html, body {
 }
 @media (prefers-reduced-motion: reduce) {
   .slide-in, .fade-up, .slide-up, .slide-down, .skeleton { animation: none; }
-  .btn-yale:active, .btn-press:hover, .btn-press:active { transform: none; }
 }
 
 /* Thin scrollbar inside the glass panels. */
@@ -81,4 +143,20 @@ button:not(:disabled), a[href] { cursor: pointer; }
   border-radius: 16px;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+}
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled), [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+    @apply font-sans;
+  }
 }

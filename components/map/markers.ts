@@ -30,12 +30,12 @@ export const MARKER_CSS = `
   font-family:var(--font-geist-sans),ui-sans-serif,system-ui,sans-serif;user-select:none;-webkit-user-select:none}
 .orbit-mk-in:hover,.orbit-mk-in.is-hot{scale:1.04}
 .orbit-mk-in.is-sel{scale:1.06}
-.orbit-mk-ph{position:relative;width:44px;height:44px;border-radius:50%;border:2.5px solid var(--c);background:#0d1626;
-  box-shadow:0 0 0 1px rgba(7,11,20,.6),0 0 18px 2px color-mix(in srgb,var(--c) 55%,transparent),0 6px 14px rgba(0,0,0,.55)}
+.orbit-mk-ph{position:relative;width:44px;height:44px;border-radius:50%;border:2.5px solid var(--c);background:#fff;
+  box-shadow:0 0 0 2px #fff,0 6px 16px rgba(23,26,32,.22)}
 .orbit-mk-in.is-sel .orbit-mk-ph{box-shadow:0 0 0 1px rgba(7,11,20,.6),0 0 28px 8px color-mix(in srgb,var(--c) 75%,transparent),0 6px 14px rgba(0,0,0,.55)}
 .orbit-mk-ph img{display:block;width:44px;height:44px;border-radius:50%;object-fit:cover}
 .orbit-mk-rk{position:absolute;left:-7px;top:-7px;min-width:20px;height:20px;padding:0 4px;border-radius:10px;background:var(--c);
-  color:#0a1020;font-size:12px;font-weight:700;line-height:20px;text-align:center;box-shadow:0 0 0 2px #070b14}
+  color:#fff;font-size:12px;font-weight:700;line-height:20px;text-align:center;box-shadow:0 0 0 2px #fff}
 .orbit-mk-fr{display:flex;flex-direction:row;align-items:center}
 .orbit-mk-fr span{width:20px;height:20px;border-radius:50%;margin-left:-6px;box-shadow:0 0 0 1.5px #070b14;
   font-size:9px;font-weight:700;line-height:20px;text-align:center;color:#0a1020;letter-spacing:-.02em}

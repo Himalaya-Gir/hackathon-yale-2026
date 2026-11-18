@@ -12,13 +12,13 @@ import { addNavigation } from './navigation';
 type State = ReturnType<typeof useOrbit.getState>;
 type GeoData = Parameters<GeoJSONSource['setData']>[0];
 
-const GOLD = '#FFC857', GOLD_HOT = '#FFF3CC';
-const SKY = '#63AAFF', SKY_HOT = '#E7F2FF';
-const STYLE_URL = 'https://tiles.openfreemap.org/styles/dark';
+const GOLD = '#286DC0', GOLD_HOT = '#00356B';
+const SKY = '#E8932A', SKY_HOT = '#C46F0E';
+const STYLE_URL = 'https://tiles.openfreemap.org/styles/positron';
 const HOME_VIEW = { center: [-72.9265, 41.3115] as [number, number], zoom: 15.6, pitch: 60, bearing: -20 };
 const OVERVIEW: [number, number] = [-72.9262, 41.3146];
-const PAD = { left: 340, right: 400, top: 60, bottom: 120 };
-const PAD_WIDE = { left: 340, right: 400, top: 170, bottom: 90 };
+const PAD = { left: 440, right: 640, top: 90, bottom: 120 };
+const PAD_WIDE = { left: 440, right: 640, top: 140, bottom: 110 };
 const HERE_ID = 'grokathon-yale-2026';
 const BEAM_M = 9;
 const BEAM_M_SELECTED = 13;
@@ -346,25 +346,26 @@ export function createScene(container: HTMLDivElement): () => void {
   function night() {
     for (const l of map.getStyle().layers ?? []) {
       const id = l.id;
-      if (l.type === 'background') paint(id, 'background-color', '#070b14');
-      else if (id === 'water') paint(id, 'fill-color', '#0c141e');
-      else if (id === 'waterway') paint(id, 'line-color', '#0c141e');
-      else if (l.type === 'fill' && /park|wood|landcover|landuse/.test(id)) paint(id, 'fill-color', '#101820');
-      else if (l.type === 'line' && /casing/.test(id)) paint(id, 'line-color', 'rgba(48,62,84,0.45)');
-      else if (l.type === 'line' && /highway_path/.test(id)) paint(id, 'line-color', '#162033');
-      else if (l.type === 'line' && /highway|road/.test(id)) paint(id, 'line-color', '#141c2c');
-      else if (l.type === 'line' && /rail/.test(id)) paint(id, 'line-color', '#141c2a');
-      else if (l.type === 'symbol' && /highway_name/.test(id)) { paint(id, 'text-color', '#5d7096'); paint(id, 'text-halo-color', 'rgba(7,11,20,0.9)'); }
-      else if (l.type === 'symbol' && /place|water_name/.test(id)) { paint(id, 'text-color', '#7286ad'); paint(id, 'text-halo-color', 'rgba(7,11,20,0.9)'); }
+      if (l.type === 'background') paint(id, 'background-color', '#eceded');
+      else if (id === 'water') paint(id, 'fill-color', '#c8d6e6');
+      else if (id === 'waterway') paint(id, 'line-color', '#c8d6e6');
+      else if (l.type === 'fill' && /park|wood|landcover|landuse/.test(id)) paint(id, 'fill-color', '#e1e6de');
+      else if (id === 'building') { paint(id, 'fill-color', '#e2e3e6'); paint(id, 'fill-outline-color', '#d4d6da'); }
+      else if (l.type === 'line' && /casing/.test(id)) paint(id, 'line-color', '#d9dbdf');
+      else if (l.type === 'line' && /highway_path/.test(id)) paint(id, 'line-color', '#f7f7f8');
+      else if (l.type === 'line' && /highway|road/.test(id)) paint(id, 'line-color', '#ffffff');
+      else if (l.type === 'line' && /rail/.test(id)) paint(id, 'line-color', '#d0d2d6');
+      else if (l.type === 'symbol' && /highway_name/.test(id)) { paint(id, 'text-color', '#8a8e96'); paint(id, 'text-halo-color', 'rgba(255,255,255,0.95)'); }
+      else if (l.type === 'symbol' && /place|water_name/.test(id)) { paint(id, 'text-color', '#6b7079'); paint(id, 'text-halo-color', 'rgba(255,255,255,0.95)'); }
     }
     try { if (map.getLayer('landcover_wood')) map.setPaintProperty('landcover_wood', 'fill-pattern', null as never); } catch { /* this style's wood sprite is missing */ }
-    try { map.setLight({ anchor: 'viewport', color: '#b7c6da', intensity: 0.32, position: [1.3, 210, 36] }); } catch { /* optional */ }
+    try { map.setLight({ anchor: 'viewport', color: '#ffffff', intensity: 0.35, position: [1.3, 215, 38] }); } catch { /* optional */ }
     try {
-      map.setSky({ 'sky-color': '#070b14', 'horizon-color': '#121c30', 'fog-color': '#070b14', 'sky-horizon-blend': 0.8, 'horizon-fog-blend': 0.8, 'fog-ground-blend': 0.55, 'atmosphere-blend': 0 });
+      map.setSky({ 'sky-color': '#f4f4f4', 'horizon-color': '#eceded', 'fog-color': '#f4f4f4', 'sky-horizon-blend': 0.8, 'horizon-fog-blend': 0.8, 'fog-ground-blend': 0.55, 'atmosphere-blend': 0 });
     } catch { /* optional */ }
 
     const heightExpr = ['case', ['>', ['to-number', ['coalesce', ['get', 'render_height'], 0]], 0], ['to-number', ['get', 'render_height']], 10] as never;
-    const bColor = ['interpolate', ['linear'], ['to-number', ['coalesce', ['get', 'render_height'], 8]], 0, '#1a2330', 18, '#2c3c4e', 55, '#45586e'] as never;
+    const bColor = ['interpolate', ['linear'], ['to-number', ['coalesce', ['get', 'render_height'], 8]], 0, '#e4e5e8', 25, '#dcdee2', 80, '#d2d5da'] as never;
     const existing = (map.getStyle().layers ?? []).find((l) => l.type === 'fill-extrusion' && l.id !== 'orbit-beams-week' && l.id !== 'orbit-beams-tonight');
     if (existing) {
       paint(existing.id, 'fill-extrusion-color', bColor);
@@ -393,10 +394,10 @@ export function createScene(container: HTMLDivElement): () => void {
     map.addLayer({
       id: 'all-events', type: 'circle', source: 'all-events',
       paint: {
-        'circle-color': '#B7D4FF',
+        'circle-color': '#286DC0',
         'circle-radius': ['interpolate', ['linear'], ['zoom'], 13, ['case', ['>', ['get', 'n'], 0], 5.5, 3.2], 17, ['case', ['>', ['get', 'n'], 0], 9, 5]],
         'circle-opacity': 0.35,
-        'circle-stroke-color': '#E4EFFF',
+        'circle-stroke-color': '#286DC0',
         'circle-stroke-width': ['case', ['>', ['get', 'n'], 0], 1.75, 0],
         'circle-stroke-opacity': 0.9,
         'circle-pitch-alignment': 'viewport',
@@ -408,11 +409,11 @@ export function createScene(container: HTMLDivElement): () => void {
     });
     map.addLayer({
       id: 'orbit-traj', type: 'line', source: 'orbit-traj', layout: { 'line-cap': 'round', 'line-join': 'round' },
-      paint: { 'line-color': '#FFE7B8', 'line-width': 3.4, 'line-opacity': 1 },
+      paint: { 'line-color': '#286DC0', 'line-width': 2.4, 'line-opacity': 0.9 },
     });
     map.addLayer({
       id: 'orbit-route', type: 'line', source: 'orbit-route', layout: { 'line-cap': 'butt' },
-      paint: { 'line-color': '#F7F9FF', 'line-width': 2.5, 'line-opacity': 0.85, 'line-dasharray': [1.4, 1.5] },
+      paint: { 'line-color': '#171A20', 'line-width': 2.5, 'line-opacity': 0.7, 'line-dasharray': [1.6, 1.6] },
     });
     map.addLayer({
       id: 'orbit-halos', type: 'circle', source: 'orbit-halos',
