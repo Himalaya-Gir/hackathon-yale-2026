@@ -18,7 +18,7 @@ Rule: Marceau owns the interface and everything that needs the xAI key or Vercel
 
 1. **Map navigation**: research and a prototype on the `map-navigation` branch (zoom and compass controls, recenter on campus, building search, smoother camera). Review it and hand it to Marceau.
 2. **Data**: the event scripts are hers (`scripts/yale-calendar.mjs`, `scripts/sample-plus.mjs`, `scripts/yale-connect.mjs`, `scripts/yale-photo-deny.json`, `scripts/yale-connect-photos.json`).
-3. **Video, before and after**:
+3. **Video**: full 2-minute script, shot list and onboarding notes in `pitch/VIDEO_SCRIPT.md`. Before and after, in short:
    Before: a screen recording of Yale Connect as it is today, a long list where nothing stands out and the Grokathon is lost in it (blur any student names on screen).
    The story: "Marceau and I found tonight's hackathon by chance. Many talented, passionate students never knew it was happening."
    After: Orbit, type the goal, the map lights up, the Grokathon tonight with Marceau going, then the rest of the week.
