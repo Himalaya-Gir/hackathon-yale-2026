@@ -88,7 +88,7 @@ fs.writeFileSync('public/data/friends.json', JSON.stringify(friends, null, 1) + 
 
 const stats = JSON.parse(fs.readFileSync('public/data/stats.json', 'utf8'));
 stats.total = merged.length;
-stats.sources = [{ name: 'yale-calendar', count: merged.filter((e) => e.source === 'yale-calendar').length }, { name: 'sample', count: merged.filter((e) => e.source === 'sample').length }];
+stats.sources = ['yale-calendar', 'yaleconnect', 'sample'].map((name) => ({ name, count: merged.filter((e) => e.source === name).length }));
 stats.bakedAt = new Date().toISOString();
 fs.writeFileSync('public/data/stats.json', JSON.stringify(stats, null, 1) + '\n');
 

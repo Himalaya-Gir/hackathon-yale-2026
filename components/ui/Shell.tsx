@@ -5,6 +5,7 @@ import { Route } from 'lucide-react';
 import { useOrbit } from '@/lib/store';
 import GoalBar from './GoalBar';
 import InviteDialog from './InviteDialog';
+import Onboarding from './Onboarding';
 import ProfilePanel from './ProfilePanel';
 import TopBar from './TopBar';
 import WeekRail from './WeekRail';
@@ -48,6 +49,7 @@ export default function Shell() {
         <TopBar />
       </div>
       <InviteDialog />
+      <Onboarding />
     </div>
   );
 }
