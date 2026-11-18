@@ -1132,39 +1132,6 @@
   "durationMin": 90
  },
  {
-  "id": "yaleconnect-yvt93p",
-  "title": "Queer Tables: Queer Italian Pasta",
-  "start": "2026-11-17T19:00:00-05:00",
-  "end": "2026-11-17T21:00:00-05:00",
-  "dayOffset": null,
-  "time": null,
-  "locationName": "Yale LGBTQ Center Café",
-  "building": "Caulkins Courtyard",
-  "lat": 41.315689,
-  "lng": -72.92368,
-  "source": "yaleconnect",
-  "sourceUrl": "https://yaleconnect.yale.edu/rsvp?id=2330226",
-  "host": "Yale LGBTQ Center",
-  "summary": "Come when you can, leave when you must.",
-  "tracks": [
-   "social"
-  ],
-  "kinds": [
-   "food-together",
-   "social-small",
-   "social-big"
-  ],
-  "future": false,
-  "free": null,
-  "food": true,
-  "rsvpUrl": "https://yaleconnect.yale.edu/rsvp?id=2330226",
-  "photoUrl": "/img/events/yc-trivia-0.jpg",
-  "sample": false,
-  "online": false,
-  "solo": false,
-  "durationMin": 120
- },
- {
   "id": "yaleconnect-jjzis3",
   "title": "Watch Me Walk",
   "start": "2026-11-17T20:00:00-05:00",
@@ -1245,15 +1212,15 @@
   "host": "Yale Center for Natural Carbon Capture",
   "summary": "Can we engineer our way out of climate change?",
   "tracks": [
-   "ai",
    "climate",
-   "policy"
+   "policy",
+   "finance"
   ],
   "kinds": [
    "social-small",
    "learn"
   ],
-  "future": true,
+  "future": false,
   "free": null,
   "food": null,
   "rsvpUrl": "https://yaleconnect.yale.edu/rsvp?id=2338322",
@@ -1347,15 +1314,15 @@
   "host": "Yale Center for Natural Carbon Capture",
   "summary": "The Yale Center for Natural Carbon Capture is hosting a student seminar series to showcase student work and encourage collaboration and…",
   "tracks": [
-   "ai",
    "climate",
-   "career"
+   "career",
+   "research"
   ],
   "kinds": [
    "food-together",
    "learn"
   ],
-  "future": true,
+  "future": false,
   "free": null,
   "food": true,
   "rsvpUrl": "https://yaleconnect.yale.edu/rsvp?id=2338822",
@@ -1893,7 +1860,7 @@
  },
  {
   "id": "sample-launch-watch",
-  "title": "Midnight launch watch party on the observatory lawn",
+  "title": "Night launch watch party on the observatory lawn",
   "start": "",
   "end": null,
   "dayOffset": 0,

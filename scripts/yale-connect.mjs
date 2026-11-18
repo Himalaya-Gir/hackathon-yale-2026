@@ -39,7 +39,7 @@ async function place(loc) {
 }
 
 // tags: same closed vocabularies as scripts/yale-calendar.mjs, from the feed's own categories
-const TRACKS = [['space', /space|astro|aerospace/], ['ai', /\bai\b|artificial|machine learning|computer|data science|tech/], ['startup', /entrepreneur|startup|venture|innovation/],
+const TRACKS = [['space', /space|astro|aerospace/], ['ai', /\bai\b|artificial|machine learning|computer|data science|robot/], ['startup', /entrepreneur|startup|venture|innovation/],
   ['climate', /climate|environment|sustainab|energy|carbon/], ['health', /health|medic|nursing|wellness/], ['policy', /policy|law|politic|global affairs|government/],
   ['finance', /financ|econom|business/], ['career', /career|professional|networking|recruit/], ['arts', /art|music|perform|theat|film|dance|poetry|comedy/],
   ['social', /social|community|belonging|conversation|culture|food|dining/], ['research', /lecture|speaker|seminar|research|talk|panel|academic/]];
