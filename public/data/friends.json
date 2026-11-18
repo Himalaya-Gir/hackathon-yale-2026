@@ -1,171 +1,252 @@
 [
- {
-  "id": "f-lena",
-  "name": "Lena Park",
-  "initials": "LP",
-  "color": "#63AAFF",
-  "classYear": "'28",
-  "college": "Pierson",
-  "status": "friend",
-  "reason": null,
-  "goingTo": [
-   "sample-boardgames",
-   "sample-yoga",
-   "sample-stargazing"
-  ]
- },
- {
-  "id": "f-theo",
-  "name": "Theo Lindqvist",
-  "initials": "TL",
-  "color": "#8FB8DE",
-  "classYear": "'28",
-  "college": "Saybrook",
-  "status": "friend",
-  "reason": null,
-  "goingTo": [
-   "sample-teststand",
-   "sample-sat-sprint",
-   "sample-stargazing"
-  ]
- },
- {
-  "id": "f-amara",
-  "name": "Amara Diallo",
-  "initials": "AD",
-  "color": "#5B7FA6",
-  "classYear": "'27",
-  "college": "Pierson",
-  "status": "friend",
-  "reason": null,
-  "goingTo": [
-   "sample-launch-careers",
-   "sample-teststand"
-  ]
- },
- {
-  "id": "f-jonah",
-  "name": "Jonah Weiss",
-  "initials": "JW",
-  "color": "#A9B8CC",
-  "classYear": "'28",
-  "college": "Davenport",
-  "status": "friend",
-  "reason": null,
-  "goingTo": [
-   "sample-founder-dinner",
-   "sample-pitch"
-  ]
- },
- {
-  "id": "f-mei",
-  "name": "Mei Tanaka",
-  "initials": "MT",
-  "color": "#3E6FB0",
-  "classYear": "'29",
-  "college": "Morse",
-  "status": "friend",
-  "reason": null,
-  "goingTo": [
-   "sample-ai-mixer",
-   "sample-wright-open"
-  ]
- },
- {
-  "id": "f-rafa",
-  "name": "Rafael Ortiz",
-  "initials": "RO",
-  "color": "#7C8DA6",
-  "classYear": "'27",
-  "college": "Trumbull",
-  "status": "friend",
-  "reason": null,
-  "goingTo": [
-   "sample-launch-careers",
-   "sample-sat-sprint",
-   "sample-boardgames"
-  ]
- },
- {
-  "id": "f-ines",
-  "name": "Ines Moreau",
-  "initials": "IM",
-  "color": "#63AAFF",
-  "classYear": "'28",
-  "college": "Pierson",
-  "status": "friend",
-  "reason": null,
-  "goingTo": [
-   "sample-kitchen",
-   "sample-yoga"
-  ]
- },
- {
-  "id": "f-kofi",
-  "name": "Kofi Mensah",
-  "initials": "KM",
-  "color": "#8FB8DE",
-  "classYear": "'26",
-  "college": "Silliman",
-  "status": "friend",
-  "reason": null,
-  "goingTo": [
-   "sample-ai-mixer",
-   "sample-founder-dinner",
-   "sample-stargazing"
-  ]
- },
- {
-  "id": "s-nora",
-  "name": "Nora Castillo",
-  "initials": "NC",
-  "color": "#5B7FA6",
-  "classYear": "'28",
-  "college": "Branford",
-  "status": "suggested",
-  "reason": "also in CPSC 3230",
-  "goingTo": [
-   "sample-ai-mixer"
-  ]
- },
- {
-  "id": "s-dev",
-  "name": "Dev Malhotra",
-  "initials": "DM",
-  "color": "#A9B8CC",
-  "classYear": "'27",
-  "college": "Pierson",
-  "status": "suggested",
-  "reason": "Pierson",
-  "goingTo": [
-   "sample-boardgames"
-  ]
- },
- {
-  "id": "s-hana",
-  "name": "Hana Suzuki",
-  "initials": "HS",
-  "color": "#3E6FB0",
-  "classYear": "'28",
-  "college": "Ezra Stiles",
-  "status": "suggested",
-  "reason": "YUAA",
-  "goingTo": [
-   "sample-teststand",
-   "sample-sat-sprint"
-  ]
- },
- {
-  "id": "s-eli",
-  "name": "Eli Brandt",
-  "initials": "EB",
-  "color": "#7C8DA6",
-  "classYear": "'29",
-  "college": "Berkeley",
-  "status": "suggested",
-  "reason": "also in MENG 2511",
-  "goingTo": [
-   "sample-launch-careers"
-  ]
- }
+  {
+    "id": "f-lena",
+    "name": "Lena Park",
+    "initials": "LP",
+    "color": "#63AAFF",
+    "classYear": "'28",
+    "college": "Pierson",
+    "status": "friend",
+    "reason": null,
+    "goingTo": [
+      "grokathon-yale-2026",
+      "sample-acappella"
+    ]
+  },
+  {
+    "id": "f-theo",
+    "name": "Theo Lindqvist",
+    "initials": "TL",
+    "color": "#8FB8DE",
+    "classYear": "'28",
+    "college": "Saybrook",
+    "status": "friend",
+    "reason": null,
+    "goingTo": [
+      "sample-ballroom",
+      "sample-cleanroom"
+    ]
+  },
+  {
+    "id": "f-amara",
+    "name": "Amara Diallo",
+    "initials": "AD",
+    "color": "#5B7FA6",
+    "classYear": "'27",
+    "college": "Pierson",
+    "status": "friend",
+    "reason": null,
+    "goingTo": [
+      "sample-boardgames",
+      "sample-cubesat"
+    ]
+  },
+  {
+    "id": "f-jonah",
+    "name": "Jonah Weiss",
+    "initials": "JW",
+    "color": "#A9B8CC",
+    "classYear": "'28",
+    "college": "Davenport",
+    "status": "friend",
+    "reason": null,
+    "goingTo": [
+      "sample-chamber",
+      "sample-cofounders"
+    ]
+  },
+  {
+    "id": "f-mei",
+    "name": "Mei Tanaka",
+    "initials": "MT",
+    "color": "#3E6FB0",
+    "classYear": "'29",
+    "college": "Morse",
+    "status": "friend",
+    "reason": null,
+    "goingTo": [
+      "sample-customers",
+      "sample-cleanroom"
+    ]
+  },
+  {
+    "id": "f-rafa",
+    "name": "Rafael Ortiz",
+    "initials": "RO",
+    "color": "#7C8DA6",
+    "classYear": "'27",
+    "college": "Trumbull",
+    "status": "friend",
+    "reason": null,
+    "goingTo": [
+      "sample-founder-dinner",
+      "sample-climbing"
+    ]
+  },
+  {
+    "id": "f-ines",
+    "name": "Ines Moreau",
+    "initials": "IM",
+    "color": "#63AAFF",
+    "classYear": "'28",
+    "college": "Pierson",
+    "status": "friend",
+    "reason": null,
+    "goingTo": [
+      "sample-cv-open",
+      "sample-cofounders"
+    ]
+  },
+  {
+    "id": "f-kofi",
+    "name": "Kofi Mensah",
+    "initials": "KM",
+    "color": "#8FB8DE",
+    "classYear": "'26",
+    "college": "Silliman",
+    "status": "friend",
+    "reason": null,
+    "goingTo": [
+      "sample-cubesat",
+      "sample-gpu"
+    ]
+  },
+  {
+    "id": "f-naomi",
+    "name": "Naomi Berg",
+    "initials": "NB",
+    "color": "#5B7FA6",
+    "classYear": "'28",
+    "college": "Ezra Stiles",
+    "status": "friend",
+    "reason": null,
+    "goingTo": [
+      "sample-customers",
+      "sample-hai"
+    ]
+  },
+  {
+    "id": "f-luis",
+    "name": "Luis Ferreira",
+    "initials": "LF",
+    "color": "#A9B8CC",
+    "classYear": "'27",
+    "college": "Timothy Dwight",
+    "status": "friend",
+    "reason": null,
+    "goingTo": [
+      "sample-acappella",
+      "sample-cv-open"
+    ]
+  },
+  {
+    "id": "f-aisha",
+    "name": "Aisha Rahman",
+    "initials": "AR",
+    "color": "#3E6FB0",
+    "classYear": "'29",
+    "college": "Berkeley",
+    "status": "friend",
+    "reason": null,
+    "goingTo": [
+      "sample-east-rock",
+      "sample-ballroom"
+    ]
+  },
+  {
+    "id": "f-owen",
+    "name": "Owen Clarke",
+    "initials": "OC",
+    "color": "#7C8DA6",
+    "classYear": "'28",
+    "college": "Branford",
+    "status": "friend",
+    "reason": null,
+    "goingTo": [
+      "sample-boardgames",
+      "sample-energy"
+    ]
+  },
+  {
+    "id": "s-nora",
+    "name": "Nora Castillo",
+    "initials": "NC",
+    "color": "#63AAFF",
+    "classYear": "'28",
+    "college": "Branford",
+    "status": "suggested",
+    "reason": "also in CPSC 3230",
+    "goingTo": [
+      "sample-rl-journal",
+      "sample-poster-tea"
+    ]
+  },
+  {
+    "id": "s-dev",
+    "name": "Dev Malhotra",
+    "initials": "DM",
+    "color": "#8FB8DE",
+    "classYear": "'27",
+    "college": "Pierson",
+    "status": "suggested",
+    "reason": "Pierson",
+    "goingTo": [
+      "sample-boardgames"
+    ]
+  },
+  {
+    "id": "s-hana",
+    "name": "Hana Suzuki",
+    "initials": "HS",
+    "color": "#5B7FA6",
+    "classYear": "'28",
+    "college": "Ezra Stiles",
+    "status": "suggested",
+    "reason": "YUAA",
+    "goingTo": [
+      "sample-teststand",
+      "sample-cubesat"
+    ]
+  },
+  {
+    "id": "s-eli",
+    "name": "Eli Brandt",
+    "initials": "EB",
+    "color": "#A9B8CC",
+    "classYear": "'29",
+    "college": "Berkeley",
+    "status": "suggested",
+    "reason": "also in MENG 2511",
+    "goingTo": [
+      "sample-launch-lunch"
+    ]
+  },
+  {
+    "id": "s-camille",
+    "name": "Camille Berger",
+    "initials": "CB",
+    "color": "#3E6FB0",
+    "classYear": "'28",
+    "college": "Silliman",
+    "status": "suggested",
+    "reason": "also in ASTR 3200",
+    "goingTo": [
+      "sample-stargazing",
+      "sample-orbit"
+    ]
+  },
+  {
+    "id": "s-rowan",
+    "name": "Rowan Hale",
+    "initials": "RH",
+    "color": "#7C8DA6",
+    "classYear": "'27",
+    "college": "Davenport",
+    "status": "suggested",
+    "reason": "Yale Entrepreneurial Society",
+    "goingTo": [
+      "sample-founder-dinner",
+      "sample-pitch"
+    ]
+  }
 ]

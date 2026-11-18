@@ -1,0 +1,2788 @@
+[
+  {
+    "name": "1 Church Street",
+    "lat": 41.303998,
+    "lng": -72.927032,
+    "addr": "1 Church Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "10 Amistad Street",
+    "lat": 41.300101,
+    "lng": -72.931754,
+    "addr": "10 Amistad Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "10 Sachem Street",
+    "lat": 41.315265,
+    "lng": -72.921613,
+    "addr": "10 Sachem Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "100 Church Street South",
+    "lat": 41.299514,
+    "lng": -72.930275,
+    "addr": "100 Church Street South, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "100 College Street",
+    "lat": 41.30406,
+    "lng": -72.931357,
+    "addr": "100 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "100 York Street",
+    "lat": 41.307149,
+    "lng": -72.933105,
+    "addr": "100 York Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "101 College Street",
+    "lat": 41.303613,
+    "lng": -72.930594,
+    "addr": "101 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "104 York Square Place",
+    "lat": 41.314327,
+    "lng": -72.929357,
+    "addr": "104 York Square Place, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "1201 Chapel Street",
+    "lat": 41.309259,
+    "lng": -72.93432,
+    "addr": "1201 Chapel Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "1203 Chapel Street",
+    "lat": 41.309282,
+    "lng": -72.934556,
+    "addr": "1203 Chapel Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "121 Whitney Avenue",
+    "lat": 41.313833,
+    "lng": -72.92137,
+    "addr": "121 Whitney Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "127 College Street",
+    "lat": 41.304537,
+    "lng": -72.930368,
+    "addr": "127 College Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "129 York Street",
+    "lat": 41.306658,
+    "lng": -72.932538,
+    "addr": "129 York Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "132 Davenport Avenue",
+    "lat": 41.302601,
+    "lng": -72.937746,
+    "addr": "132 Davenport Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "135 College Street",
+    "lat": 41.304562,
+    "lng": -72.930293,
+    "addr": "135 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "143 Elm Street",
+    "lat": 41.309103,
+    "lng": -72.925455,
+    "addr": "143 Elm Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "149 Elm Street",
+    "lat": 41.309193,
+    "lng": -72.925672,
+    "addr": "149 Elm Street, New Haven,  06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "149 York Street",
+    "lat": 41.307582,
+    "lng": -72.931774,
+    "addr": "149 York Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "15 Hillhouse Avenue",
+    "lat": 41.31239,
+    "lng": -72.923724,
+    "addr": "15 Hillhouse Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "150 York Street",
+    "lat": 41.307961,
+    "lng": -72.932521,
+    "addr": "150 York Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "153 College Street",
+    "lat": 41.3049,
+    "lng": -72.93025,
+    "addr": "153 College Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "157 Church Street",
+    "lat": 41.307018,
+    "lng": -72.924861,
+    "addr": "157 Church Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "160 St. Ronan Street",
+    "lat": 41.320082,
+    "lng": -72.920743,
+    "addr": "160 St. Ronan Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "17 Hillhouse Avenue",
+    "lat": 41.312736,
+    "lng": -72.923457,
+    "addr": "17 Hillhouse Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "175 St. Ronan Street",
+    "lat": 41.320275,
+    "lng": -72.919609,
+    "addr": "175 St. Ronan Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "195 Church Street",
+    "lat": 41.307981,
+    "lng": -72.924032,
+    "addr": "195 Church Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "199 Whitney Avenue",
+    "lat": 41.316049,
+    "lng": -72.920172,
+    "addr": "199 Whitney Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "2 Church Street South",
+    "lat": 41.302056,
+    "lng": -72.929954,
+    "addr": "2 Church Street South, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "2 Science Park",
+    "lat": 41.324518,
+    "lng": -72.925496,
+    "addr": "50 Division Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "202 Prospect Street",
+    "lat": 41.31725,
+    "lng": -72.924356,
+    "addr": "202 Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "202 York Street",
+    "lat": 41.309109,
+    "lng": -72.9315,
+    "addr": "202 York Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "204 Prospect Street",
+    "lat": 41.317422,
+    "lng": -72.92432,
+    "addr": "204 Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "204 York Street",
+    "lat": 41.309277,
+    "lng": -72.931923,
+    "addr": "204 York Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "205 Park Street",
+    "lat": 41.309219,
+    "lng": -72.932999,
+    "addr": "205 Park Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "205 Whitney Ave",
+    "lat": 41.316159,
+    "lng": -72.919895,
+    "addr": "205 Whitney Ave, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "205 Whitney Avenue",
+    "lat": 41.316149,
+    "lng": -72.919894,
+    "addr": "205 Whitney Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "210 Prospect Street",
+    "lat": 41.317588,
+    "lng": -72.924287,
+    "addr": "210 Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "211 Park Street",
+    "lat": 41.309367,
+    "lng": -72.932815,
+    "addr": "211 Park Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "212 York Street",
+    "lat": 41.309485,
+    "lng": -72.932093,
+    "addr": "212 York Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "215 Park Street",
+    "lat": 41.30925,
+    "lng": -72.932363,
+    "addr": "215 Park Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "217 Park Street",
+    "lat": 41.30953,
+    "lng": -72.932579,
+    "addr": "217 Park Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "220 West Campus Drive",
+    "lat": 41.253288,
+    "lng": -72.997794,
+    "addr": "220 West Campus Drive, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "220 York Street",
+    "lat": 41.3097,
+    "lng": -72.93185,
+    "addr": "220 York Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "221 Whitney Avenue",
+    "lat": 41.316724,
+    "lng": -72.919832,
+    "addr": "221 Whitney Avenue , New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "230 Prospect Street",
+    "lat": 41.318119,
+    "lng": -72.924122,
+    "addr": "230 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "238 Prospect Street",
+    "lat": 41.318324,
+    "lng": -72.924095,
+    "addr": "238 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "24 Hillhouse Avenue",
+    "lat": 41.313452,
+    "lng": -72.924161,
+    "addr": "24 Hillhouse Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "240 West Campus Drive",
+    "lat": 41.252064,
+    "lng": -72.997091,
+    "addr": "240 West Campus Drive, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "242 Prospect Street",
+    "lat": 41.318516,
+    "lng": -72.924064,
+    "addr": "242 Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "246 Church Street",
+    "lat": 41.310025,
+    "lng": -72.923304,
+    "addr": "246 Church Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "25 Science Park",
+    "lat": 41.321009,
+    "lng": -72.928985,
+    "addr": "25 Science Park, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "250 Church Street",
+    "lat": 41.310154,
+    "lng": -72.923102,
+    "addr": "250 Church Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "250 West Campus Drive",
+    "lat": 41.252132,
+    "lng": -72.998393,
+    "addr": "250 West Campus Drive, Orange, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "254 Elm Street",
+    "lat": 41.310712,
+    "lng": -72.930337,
+    "addr": "254 Elm Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "254 Prospect Street",
+    "lat": 41.318756,
+    "lng": -72.924044,
+    "addr": "254 Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "258 Church Street / 96 Grove Street",
+    "lat": 41.310408,
+    "lng": -72.922895,
+    "addr": "258 Church Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "26 High Street",
+    "lat": 41.306979,
+    "lng": -72.931269,
+    "addr": "26 High Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "27 Hillhouse Avenue",
+    "lat": 41.313716,
+    "lng": -72.923154,
+    "addr": "27 Hillhouse Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "270 Congress Avenue",
+    "lat": 41.301984,
+    "lng": -72.932238,
+    "addr": "270 Congress Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "270 Crown Street",
+    "lat": 41.306038,
+    "lng": -72.930969,
+    "addr": "270 Crown Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "272 Elm Street",
+    "lat": 41.310825,
+    "lng": -72.930945,
+    "addr": "272 Elm Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "276 Prospect Street",
+    "lat": 41.319223,
+    "lng": -72.924005,
+    "addr": "276 Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "276-286 York Street",
+    "lat": 41.311133,
+    "lng": -72.929884,
+    "addr": "276-286 York Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "279 Mansfield Street",
+    "lat": 41.322561,
+    "lng": -72.925548,
+    "addr": "279 Mansfield Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "28 Hillhouse Avenue",
+    "lat": 41.313928,
+    "lng": -72.924059,
+    "addr": "28 Hillhouse Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "282 Prospect Street",
+    "lat": 41.319543,
+    "lng": -72.923862,
+    "addr": "282 Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "294-296 Elm Street",
+    "lat": 41.31094,
+    "lng": -72.930937,
+    "addr": "294-296 Elm Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "295 Crown Street",
+    "lat": 41.307028,
+    "lng": -72.931592,
+    "addr": "295 Crown Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "295 Prospect Street",
+    "lat": 41.319745,
+    "lng": -72.922941,
+    "addr": "295 Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "295-297 Crown Street",
+    "lat": 41.307021,
+    "lng": -72.931581,
+    "addr": "295-297 Crown Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "30 Hillhouse Avenue",
+    "lat": 41.3141,
+    "lng": -72.923977,
+    "addr": "30 Hillhouse Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "300 George Street",
+    "lat": 41.304859,
+    "lng": -72.931477,
+    "addr": "300 George Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "300 Prospect Street",
+    "lat": 41.319795,
+    "lng": -72.923781,
+    "addr": "300 Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "300R Prospect Street",
+    "lat": 41.319931,
+    "lng": -72.924087,
+    "addr": "300R Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "301 Crown Street",
+    "lat": 41.307102,
+    "lng": -72.931753,
+    "addr": "301 Crown Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "301 Prospect Street",
+    "lat": 41.319912,
+    "lng": -72.922792,
+    "addr": "301 Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "302 Temple Street",
+    "lat": 41.309433,
+    "lng": -72.925248,
+    "addr": "302 Temple Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "305 Crown Street",
+    "lat": 41.307171,
+    "lng": -72.932031,
+    "addr": "305 Crown Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "309 Edwards Street",
+    "lat": 41.320039,
+    "lng": -72.919998,
+    "addr": "309 Edwards Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "310 Prospect Street",
+    "lat": 41.320069,
+    "lng": -72.923805,
+    "addr": "310 Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "314 Prospect Street",
+    "lat": 41.320328,
+    "lng": -72.923787,
+    "addr": "314 Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "32 Edgewood Avenue",
+    "lat": 41.310209,
+    "lng": -72.93428,
+    "addr": "32 Edgewood Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "320 Temple Street",
+    "lat": 41.309855,
+    "lng": -72.924927,
+    "addr": "320 Temple Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "33 Hillhouse Avenue",
+    "lat": 41.313992,
+    "lng": -72.922548,
+    "addr": "33 Hillhouse Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "340 Edwards Street",
+    "lat": 41.319726,
+    "lng": -72.9213,
+    "addr": "340 Edwards Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "344 Winchester Avenue",
+    "lat": 41.324828,
+    "lng": -72.92943,
+    "addr": "344 Winchester Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "35 Broadway",
+    "lat": 41.311593,
+    "lng": -72.930144,
+    "addr": "35 Broadway, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "35 Hillhouse Avenue",
+    "lat": 41.314196,
+    "lng": -72.922871,
+    "addr": "35 Hillhouse Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "350 George Street",
+    "lat": 41.305675,
+    "lng": -72.932946,
+    "addr": "350 George Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "353 Crown Street",
+    "lat": 41.307955,
+    "lng": -72.933553,
+    "addr": "353 Crown Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "36 Edgewood Avenue",
+    "lat": 41.309835,
+    "lng": -72.934136,
+    "addr": "36 Edgewood Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "36 Sachem Street",
+    "lat": 41.315497,
+    "lng": -72.921912,
+    "addr": "36 Sachem Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "360 Edwards Street",
+    "lat": 41.319764,
+    "lng": -72.922044,
+    "addr": "360 Edwards Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "363 St. Ronan Street",
+    "lat": 41.325531,
+    "lng": -72.918108,
+    "addr": "363 St. Ronan Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "37 Hillhouse Avenue",
+    "lat": 41.314469,
+    "lng": -72.922736,
+    "addr": "37 Hillhouse Avenue",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "380 Edwards Street",
+    "lat": 41.319819,
+    "lng": -72.922391,
+    "addr": "380 Edwards Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "389 Whitney Avenue",
+    "lat": 41.3211,
+    "lng": -72.91767,
+    "addr": "389 Whitney Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "40 Temple Street",
+    "lat": 41.303931,
+    "lng": -72.929528,
+    "addr": "40 Temple Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "400 West Campus Drive",
+    "lat": 41.256063,
+    "lng": -72.992844,
+    "addr": "400 West Campus Drive, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "405 Temple Street",
+    "lat": 41.311984,
+    "lng": -72.92285,
+    "addr": "405 Temple Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "41 High Street",
+    "lat": 41.307527,
+    "lng": -72.930547,
+    "addr": "41 High Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "41 Sachem Street",
+    "lat": 41.315927,
+    "lng": -72.923016,
+    "addr": "41 Sachem Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "410 West Campus Drive",
+    "lat": 41.255252,
+    "lng": -72.992422,
+    "addr": "410 West Campus Drive, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "421 Temple Street",
+    "lat": 41.312241,
+    "lng": -72.92234,
+    "addr": "421 Temple Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "43 Hillhouse Avenue",
+    "lat": 41.314704,
+    "lng": -72.922665,
+    "addr": "43 Hillhouse Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "432-434 Temple Street",
+    "lat": 41.312854,
+    "lng": -72.922707,
+    "addr": "432-434 Temple Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "433 Temple Street",
+    "lat": 41.31263,
+    "lng": -72.922245,
+    "addr": "433 Temple Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "442 Temple Street",
+    "lat": 41.313085,
+    "lng": -72.922594,
+    "addr": "442 Temple Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "451 College Street",
+    "lat": 41.310151,
+    "lng": -72.926208,
+    "addr": "451 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "459 Prospect Street",
+    "lat": 41.324281,
+    "lng": -72.922853,
+    "addr": "459 Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "46 Hillhouse",
+    "lat": 41.315048,
+    "lng": -72.923557,
+    "addr": "46 Hillhouse, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "47 College Street",
+    "lat": 41.303061,
+    "lng": -72.93143,
+    "addr": "47 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "493 College Street",
+    "lat": 41.311148,
+    "lng": -72.925537,
+    "addr": "493 College Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "500 West Campus Drive",
+    "lat": 41.257481,
+    "lng": -72.991134,
+    "addr": "500 West Campus Drive, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "51 Hillhouse Avenue",
+    "lat": 41.315133,
+    "lng": -72.922581,
+    "addr": "51 Hillhouse Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "53 Broadway",
+    "lat": 41.311736,
+    "lng": -72.930548,
+    "addr": "53 Broadway, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "53 Wall Street",
+    "lat": 41.309934,
+    "lng": -72.923499,
+    "addr": "53 Wall Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "55 Church Street",
+    "lat": 41.305178,
+    "lng": -72.926201,
+    "addr": "55 Church Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "55 Whitney Avenue",
+    "lat": 41.311845,
+    "lng": -72.921954,
+    "addr": "55 Whitney Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "60 Temple Street",
+    "lat": 41.304286,
+    "lng": -72.928841,
+    "addr": "60 Temple Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "63-65 Goffe Street",
+    "lat": 41.314535,
+    "lng": -72.933446,
+    "addr": "63-65 Goffe Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "66 Wall Street",
+    "lat": 41.310033,
+    "lng": -72.924809,
+    "addr": "66 Wall Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "68 Mansfield Street",
+    "lat": 41.316935,
+    "lng": -72.926048,
+    "addr": "68 Mansfield Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "70 Whitney Avenue",
+    "lat": 41.312395,
+    "lng": -72.922216,
+    "addr": "70 Whitney Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "700 West Campus Drive",
+    "lat": 41.256235,
+    "lng": -72.988249,
+    "addr": "700 West Campus Drive, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "71 Goffe Street",
+    "lat": 41.314637,
+    "lng": -72.93362,
+    "addr": "71 Goffe Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "720 West Campus Drive",
+    "lat": 41.256583,
+    "lng": -72.987462,
+    "addr": "720 West Campus Drive, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "77 Prospect Street",
+    "lat": 41.314082,
+    "lng": -72.924548,
+    "addr": "77 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "81 Wall Street",
+    "lat": 41.310611,
+    "lng": -72.925414,
+    "addr": "81 Wall Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "82 Wall Street",
+    "lat": 41.310355,
+    "lng": -72.925568,
+    "addr": "82 Wall Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "82-90 Wall Street",
+    "lat": 41.310442,
+    "lng": -72.925712,
+    "addr": "82-90 Wall Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "85 Goffe Street",
+    "lat": 41.314964,
+    "lng": -72.933966,
+    "addr": "85 Goffe Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "85 Trumbull Street",
+    "lat": 41.313547,
+    "lng": -72.922679,
+    "addr": "85 Trumbull Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "87 Goffe Street",
+    "lat": 41.314965,
+    "lng": -72.933997,
+    "addr": "87 Goffe Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "87 Trumbull Street",
+    "lat": 41.31388,
+    "lng": -72.924339,
+    "addr": "87 Trumbull Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "910 West Campus Drive",
+    "lat": 41.260685,
+    "lng": -72.987344,
+    "addr": "910 West Campus Drive, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "920 West Campus Drive",
+    "lat": 41.260476,
+    "lng": -72.988155,
+    "addr": "920 West Campus Drive, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "94 York Square Place",
+    "lat": 41.31417,
+    "lng": -72.929708,
+    "addr": "94 York Square Place, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Administrative Office North",
+    "lat": 41.25378,
+    "lng": -72.997011,
+    "addr": "200 West Campus Drive, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Advanced Biosciences Center",
+    "lat": 41.256918,
+    "lng": -72.989699,
+    "addr": "840 West Campus Drive, West Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Alice Tully Hall",
+    "lat": 40.772826,
+    "lng": -73.982315,
+    "addr": "1941 Broadway at W 65th St, New York, NY 10023",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Allwin Hall",
+    "lat": 41.313924,
+    "lng": -72.923102,
+    "addr": "31 Hillhouse Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Anlyan Center",
+    "lat": 41.30142,
+    "lng": -72.933837,
+    "addr": "300 Cedar Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Arnold Hall",
+    "lat": 41.310992,
+    "lng": -72.931351,
+    "addr": "304 Elm Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Artspace",
+    "lat": 41.304357,
+    "lng": -72.925432,
+    "addr": "50 Orange Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Baker Hall",
+    "lat": 41.313974,
+    "lng": -72.928894,
+    "addr": "100 Tower Parkway, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Baseball Practice Facility and Neil Clubhouse",
+    "lat": 41.309763,
+    "lng": -72.959719,
+    "addr": "250 Derby Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Bass Center",
+    "lat": 41.317411,
+    "lng": -72.921714,
+    "addr": "266 Whitney Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Bass Library",
+    "lat": 41.310756,
+    "lng": -72.927275,
+    "addr": "110 Wall Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Battell Chapel",
+    "lat": 41.309411,
+    "lng": -72.927544,
+    "addr": "400 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Bauer Hall",
+    "lat": 41.323506,
+    "lng": -72.921879,
+    "addr": "409 Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Becton Center & Davies Auditorium",
+    "lat": 41.312605,
+    "lng": -72.925136,
+    "addr": "15 Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Becton Engineering and Applied Science Center",
+    "lat": 41.312605,
+    "lng": -72.925136,
+    "addr": "15 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Beinecke Golf House",
+    "lat": 41.320725,
+    "lng": -72.979501,
+    "addr": "200 Conrad Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Beinecke Library",
+    "lat": 41.311627,
+    "lng": -72.927226,
+    "addr": "121 Wall Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/49860342311322/huge/ece4e79c5565a26548096bfa4cacef02c2e7645b.jpg"
+  },
+  {
+    "name": "Bellamy Hall",
+    "lat": 41.324609,
+    "lng": -72.92052,
+    "addr": "354 Canner Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Benjamin Franklin College",
+    "lat": 41.314416,
+    "lng": -72.925149,
+    "addr": "90 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Berkeley Center",
+    "lat": 41.325531,
+    "lng": -72.918108,
+    "addr": "363 St. Ronan Street New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Berkeley College",
+    "lat": 41.310178,
+    "lng": -72.928205,
+    "addr": "205 Elm Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Betts House",
+    "lat": 41.322536,
+    "lng": -72.922125,
+    "addr": "393 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Bingham Hall",
+    "lat": 41.307565,
+    "lng": -72.928749,
+    "addr": "300 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Boardman Building",
+    "lat": 41.302939,
+    "lng": -72.934267,
+    "addr": "330 Cedar Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Boyer Center",
+    "lat": 41.302411,
+    "lng": -72.932681,
+    "addr": "295 Congress Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Brady Memorial Lab",
+    "lat": 41.302253,
+    "lng": -72.933868,
+    "addr": "310 Cedar Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Brady Memorial Laboratory",
+    "lat": 41.302308,
+    "lng": -72.933896,
+    "addr": "310 Cedar Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Branford College",
+    "lat": 41.31005,
+    "lng": -72.929826,
+    "addr": "74 High Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Broadway Rehearsal Lofts",
+    "lat": 41.31094,
+    "lng": -72.930937,
+    "addr": "294 Elm Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Burnat-Grass Complex",
+    "lat": 41.309763,
+    "lng": -72.959719,
+    "addr": "250 Derby Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Bush Field",
+    "lat": 41.309763,
+    "lng": -72.959719,
+    "addr": "250 Derby Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Calvin Hill Day Care Center",
+    "lat": 41.328194,
+    "lng": -72.92091,
+    "addr": "150 Highland Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Caulkins Courtyard",
+    "lat": 41.315689,
+    "lng": -72.92368,
+    "addr": "135 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Cedarhurst School",
+    "lat": 41.335184,
+    "lng": -72.918557,
+    "addr": "871 Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Center Church on the Green",
+    "lat": 41.307828,
+    "lng": -72.926461,
+    "addr": "250 Temple Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Center for Collaborative Arts and Media",
+    "lat": 41.307567,
+    "lng": -72.931754,
+    "addr": "149 York Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Center for Engineering Innovation & Design",
+    "lat": 41.312677,
+    "lng": -72.925136,
+    "addr": "15 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Central Campus Chiller Plant",
+    "lat": 41.324305,
+    "lng": -72.92817,
+    "addr": "330 Winchester Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Central Power Plant",
+    "lat": 41.313119,
+    "lng": -72.928838,
+    "addr": "120 Tower Parkway, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Child Care & Community Education Center",
+    "lat": 41.252776,
+    "lng": -72.997655,
+    "addr": "230 West Campus Drive, Orange, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Child Study Center",
+    "lat": 41.304344,
+    "lng": -72.933026,
+    "addr": "230 South Frontage Rd., New Haven, CT 06520",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Christ Church",
+    "lat": 41.311679,
+    "lng": -72.932011,
+    "addr": "84 Broadway, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Class of 1954 Chemistry Research Building",
+    "lat": 41.31928,
+    "lng": -72.922608,
+    "addr": "275 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Class of 1954 Environmental Science Center",
+    "lat": 41.316472,
+    "lng": -72.921706,
+    "addr": "21 Sachem Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Clinic Building",
+    "lat": 41.302455,
+    "lng": -72.935602,
+    "addr": "789 Howard Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Clinton Frank Field",
+    "lat": 41.309748,
+    "lng": -72.959813,
+    "addr": "256 Derby Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Collection Studies Center",
+    "lat": 41.25981,
+    "lng": -72.987361,
+    "addr": "900 West Campus Drive, West Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "College Place",
+    "lat": 41.303234,
+    "lng": -72.931343,
+    "addr": "37-55 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "College Street Music Hall",
+    "lat": 41.306503,
+    "lng": -72.929396,
+    "addr": "238 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Congress Place",
+    "lat": 41.301802,
+    "lng": -72.933143,
+    "addr": "301 Cedar Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Connecticut Hall",
+    "lat": 41.308158,
+    "lng": -72.928831,
+    "addr": "344 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Connecticut Mental Health Center",
+    "lat": 41.305154,
+    "lng": -72.936921,
+    "addr": "34 Park Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Cooperative Arts and Humanities High School",
+    "lat": 41.305471,
+    "lng": -72.929887,
+    "addr": "177 College Street, New Haven, CT 06510",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Coxe Cage",
+    "lat": 41.310866,
+    "lng": -72.962221,
+    "addr": "257 Derby Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Creative Arts Workshop",
+    "lat": 41.311068,
+    "lng": -72.921404,
+    "addr": "80 Audubon Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Cross Campus",
+    "lat": 41.310756,
+    "lng": -72.927275,
+    "addr": "110 Wall Street, New Haven, CT 6511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Cullman-Heyman Tennis Center",
+    "lat": 41.310257,
+    "lng": -72.958789,
+    "addr": "253 Derby Avenue, West Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Curtis Hall",
+    "lat": 41.324553,
+    "lng": -72.919974,
+    "addr": "350 Canner Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Dana Clinic Building",
+    "lat": 41.302438,
+    "lng": -72.935803,
+    "addr": "789 Howard Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Davenport College",
+    "lat": 41.310217,
+    "lng": -72.930681,
+    "addr": "248 York Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Dewitt Cuyler Athletic Complex",
+    "lat": 41.310251,
+    "lng": -72.958829,
+    "addr": "256 Derby Avenue, West Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "DeWitt Family Field",
+    "lat": 41.312959,
+    "lng": -72.968845,
+    "addr": "70 Central Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Dow Hall",
+    "lat": 41.31134,
+    "lng": -72.923867,
+    "addr": "370 Temple Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Dunham Laboratory",
+    "lat": 41.312315,
+    "lng": -72.924484,
+    "addr": "10 Hillhouse Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Durfee Hall",
+    "lat": 41.309664,
+    "lng": -72.928142,
+    "addr": "198 Elm Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Dwight Chapel",
+    "lat": 41.308937,
+    "lng": -72.929315,
+    "addr": "67 High St, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Dwight Hall",
+    "lat": 41.308937,
+    "lng": -72.929315,
+    "addr": "67 High Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Dwight Hall & Memorial Chapel",
+    "lat": 41.308937,
+    "lng": -72.929315,
+    "addr": "67 High Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "East Rock Park",
+    "lat": 41.3248,
+    "lng": -72.9112,
+    "addr": "East Rock Park, New Haven, CT",
+    "photoRaw": null
+  },
+  {
+    "name": "ECA DanceSpace",
+    "lat": 41.311202,
+    "lng": -72.920357,
+    "addr": "55 Audubon Street, New Haven, CT 06510",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Edgerton Park",
+    "lat": 41.333243,
+    "lng": -72.915442,
+    "addr": "75 Cliff Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Elizabethan Club",
+    "lat": 41.31035,
+    "lng": -72.926143,
+    "addr": "459 College Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Ellen Battell Stoeckel Estate",
+    "lat": 41.989855,
+    "lng": -73.200832,
+    "addr": "17 Stoeckel Road, Norfolk, CT 06058",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Energy Sciences Center I",
+    "lat": 41.25809,
+    "lng": -72.990053,
+    "addr": "520 West Campus Drive, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Energy Sciences Center II",
+    "lat": 41.259464,
+    "lng": -72.989122,
+    "addr": "810 West Campus Drive, West Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Evans Hall",
+    "lat": 41.314941,
+    "lng": -72.920346,
+    "addr": "165 Whitney Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Ezra Stiles College",
+    "lat": 41.312781,
+    "lng": -72.931477,
+    "addr": "302 York Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Farmington Canal",
+    "lat": 41.323699,
+    "lng": -72.930646,
+    "addr": "Farmington Canal, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Farnam Hall",
+    "lat": 41.309056,
+    "lng": -72.927653,
+    "addr": "380 College Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Farnam Memorial Building",
+    "lat": 41.302253,
+    "lng": -72.933868,
+    "addr": "310 Cedar Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Farnam Memorial Gardens",
+    "lat": 41.320593,
+    "lng": -72.922069,
+    "addr": "335 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Field Y",
+    "lat": 41.309007,
+    "lng": -72.959252,
+    "addr": "252 Derby Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Fisher Hall",
+    "lat": 41.325105,
+    "lng": -72.920158,
+    "addr": "352 Canner Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Fitkin Amphitheater",
+    "lat": 41.302438,
+    "lng": -72.935803,
+    "addr": "789 Howard Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Fitkin Memorial Pavilion",
+    "lat": 41.302438,
+    "lng": -72.935803,
+    "addr": "789 Howard Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Founders Hall",
+    "lat": 41.315689,
+    "lng": -72.92368,
+    "addr": "135 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Gales Ferry Boathouse",
+    "lat": 41.430299,
+    "lng": -72.093037,
+    "addr": "4 Riverside Place, Gales Ferry, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Genome Analysis Center",
+    "lat": 41.257894,
+    "lng": -72.987781,
+    "addr": "830 West Campus Drive, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Gilder Boathouse",
+    "lat": 41.327844,
+    "lng": -73.103887,
+    "addr": "280 Roosevelt Drive, Derby, CT 6418",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Government Greenhouse",
+    "lat": 41.322495,
+    "lng": -72.925602,
+    "addr": "265 Mansfield Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Grace Hopper College",
+    "lat": 41.309804,
+    "lng": -72.927385,
+    "addr": "189 Elm Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Great Hall, Sterling Divinity Quadrangle",
+    "lat": 41.323159,
+    "lng": -72.922018,
+    "addr": "409 Prospect St, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Greeley Greenhouse",
+    "lat": 41.321947,
+    "lng": -72.924526,
+    "addr": "370 Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Greeley Memorial Laboratory",
+    "lat": 41.321947,
+    "lng": -72.924526,
+    "addr": "370 Prospect Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Green Hall",
+    "lat": 41.308332,
+    "lng": -72.932952,
+    "addr": "1156 Chapel Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Greenberg Conference Center",
+    "lat": 41.322188,
+    "lng": -72.921905,
+    "addr": "391 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Guilford Biological Field Station",
+    "lat": 41.25904,
+    "lng": -72.731486,
+    "addr": "276 Old Quarry Road, Guilford, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Haas Family Arts Library",
+    "lat": 41.308754,
+    "lng": -72.93188,
+    "addr": "180 York St, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/49948229555570/huge/6f03b8753818b057966cb7a49f009a8990282394.jpg"
+  },
+  {
+    "name": "Harkness Memorial Hall",
+    "lat": 41.30441,
+    "lng": -72.933833,
+    "addr": "367 Cedar Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Harris Building",
+    "lat": 41.303978,
+    "lng": -72.93345,
+    "addr": "230 South Frontage Road, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Harvey Cushing/John Hay Whitney Medical Library",
+    "lat": 0,
+    "lng": 0,
+    "addr": "",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Hendrie Hall",
+    "lat": 41.309404,
+    "lng": -72.926098,
+    "addr": "165 Elm Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Hendrie Hall/Adams Center",
+    "lat": 41.309404,
+    "lng": -72.926098,
+    "addr": "165 Elm Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Hewitt Quadrangle",
+    "lat": 41.310725,
+    "lng": -72.926129,
+    "addr": "111 Wall Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Hope Memorial Building",
+    "lat": 41.3022,
+    "lng": -72.933362,
+    "addr": "315 Cedar Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Horchow Hall",
+    "lat": 41.315444,
+    "lng": -72.922389,
+    "addr": "55 Hillhouse Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Humanities Quadrangle",
+    "lat": 41.312153,
+    "lng": -72.929535,
+    "addr": "320 York Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Hunter Building",
+    "lat": 41.303463,
+    "lng": -72.934987,
+    "addr": "15 York Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Immanuel Baptist Church",
+    "lat": 41.309552,
+    "lng": -72.939012,
+    "addr": "1324 Chapel St., New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Ingalls Rink",
+    "lat": 41.316804,
+    "lng": -72.925029,
+    "addr": "73 Sachem Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Integrated Science & Technology Center",
+    "lat": 41.25746,
+    "lng": -72.990252,
+    "addr": "850 West Campus Drive, WestHaven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "J. W. Gibbs Laboratories",
+    "lat": 41.318041,
+    "lng": -72.923029,
+    "addr": "225 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Johnson Field",
+    "lat": 41.312959,
+    "lng": -72.968845,
+    "addr": "70 Central Avenue, New Haven, CT 06515",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Jonathan Edwards College",
+    "lat": 41.308807,
+    "lng": -72.93019,
+    "addr": "68 High Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Kirtland Hall",
+    "lat": 41.311882,
+    "lng": -72.924651,
+    "addr": "2 Hillhouse Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Kline Chemistry Laboratory",
+    "lat": 41.319088,
+    "lng": -72.923447,
+    "addr": "255 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Kline Geology Laboratory",
+    "lat": 41.316579,
+    "lng": -72.921089,
+    "addr": "210 Whitney Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Kline Tower",
+    "lat": 41.317327,
+    "lng": -72.922629,
+    "addr": "219 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Kroon Hall",
+    "lat": 41.316784,
+    "lng": -72.923329,
+    "addr": "195 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Laboratory for Medicine and Pediatrics",
+    "lat": 41.303463,
+    "lng": -72.934987,
+    "addr": "15 York Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Laboratory of Epidemiology & Public Health",
+    "lat": 41.30372,
+    "lng": -72.932141,
+    "addr": "60 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Labyrinth Books",
+    "lat": 41.311435,
+    "lng": -72.929783,
+    "addr": "290 York Street, New Haven, CT 06510",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Lanman Center",
+    "lat": 41.31396,
+    "lng": -72.930557,
+    "addr": "70 Tower Parkway, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Lanman-Wright Hall",
+    "lat": 41.309802,
+    "lng": -72.928738,
+    "addr": "206 Elm Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Lapham Field House & Smilow Field Center",
+    "lat": 41.309943,
+    "lng": -72.960695,
+    "addr": "251 Derby Avenue, West Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Lauder Hall",
+    "lat": 41.302308,
+    "lng": -72.933896,
+    "addr": "310 Cedar Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Lawrance Hall",
+    "lat": 41.308669,
+    "lng": -72.927938,
+    "addr": "358 College Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Leet Oliver Memorial Hall",
+    "lat": 41.312737,
+    "lng": -72.924314,
+    "addr": "12 Hillhouse Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Leigh Hall",
+    "lat": 41.30984,
+    "lng": -72.926323,
+    "addr": "435 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Leitner House",
+    "lat": 41.309754,
+    "lng": -72.932713,
+    "addr": "231 Park Street, New Haven, CT 06520",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Leitner Observatory & Planetarium",
+    "lat": 41.321132,
+    "lng": -72.921942,
+    "addr": "355 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Lewis Walpole Library",
+    "lat": 41.761618,
+    "lng": -72.891199,
+    "addr": "154 Main Street, Farmington, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/49860352904509/huge/701f8c76e5176434406b7183fa8c8f45a1c9678c.jpg"
+  },
+  {
+    "name": "Library Shelving Facility",
+    "lat": 41.345379,
+    "lng": -72.92151,
+    "addr": "147 Leeder Hill Road, Hamden, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Lillian Goldman Law Library",
+    "lat": 41.31171,
+    "lng": -72.928089,
+    "addr": "127 Wall Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Linsly-Chittenden Hall",
+    "lat": 41.308522,
+    "lng": -72.92947,
+    "addr": "63 High Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Lippard Laboratory",
+    "lat": 41.303463,
+    "lng": -72.934987,
+    "addr": "15 York Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Long Wharf Theater",
+    "lat": 41.294165,
+    "lng": -72.92271,
+    "addr": "222 Sargent Drive, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Loria Center",
+    "lat": 41.308992,
+    "lng": -72.931596,
+    "addr": "190 York Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Luce Hall",
+    "lat": 41.314426,
+    "lng": -72.924324,
+    "addr": "34 Hillhouse Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Luther House",
+    "lat": 41.32327,
+    "lng": -72.918437,
+    "addr": "305 St. Ronan Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Magnetic Resonance Center",
+    "lat": 41.303005,
+    "lng": -72.936043,
+    "addr": "801 Howard Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Malone Center",
+    "lat": 41.313364,
+    "lng": -72.924765,
+    "addr": "55 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Marquand Chapel",
+    "lat": 41.323159,
+    "lng": -72.922018,
+    "addr": "409 Prospect St, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Marsh Botanical Garden",
+    "lat": 41.322498,
+    "lng": -72.92562,
+    "addr": "265 Mansfield Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Marsh Garden Greenhouses",
+    "lat": 41.322495,
+    "lng": -72.925602,
+    "addr": "265 Mansfield Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Marsh Hall",
+    "lat": 41.321698,
+    "lng": -72.923817,
+    "addr": "360 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Mason Laboratory",
+    "lat": 41.312111,
+    "lng": -72.923557,
+    "addr": "9 Hillhouse Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "McClellan Hall",
+    "lat": 41.308341,
+    "lng": -72.929279,
+    "addr": "1037 Chapel Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "McNay Family Sailing Center",
+    "lat": 41.255854,
+    "lng": -72.851587,
+    "addr": "170 Clark Avenue, Branford, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "McPhillips Roberts Field House",
+    "lat": 41.312959,
+    "lng": -72.968845,
+    "addr": "70 Central Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Miller Hall",
+    "lat": 41.323147,
+    "lng": -72.923771,
+    "addr": "406 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Molecular Innovations Center",
+    "lat": 41.25686,
+    "lng": -72.990868,
+    "addr": "600 West Campus Drive, West Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Morse College",
+    "lat": 41.311674,
+    "lng": -72.929487,
+    "addr": "304 York Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Morse Recital Hall",
+    "lat": 41.310789,
+    "lng": -72.926735,
+    "addr": "470 College St, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Nathan Smith Building",
+    "lat": 41.303333,
+    "lng": -72.933741,
+    "addr": "333 Cedar Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "New Haven Free Public Library - Ives Main Library",
+    "lat": 41.309106,
+    "lng": -72.924602,
+    "addr": "133 Elm Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "New Haven Free Public Library - Stetson Library",
+    "lat": 41.318801,
+    "lng": -72.932832,
+    "addr": "197 Dixwell Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "New Haven Free Public Library - Wilson Library",
+    "lat": 41.299134,
+    "lng": -72.935207,
+    "addr": "303 Washington Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "New Haven Free Public Library – Fair Haven Branch",
+    "lat": 41.308751,
+    "lng": -72.894232,
+    "addr": "182 Grand Ave, New Haven, CT 06513",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "New Haven Free Public Library – Mitchell Branch Library",
+    "lat": 41.327838,
+    "lng": -72.961762,
+    "addr": "37 Harrison Street New Haven, CT 06515",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "New Haven Green",
+    "lat": 41.30861,
+    "lng": -72.92552,
+    "addr": "Temple Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "New Haven Museum",
+    "lat": 41.313969,
+    "lng": -72.922018,
+    "addr": "114 Whitney Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "New Haven Pride Center",
+    "lat": 41.304965,
+    "lng": -72.924962,
+    "addr": "84 Orange Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Off Broadway Theater",
+    "lat": 41.311573,
+    "lng": -72.930306,
+    "addr": "41 Broadway, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Old Art Gallery",
+    "lat": 41.307853,
+    "lng": -72.930366,
+    "addr": "56 High Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Old Campus",
+    "lat": 41.308158,
+    "lng": -72.928831,
+    "addr": "344 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Omni New Haven Hotel at Yale",
+    "lat": 41.3056,
+    "lng": -72.926884,
+    "addr": "155 Temple Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Osborn Memorial Laboratories",
+    "lat": 41.316375,
+    "lng": -72.923884,
+    "addr": "165 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Pauli Murray College",
+    "lat": 41.315695,
+    "lng": -72.925341,
+    "addr": "130 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Payne Whitney Gymnasium",
+    "lat": 41.31396,
+    "lng": -72.930557,
+    "addr": "70 Tower Parkway, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Phelps Hall & Gate",
+    "lat": 41.308158,
+    "lng": -72.928831,
+    "addr": "344 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Pierce Laboratory",
+    "lat": 41.301981,
+    "lng": -72.932467,
+    "addr": "290 Congress Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Pierson College",
+    "lat": 41.309934,
+    "lng": -72.932601,
+    "addr": "261 Park Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Poorvu Center for Teaching and Learning",
+    "lat": 41.310522,
+    "lng": -72.929057,
+    "addr": "120 High Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Primary Care Center",
+    "lat": 41.302438,
+    "lng": -72.935803,
+    "addr": "789 Howard Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Quantum Institute",
+    "lat": 41.312737,
+    "lng": -72.923454,
+    "addr": "17 Hillhouse Avenue, New Haven, 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Ray Tompkins House",
+    "lat": 41.313191,
+    "lng": -72.931799,
+    "addr": "20 Tower Parkway, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Reese Stadium",
+    "lat": 41.311651,
+    "lng": -72.962112,
+    "addr": "75 Central Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Rose Alumni House",
+    "lat": 41.309966,
+    "lng": -72.931246,
+    "addr": "232 York Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Rose Center",
+    "lat": 41.315985,
+    "lng": -72.928754,
+    "addr": "101 Ashmun Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Rosenfeld Hall",
+    "lat": 41.311195,
+    "lng": -72.92331,
+    "addr": "109-111 Grove Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Rosenkranz Hall",
+    "lat": 41.314446,
+    "lng": -72.924459,
+    "addr": "115 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Rudolph Hall",
+    "lat": 41.308754,
+    "lng": -72.93188,
+    "addr": "180 York Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Sage Hall",
+    "lat": 41.317206,
+    "lng": -72.923771,
+    "addr": "205 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Saint Anthony Hall",
+    "lat": 41.310732,
+    "lng": -72.92578,
+    "addr": "483 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Saint Joseph Church",
+    "lat": 41.317915,
+    "lng": -72.91355,
+    "addr": "129 Edwards Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Saybrook College",
+    "lat": 41.310234,
+    "lng": -72.92931,
+    "addr": "242 Elm Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Seamco Building",
+    "lat": 41.301121,
+    "lng": -72.935678,
+    "addr": "430-470 Congress Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Sheffield-Sterling-Strathcona Hall",
+    "lat": 41.311882,
+    "lng": -72.925196,
+    "addr": "1 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Shubert Theatre",
+    "lat": 41.306356,
+    "lng": -72.928801,
+    "addr": "247 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Silliman College",
+    "lat": 41.311352,
+    "lng": -72.92534,
+    "addr": "505 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Slifka Center",
+    "lat": 41.310145,
+    "lng": -72.925084,
+    "addr": "80 Wall Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Sloane Physics Laboratory",
+    "lat": 41.31737,
+    "lng": -72.923096,
+    "addr": "217 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Smilow Cancer Hospital",
+    "lat": 41.30429,
+    "lng": -72.935234,
+    "addr": "20 York Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Southern Connecticut State University",
+    "lat": 41.306169,
+    "lng": -72.926478,
+    "addr": "900 Chapel Street, New Haven, CT 06510",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Sprague Hall",
+    "lat": 41.310789,
+    "lng": -72.926735,
+    "addr": "470 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "St. Mary's Church",
+    "lat": 41.31186,
+    "lng": -72.923679,
+    "addr": "5 Hillhouse Ave, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "St. Thomas Episcopal Church",
+    "lat": 41.332108,
+    "lng": -72.913617,
+    "addr": "830 Whitney Ave., New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "St. Thomas More Chapel & Golden Center",
+    "lat": 41.310867,
+    "lng": -72.932269,
+    "addr": "268 Park Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Steinbach Hall",
+    "lat": 41.315438,
+    "lng": -72.923423,
+    "addr": "52 Hillhouse Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Sterling Chemistry Laboratory",
+    "lat": 41.318041,
+    "lng": -72.923029,
+    "addr": "225 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Sterling Divinity Quadrangle",
+    "lat": 41.323159,
+    "lng": -72.922018,
+    "addr": "409 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Sterling Hall of Medicine",
+    "lat": 41.303333,
+    "lng": -72.933741,
+    "addr": "333 Cedar Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Sterling Law Building",
+    "lat": 41.31171,
+    "lng": -72.928089,
+    "addr": "127 Wall Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Sterling Memorial Library",
+    "lat": 41.310522,
+    "lng": -72.929057,
+    "addr": "120 High Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/49860332335651/huge/fc00105ca6593247fb19a10ef45e7fe1bb06fa8b.jpg"
+  },
+  {
+    "name": "Sterling Power Plant",
+    "lat": 41.302805,
+    "lng": -72.932802,
+    "addr": "309 Congress Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Stoeckel Hall",
+    "lat": 41.310493,
+    "lng": -72.925962,
+    "addr": "469 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Street Hall",
+    "lat": 41.308242,
+    "lng": -72.930438,
+    "addr": "1071 Chapel Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Sudler Recital Hall",
+    "lat": 41.310614,
+    "lng": -72.926679,
+    "addr": "100 Wall Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "T.M. Evans Hall",
+    "lat": 41.31569,
+    "lng": -72.923326,
+    "addr": "56 Hillhouse Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "The Connecticut Agricultural Experiment Station",
+    "lat": 41.331156,
+    "lng": -72.919111,
+    "addr": "123 Huntington St, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "The Elm City Club",
+    "lat": 41.309306,
+    "lng": -72.925834,
+    "addr": "155 Elm St, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "The Norfolk Music Shed",
+    "lat": 41.987885,
+    "lng": -73.200228,
+    "addr": "20 Litchfield Road, Norfolk, CT 06058",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "The Shops at Yale",
+    "lat": 41.311968,
+    "lng": -72.93132,
+    "addr": "Broadway, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "The Yale Club of New York City",
+    "lat": 40.754023,
+    "lng": -73.97747,
+    "addr": "50 Vanderbilt Avenue, New York, NY 10017",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Timothy Dwight College",
+    "lat": 41.310271,
+    "lng": -72.923569,
+    "addr": "345 Temple Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Tompkins East",
+    "lat": 41.302438,
+    "lng": -72.935803,
+    "addr": "789 Howard Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Tompkins Memorial Pavilion",
+    "lat": 41.302438,
+    "lng": -72.935803,
+    "addr": "789 Howard Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Trinity Church on the Green",
+    "lat": 41.307047,
+    "lng": -72.927333,
+    "addr": "230 Temple Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Trinity Lutheran Church",
+    "lat": 41.308822,
+    "lng": -72.922174,
+    "addr": "292 Orange Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Trumbull College",
+    "lat": 41.310577,
+    "lng": -72.929155,
+    "addr": "241 Elm Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Tsai CITY",
+    "lat": 41.3124,
+    "lng": -72.9249,
+    "addr": "17 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Tsai Lacrosse Field House",
+    "lat": 41.319334,
+    "lng": -72.962237,
+    "addr": "73 Central Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Undergraduate Admissions",
+    "lat": 41.314591,
+    "lng": -72.923749,
+    "addr": "38 Hillhouse Avenue, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "United Church on the Green",
+    "lat": 41.308646,
+    "lng": -72.926078,
+    "addr": "270 Temple Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "University Theatre",
+    "lat": 41.309741,
+    "lng": -72.931261,
+    "addr": "222 York Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Vanderbilt Hall",
+    "lat": 41.307993,
+    "lng": -72.929254,
+    "addr": "1035 Chapel Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "W. L. Harkness Hall",
+    "lat": 41.310614,
+    "lng": -72.926679,
+    "addr": "100 Wall Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Warner House",
+    "lat": 41.311463,
+    "lng": -72.924082,
+    "addr": "1 Hillhouse Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Watson Center",
+    "lat": 41.315779,
+    "lng": -72.923771,
+    "addr": "60 Sachem Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Watson Hall",
+    "lat": 41.313087,
+    "lng": -72.92485,
+    "addr": "51 Prospect Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Welch Hall",
+    "lat": 41.308151,
+    "lng": -72.928335,
+    "addr": "330 College Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "West Campus Barn",
+    "lat": 41.256134,
+    "lng": -72.993427,
+    "addr": "350 West Campus Drive",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "West Campus Conference Center",
+    "lat": 41.258236,
+    "lng": -72.989129,
+    "addr": "800 West Campus Drive, West Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "West Campus Farm",
+    "lat": 0,
+    "lng": 0,
+    "addr": "",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "West Campus Fitness Center",
+    "lat": 41.25929,
+    "lng": -72.988891,
+    "addr": "820 West Campus Drive, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "West Campus Storage & Receiving Center",
+    "lat": 41.25776,
+    "lng": -72.985974,
+    "addr": "750 West Campus Drive, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "West Campus Welcome Center",
+    "lat": 41.254689,
+    "lng": -72.996561,
+    "addr": "100 West Campus Drive, Orange, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Whitney Center",
+    "lat": 41.34938,
+    "lng": -72.922116,
+    "addr": "200 Leeder Hill Road, Hamden, CT 06517",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Whitney Grove Square",
+    "lat": 41.310811,
+    "lng": -72.922818,
+    "addr": "2 Whitney Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Winchester Building",
+    "lat": 41.303552,
+    "lng": -72.93501,
+    "addr": "25 York Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Winslow Auditorium",
+    "lat": 41.303712,
+    "lng": -72.932127,
+    "addr": "60 College Street, New Haven, CT",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Woodbridge Hall",
+    "lat": 41.311148,
+    "lng": -72.926648,
+    "addr": "105 Wall Street, New Haven, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Woolsey Hall",
+    "lat": 41.311581,
+    "lng": -72.926098,
+    "addr": "500 College Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Wright Lab - Connector",
+    "lat": 41.319001,
+    "lng": -72.921217,
+    "addr": "270 Whitney Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Wright Laboratory",
+    "lat": 41.318985,
+    "lng": -72.920782,
+    "addr": "272 Whitney Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Yale Bookstore",
+    "lat": 41.312206,
+    "lng": -72.9312,
+    "addr": "77 Broadway, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Yale Bowl",
+    "lat": 41.313075,
+    "lng": -72.960451,
+    "addr": "81 Central Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Yale Center for British Art",
+    "lat": 41.307884,
+    "lng": -72.930874,
+    "addr": "1080 Chapel Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Yale Farm",
+    "lat": 41.320406,
+    "lng": -72.921279,
+    "addr": "345 Edwards Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Yale Graduate Club",
+    "lat": 41.309326,
+    "lng": -72.925826,
+    "addr": "155 Elm Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Yale Health Center",
+    "lat": 41.315668,
+    "lng": -72.928297,
+    "addr": "55 Lock Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Yale New Haven Hospital",
+    "lat": 41.30429,
+    "lng": -72.935234,
+    "addr": "20 York Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Yale Outdoor Education Center",
+    "lat": 41.388472,
+    "lng": -72.25476,
+    "addr": "291 Upper Pattagansett Road, East Lyme, CT ",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Yale Peabody Museum",
+    "lat": 41.315975,
+    "lng": -72.921225,
+    "addr": "170 Whitney Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Yale Physicians Building",
+    "lat": 41.302501,
+    "lng": -72.936325,
+    "addr": "800 Howard Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Yale Repertory Theatre",
+    "lat": 41.308106,
+    "lng": -72.931604,
+    "addr": "1120 Chapel Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Yale Schwarzman Center",
+    "lat": 41.311556,
+    "lng": -72.926006,
+    "addr": "168 Grove Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Yale Science Building",
+    "lat": 41.317459,
+    "lng": -72.921681,
+    "addr": "260 Whitney Avenue, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/46666181734895/huge/6c7d884b86748fd9d607f2966567c4b8d05e3a10.jpg"
+  },
+  {
+    "name": "Yale University Art Gallery",
+    "lat": 41.308426,
+    "lng": -72.931015,
+    "addr": "1111 Chapel Street, New Haven, CT 06511",
+    "photoRaw": "https://localist-images.azureedge.net/photos/50463972313578/huge/9b1ca2861e3b3a55cf405d7b069437fce0dac7b2.jpg"
+  }
+]
