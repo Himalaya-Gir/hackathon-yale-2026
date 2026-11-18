@@ -1,1 +1,39 @@
-{"picks":[],"trajectory":null,"bakedAt":null}
+{
+  "picks": [
+    {
+      "eventId": "sample-teststand",
+      "score": 85,
+      "lane": "both",
+      "mechanismId": "weak-ties",
+      "why": "Your CPSC 3230 systems work is exactly what this team needs on its flight computer while you wire and…",
+      "friendLine": "Theo",
+      "withContactId": "c-theo",
+      "withWhy": "Theo builds CubeSat radios and wants a team for satellite projects.",
+      "invite": "Hey Theo, want to join me at the propulsion test-stand build night in Mason Lab tonight at 7:30? Should be a good chance to help get the cold-flow run ready."
+    },
+    {
+      "eventId": "sample-launch-watch",
+      "score": 80,
+      "lane": "both",
+      "mechanismId": "awe",
+      "why": "You and Theo can point telescopes at the sky together while the big screen streams tonight's orbital launch…",
+      "friendLine": "Theo",
+      "withContactId": "c-theo",
+      "withWhy": "Theo builds CubeSat radios and wants a team for satellite projects.",
+      "invite": "Hey Theo, heading to the midnight launch watch party on the observatory lawn tonight at 9:30 with the big screen and telescopes, want to come?"
+    },
+    {
+      "eventId": "sample-hotfire",
+      "score": 75,
+      "lane": "both",
+      "mechanismId": "novelty",
+      "why": "You can watch the YUAA propulsion team replay last weekend's test-stand footage tomorrow at 7 PM and hear…",
+      "friendLine": "Theo",
+      "withContactId": null,
+      "withWhy": null,
+      "invite": null
+    }
+  ],
+  "trajectory": null,
+  "bakedAt": "2026-11-18T00:10:26.869Z"
+}

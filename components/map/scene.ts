@@ -106,6 +106,7 @@ export function createScene(container: HTMLDivElement): () => void {
   let trajPts: number[][] = [], trajShown = 0, trajLast = 0, trajSig = '';
   let riseAt = 0;
   let phaseSeen: State['phase'] = store.getState().phase;
+  let weekRun = 0, tonightRun = 0;
   let eventsRef: YaleEvent[] | null = null;
   let byId = new Map<string, YaleEvent>();
   let loggedError = false;
@@ -231,19 +232,23 @@ export function createScene(container: HTMLDivElement): () => void {
       return list;
     };
     const wanted = new Set<string>();
+    const beamed = new Set<string>();
     const want = (p: OrbitPick, i: number, kind: 'week' | 'tonight') => {
       const ev = byId.get(p.eventId);
       if (!okPos(ev)) return;
-      const key = `${kind}:${ev.id}`;
+      const run = kind === 'week' ? weekRun : tonightRun;
+      const key = `${kind}:${run}:${ev.id}`;
       if (wanted.has(key)) return;
       wanted.add(key);
+      beamed.add(ev.id);
       const score = Number.isFinite(p.score) ? Math.max(0, Math.min(100, p.score)) : 60;
       const full = 40 + score * 1.6;
       const dim = kind === 'week' && tonight;
       const to = dim ? full / 2 : full;
       const state: Beam['state'] = s.selectedEventId === ev.id ? 2 : s.hoveredEventId === ev.id ? 1 : 0;
-      const color = kind === 'week' ? GOLD : SKY;
-      const both = kind === 'tonight' && p.lane === 'both';
+      const both = p.lane === 'both';
+      const color = both || kind === 'tonight' ? SKY : GOLD;
+      const hot = both || kind === 'tonight' ? SKY_HOT : GOLD_HOT;
       let b = beams.get(key);
       if (!b) {
         b = {
@@ -257,7 +262,7 @@ export function createScene(container: HTMLDivElement): () => void {
       }
       b.lng = ev.lng; b.lat = ev.lat; b.full = full; b.state = state; b.dim = dim;
       b.color = color;
-      b.hot = kind === 'week' ? GOLD_HOT : SKY_HOT;
+      b.hot = hot;
       b.halo = both ? GOLD : color;
       b.haloScale = state === 2 ? 1.6 : both ? 1.35 : 1;
       markers.upsert(key, {
@@ -286,13 +291,13 @@ export function createScene(container: HTMLDivElement): () => void {
     const t0 = tRef - 18 * 3600_000, t1 = tRef + 7 * 86400_000;
     const dots: unknown[] = [];
     for (const e of s.events) {
-      if (!okPos(e) || wanted.has(`week:${e.id}`) || wanted.has(`tonight:${e.id}`)) continue;
+      if (!okPos(e) || beamed.has(e.id)) continue;
       const at = new Date(e.start).getTime();
       if (!(at >= t0 && at <= t1)) continue;
       const n = s.friends.filter((f) => f.status === 'friend' && f.goingTo?.includes(e.id)).length;
       dots.push({ type: 'Feature', properties: { id: e.id, n }, geometry: { type: 'Point', coordinates: [e.lng, e.lat] } });
     }
-    void src('orbit-dots')?.setData(fc(dots));
+    void src('all-events')?.setData(fc(dots));
 
     const sel = s.selectedEventId ? byId.get(s.selectedEventId) : undefined;
     const from = okPos(sel) ? originFor(sel, s.profile) : null;
@@ -324,6 +329,8 @@ export function createScene(container: HTMLDivElement): () => void {
 
   const unsub = store.subscribe((s, p) => {
     if (dead) return;
+    if (s.mode === 'week' && s.phase === 'thinking' && s.weekPicks.length === 0 && (p.mode !== 'week' || p.phase !== 'thinking' || p.weekPicks.length > 0)) weekRun += 1;
+    if (s.mode === 'tonight' && s.phase === 'thinking' && s.tonightPicks.length === 0 && (p.mode !== 'tonight' || p.phase !== 'thinking' || p.tonightPicks.length > 0)) tonightRun += 1;
     if (s.events !== p.events || s.weekPicks !== p.weekPicks || s.tonightPicks !== p.tonightPicks || s.mode !== p.mode
       || s.phase !== p.phase || s.selectedEventId !== p.selectedEventId || s.hoveredEventId !== p.hoveredEventId
       || s.friends !== p.friends || s.going !== p.going || s.profile !== p.profile) sync(s);
@@ -378,11 +385,11 @@ export function createScene(container: HTMLDivElement): () => void {
 
   function layers() {
     const empty = fc([]);
-    for (const id of ['orbit-dots', 'orbit-traj', 'orbit-route', 'orbit-halos', 'orbit-beams']) {
+    for (const id of ['all-events', 'orbit-traj', 'orbit-route', 'orbit-halos', 'orbit-beams']) {
       if (!map.getSource(id)) map.addSource(id, { type: 'geojson', data: empty });
     }
     map.addLayer({
-      id: 'orbit-dots', type: 'circle', source: 'orbit-dots',
+      id: 'all-events', type: 'circle', source: 'all-events',
       paint: {
         'circle-color': '#B7D4FF',
         'circle-radius': ['interpolate', ['linear'], ['zoom'], 13, ['case', ['>', ['get', 'n'], 0], 5.5, 3.2], 17, ['case', ['>', ['get', 'n'], 0], 9, 5]],
@@ -427,6 +434,11 @@ export function createScene(container: HTMLDivElement): () => void {
 
   const ro = new ResizeObserver(() => { if (!dead) map.resize(); });
   ro.observe(container);
+
+  // The dark style references a missing sprite. Hide that layer before the first paint so it does not warn.
+  map.on('style.load', () => {
+    try { if (map.getLayer('landcover_wood')) map.setLayoutProperty('landcover_wood', 'visibility', 'none'); } catch { /* optional */ }
+  });
 
   map.on('load', () => {
     if (dead) return;

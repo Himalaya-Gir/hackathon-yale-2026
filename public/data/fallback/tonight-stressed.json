@@ -1,1 +1,39 @@
-{"picks":[],"trajectory":null,"bakedAt":null}
+{
+  "picks": [
+    {
+      "eventId": "sample-launch-watch",
+      "score": 85,
+      "lane": "both",
+      "mechanismId": "awe",
+      "why": "Your CPSC 3230 systems work and Theo's CubeSat radios would both click during the orbital launch stream on…",
+      "friendLine": "Lena, Theo, Rafael",
+      "withContactId": "c-theo",
+      "withWhy": "Theo builds CubeSat radios and wants a team for astronomy projects.",
+      "invite": "Hey Theo, want to come to the midnight launch watch party on the observatory lawn tonight at 9:30? It's a live stream with telescopes and cider."
+    },
+    {
+      "eventId": "sample-boardgames",
+      "score": 70,
+      "lane": "feel",
+      "mechanismId": "laugh",
+      "why": "Your suitemate Lena will be there for a low-key board games night with snacks in the Pierson common room at…",
+      "friendLine": "Lena, Rafael",
+      "withContactId": "c-lena",
+      "withWhy": "Lena is your suitemate and running partner who studies cognitive science.",
+      "invite": "Hey Lena, want to join me for board games night in the Pierson common room tonight at 8:30?"
+    },
+    {
+      "eventId": "sample-yoga",
+      "score": 65,
+      "lane": "feel",
+      "mechanismId": "move",
+      "why": "You and Lena can do the easy outdoor flow at sunset yoga on Cross Campus tomorrow at 4:30 after your…",
+      "friendLine": "Lena, Ines",
+      "withContactId": "c-lena",
+      "withWhy": "Lena is your suitemate and running partner.",
+      "invite": "Hey Lena, want to do sunset yoga on Cross Campus tomorrow at 4:30? Mats provided."
+    }
+  ],
+  "trajectory": null,
+  "bakedAt": "2026-11-18T00:10:21.457Z"
+}

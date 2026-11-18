@@ -8,14 +8,16 @@ import { MARKER_CSS } from './markers';
 
 export default function CampusMap() {
   const ref = useRef<HTMLDivElement | null>(null);
+  const started = useRef(false);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || started.current) return;
+    started.current = true;
     let destroy: (() => void) | null = null;
     try { destroy = createScene(el); }
-    catch (err) { console.error('orbit map: init', err); el.style.opacity = '1'; }
-    return () => { destroy?.(); };
+    catch (err) { started.current = false; console.error('orbit map: init', err); el.style.opacity = '1'; }
+    return () => { started.current = false; destroy?.(); };
   }, []);
 
   return (

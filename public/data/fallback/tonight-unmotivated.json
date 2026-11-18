@@ -1,1 +1,39 @@
-{"picks":[],"trajectory":null,"bakedAt":null}
+{
+  "picks": [
+    {
+      "eventId": "sample-teststand",
+      "score": 85,
+      "lane": "both",
+      "mechanismId": "progress",
+      "why": "Your CPSC 3230 systems work is exactly what this team needs on its flight computer while you help wire and…",
+      "friendLine": "Theo",
+      "withContactId": "c-theo",
+      "withWhy": "Theo builds CubeSat radios and wants a team right now.",
+      "invite": "Hey Theo, want to come to the propulsion test-stand build night at Mason Lab tonight at 7:30? I'm heading over to help wire everything before the cold-flow run."
+    },
+    {
+      "eventId": "sample-hotfire",
+      "score": 80,
+      "lane": "both",
+      "mechanismId": "novelty",
+      "why": "Your MENG 2511 thermodynamics background will help you follow exactly what failed in the hybrid engine…",
+      "friendLine": "Theo",
+      "withContactId": "c-theo",
+      "withWhy": "Theo is new to campus clubs and wants a team.",
+      "invite": "Hey Theo, heading to YUAA's hot-fire night tomorrow at 7 in Mason Lab room 211 to watch the replay and next test. Want to join?"
+    },
+    {
+      "eventId": "sample-launch-watch",
+      "score": 70,
+      "lane": "feel",
+      "mechanismId": "activation",
+      "why": "You and Lena can grab hot cider while you watch the orbital launch on the big screen with telescopes at the…",
+      "friendLine": "Lena, Theo, Rafael",
+      "withContactId": "c-lena",
+      "withWhy": "Lena is your suitemate and running partner who already knows Theo.",
+      "invite": "Hey Lena, want to come to the midnight launch watch party on the observatory lawn tonight at 9:30? Telescopes and hot cider, should be chill."
+    }
+  ],
+  "trajectory": null,
+  "bakedAt": "2026-11-18T00:10:31.786Z"
+}

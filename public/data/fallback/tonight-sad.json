@@ -1,1 +1,39 @@
-{"picks":[],"trajectory":null,"bakedAt":null}
+{
+  "picks": [
+    {
+      "eventId": "sample-teststand",
+      "score": 85,
+      "lane": "both",
+      "mechanismId": "activation",
+      "why": "Your CPSC 3230 systems work is exactly what this team needs on its flight computer while you wire and…",
+      "friendLine": "Theo, Amara",
+      "withContactId": "c-theo",
+      "withWhy": "Theo builds CubeSat radios and wants a team for propulsion projects.",
+      "invite": "Hey Theo, want to join me at the propulsion test-stand build night in Mason Lab tonight at 7:30? Could be a good chance to team up on something."
+    },
+    {
+      "eventId": "sample-hotfire",
+      "score": 80,
+      "lane": "both",
+      "mechanismId": "weak-ties",
+      "why": "You and Theo can replay the hybrid engine footage in Mason Lab tomorrow at 7 PM and talk through what held…",
+      "friendLine": "Theo, Amara",
+      "withContactId": "c-theo",
+      "withWhy": "Theo is new to campus clubs and looking to build with others on satellites and…",
+      "invite": "Hey Theo, heading to YUAA's hot-fire night tomorrow at 7 in Mason Lab room 211 to watch the replay and next test. Join me?"
+    },
+    {
+      "eventId": "sample-launch-watch",
+      "score": 70,
+      "lane": "feel",
+      "mechanismId": "awe",
+      "why": "You will stand on the observatory lawn tonight at 9:30 with telescopes and hot cider watching the orbital…",
+      "friendLine": "Lena, Theo, Rafael",
+      "withContactId": "c-sam",
+      "withWhy": "Sam posts about hot-fire tests and is looking for people to build a small…",
+      "invite": "Hey Sam, there's a midnight launch watch party on the observatory lawn tonight at 9:30 with telescopes and cider if you want to come watch together."
+    }
+  ],
+  "trajectory": null,
+  "bakedAt": "2026-11-18T00:10:16.335Z"
+}

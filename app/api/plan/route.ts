@@ -11,7 +11,7 @@ import { allowedMechanisms, codeInvite, codeOnlyPicks, codeTrajectory, friendLin
 import { systemPrompt, userPrompt } from '@/lib/prompts';
 import { candidates, conflict, fit, leaveBy, startPoint, walkMin } from '@/lib/schedule';
 import { MECHANISMS } from '@/lib/science';
-import { redateAll, parseNow } from '@/lib/time';
+import { nyParts, parseNow, redateAll } from '@/lib/time';
 import { MOODS } from '@/lib/types';
 import type { Contact, Friend, Mode, Mood, Pick as OrbitPick, PlanEvent, Profile, Stats, YaleEvent } from '@/lib/types';
 import { z } from 'zod';
@@ -35,7 +35,7 @@ type Ctx = {
   going: Map<string, string[]>; pool: YaleEvent[]; byId: Map<string, YaleEvent>;
   want: number; min: number;
 };
-type State = { used: Set<string>; mech: Set<string>; contacts: Map<string, number>; days: Map<string, number> };
+type State = { used: Set<string>; mech: Set<string>; contacts: Map<string, number>; days: Map<string, number>; relax: boolean };
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 const BANNED = /great opportunity|aligns with your interests|since you are|since you're|to cheer you up/i;
@@ -55,16 +55,13 @@ function stripEmoji(text: string): string {
 
 /** An invite that states a clock time must state the event's real start time. */
 function inviteTimeOk(invite: string, event: YaleEvent): boolean {
-  const p = event.start.match(/T(\d{2}):(\d{2})/);
-  if (!p) return true;
-  const hh = Number(p[1]);
-  const mm = Number(p[2]);
+  const p = nyParts(new Date(event.start));
   const found = [...invite.matchAll(/\b(\d{1,2})(?::(\d\d))?\s*(a\.?m\.?|p\.?m\.?)/gi)];
   if (found.length === 0) return true;
   return found.some((m) => {
     let h = Number(m[1]) % 12;
     if (m[3].toLowerCase().startsWith('p')) h += 12;
-    return h === hh && Number(m[2] ?? 0) === mm;
+    return h === p.hh && Number(m[2] ?? 0) === p.mm;
   });
 }
 
@@ -100,10 +97,12 @@ function finalize(raw: RawPick, ctx: Ctx, st: State): OrbitPick | null {
     if ((st.days.get(dayKey(event.start)) ?? 0) >= 2) return null;
   } else {
     lane = raw.lane === 'both' || raw.lane === 'feel' ? raw.lane : (servesGoal(event, ctx.goal) ? 'both' : 'feel');
-    mechanismId = raw.mechanismId ?? null;
+    const allowed = allowedMechanisms(event, ctx.mood);
+    const unused = allowed.filter((id) => !st.mech.has(id));
+    const asked = raw.mechanismId && allowed.includes(raw.mechanismId) ? raw.mechanismId : null;
+    if (st.relax) mechanismId = (asked && !st.mech.has(asked) ? asked : null) ?? unused.find((id) => id !== 'activation') ?? unused[0] ?? asked ?? allowed[0] ?? null;
+    else mechanismId = (asked && !st.mech.has(asked) ? asked : null) ?? unused.find((id) => id !== 'activation') ?? unused[0] ?? null;
     if (!mechanismId || !MECHANISMS.some((m) => m.id === mechanismId)) return null;
-    if (!allowedMechanisms(event, ctx.mood).includes(mechanismId)) return null;
-    if (st.mech.has(mechanismId)) return null;
   }
   if (!validPick({ lane, mechanismId }, event, ctx.mode, ctx.mood)) return null;
 
@@ -141,6 +140,29 @@ function finalize(raw: RawPick, ctx: Ctx, st: State): OrbitPick | null {
     invite: contact ? (own && inviteRaw && inviteTimeOk(inviteRaw, event) ? clip(inviteRaw, 220) : codeInvite(contact, event, ctx.ref)) : null,
     ...addedFacts(event, ctx.profile),
   };
+}
+
+/** Tonight prompt: rare mechanisms first, then round-robin, so three picks can use three mechanisms. */
+function diversify(pool: YaleEvent[], mood: Mood): YaleEvent[] {
+  const buckets = new Map<string, YaleEvent[]>();
+  for (const event of pool) {
+    const ids = allowedMechanisms(event, mood);
+    const key = ids.find((id) => id !== 'activation') ?? ids[0] ?? 'x';
+    const list = buckets.get(key) ?? [];
+    list.push(event);
+    buckets.set(key, list);
+  }
+  const keys = [...buckets.keys()].sort((a, b) => (buckets.get(a)?.length ?? 0) - (buckets.get(b)?.length ?? 0));
+  const out: YaleEvent[] = [];
+  let moved = true;
+  while (moved) {
+    moved = false;
+    for (const key of keys) {
+      const next = buckets.get(key)?.shift();
+      if (next) { out.push(next); moved = true; }
+    }
+  }
+  return out;
 }
 
 function sourceLine(events: YaleEvent[], stats: Stats): string {
@@ -187,12 +209,13 @@ export async function POST(request: Request) {
   const events = redateAll((eventsJson as unknown as YaleEvent[]) ?? [], ref);
   const going = friendsGoing(friends);
   const inWindow = candidates(events, ref, mode === 'week' ? 168 : 48, mode === 'tonight' ? { minCount: 30, widenHours: 96 } : {});
-  const pool = preselect(mode, events, ref, profile, mode === 'tonight' ? mood : undefined);
+  const selected = preselect(mode, events, ref, profile, mode === 'tonight' ? mood : undefined);
+  const pool = mode === 'tonight' ? diversify(selected, mood) : selected;
   const ctx: Ctx = {
     mode, goal, mood, ref, profile, going, pool, byId: new Map(pool.map((e) => [e.id, e])),
     want: mode === 'week' ? 6 : 3, min: mode === 'week' ? 4 : 2,
   };
-  const st: State = { used: new Set(), mech: new Set(), contacts: new Map(), days: new Map() };
+  const st: State = { used: new Set(), mech: new Set(), contacts: new Map(), days: new Map(), relax: false };
   const model = fastModel();
   const useLive = !demo && Boolean(process.env.XAI_API_KEY) && Boolean(model) && pool.length > 0;
   const recorded = FALLBACKS[mode === 'week' ? `week-${goalSlug(goal)}` : `tonight-${mood}`];
@@ -217,9 +240,16 @@ export async function POST(request: Request) {
       };
       const topUp = async () => {
         if (forceLive || count >= ctx.want) return;
-        const extra = codeOnlyPicks({ mode, pool, goal, mood, profile, going, ref, want: ctx.want - count, exclude: st.used, usedMechanisms: st.mech });
+        const extra = codeOnlyPicks({ mode, pool, goal, mood, profile, going, ref, want: pool.length, exclude: st.used, usedMechanisms: st.mech });
         for (const p of extra) {
           if (sendPick(finalize(p, ctx, st))) await sleep(REPLAY_MS);
+        }
+        if (mode === 'tonight' && count < ctx.want) {
+          st.relax = true;
+          const more = codeOnlyPicks({ mode, pool, goal, mood, profile, going, ref, want: pool.length, exclude: st.used });
+          for (const p of more) {
+            if (sendPick(finalize(p, ctx, st))) await sleep(REPLAY_MS);
+          }
         }
       };
       const finish = (source: 'live' | 'fallback') => {

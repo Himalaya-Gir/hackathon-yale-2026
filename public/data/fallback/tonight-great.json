@@ -1,1 +1,28 @@
-{"picks":[],"trajectory":null,"bakedAt":null}
+{
+  "picks": [
+    {
+      "eventId": "sample-teststand",
+      "score": 85,
+      "lane": "both",
+      "mechanismId": "progress",
+      "why": "Your CPSC 3230 systems work is exactly what this team needs on its flight computer while you and Theo wire…",
+      "friendLine": "Theo",
+      "withContactId": "c-theo",
+      "withWhy": "Theo builds CubeSat radios and wants a team for his next project.",
+      "invite": "Hey Theo, want to join me at the propulsion test-stand build night in Mason Lab at 7:30 tonight? Should be a good chance to help get the cold-flow run ready."
+    },
+    {
+      "eventId": "sample-hotfire",
+      "score": 80,
+      "lane": "both",
+      "mechanismId": "weak-ties",
+      "why": "Your embedded systems background from CPSC 3230 will help you spot exactly what failed in the footage when…",
+      "friendLine": "Theo",
+      "withContactId": "c-theo",
+      "withWhy": "Theo is new to campus clubs and looking to build a team around satellites and…",
+      "invite": "Hey Theo, heading to the hot-fire night replay in Mason Lab room 211 tomorrow at 7, want to come watch the propulsion team break down what held and what fires next?"
+    }
+  ],
+  "trajectory": null,
+  "bakedAt": "2026-11-18T00:10:34.250Z"
+}

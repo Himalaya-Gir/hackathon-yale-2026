@@ -74,11 +74,15 @@ async function main() {
     console.log('no events — bake skipped');
     return;
   }
+  const only = new Set(process.argv.slice(2));
+  const wanted = (name: string) => only.size === 0 || only.has(name);
   for (const [slug, goal] of GOALS) {
+    if (!wanted(slug) && !wanted(`week-${slug}`)) continue;
     const result = await call({ mode: 'week', goal });
     writeIfLive(`public/data/fallback/week-${slug}.json`, result, 4, true);
   }
   for (const mood of MOODS) {
+    if (!wanted(mood) && !wanted(`tonight-${mood}`)) continue;
     const result = await call({ mode: 'tonight', goal: TONIGHT_GOAL, mood });
     writeIfLive(`public/data/fallback/tonight-${mood}.json`, result, 2, false);
   }

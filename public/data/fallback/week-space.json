@@ -1,1 +1,72 @@
-{"picks":[],"trajectory":null,"bakedAt":null}
+{
+  "picks": [
+    {
+      "eventId": "sample-teststand",
+      "score": 85,
+      "lane": "build",
+      "mechanismId": null,
+      "why": "Your CPSC 3230 systems programming directly helps wire the flight computer on this test stand.",
+      "friendLine": "Theo, Amara",
+      "withContactId": "c-theo",
+      "withWhy": "Theo builds CubeSat radios and wants a team for satellite work.",
+      "invite": "Hey Theo, want to join me at the propulsion test-stand build night tonight at 7:30 in Mason Lab machine shop? Could be a good way to get the team going."
+    },
+    {
+      "eventId": "sample-hotfire",
+      "score": 82,
+      "lane": "build",
+      "mechanismId": null,
+      "why": "Your MENG 2511 thermodynamics knowledge lets you debug the combustion issues in YUAA's hybrid engine replay.",
+      "friendLine": "Theo, Amara",
+      "withContactId": "c-sam",
+      "withWhy": "Sam posts about hot-fire tests and wants collaborators on a small liquid engine.",
+      "invite": "Hey Sam, I'm going to YUAA hot-fire night tomorrow at 7 PM in Mason Lab room 211 to watch the engine test footage. Want to come?"
+    },
+    {
+      "eventId": "sample-cubesat-review",
+      "score": 78,
+      "lane": "build",
+      "mechanismId": null,
+      "why": "Your Yale Undergraduate Aerospace Association membership makes you ready to pitch a payload using embedded…",
+      "friendLine": "Theo, Amara",
+      "withContactId": "c-theo",
+      "withWhy": "Theo is new to campus clubs and wants a team for CubeSat work.",
+      "invite": "Theo, CubeSat design review is Thursday at 6 PM in CEID. I'm pitching an astronomy payload idea, want to team up?"
+    },
+    {
+      "eventId": "sample-orbit-econ",
+      "score": 75,
+      "lane": "build",
+      "mechanismId": null,
+      "why": "Your ECON 2121 microeconomics background helps you see who profits in the next space businesses at this…",
+      "friendLine": "Jonah",
+      "withContactId": null,
+      "withWhy": null,
+      "invite": null
+    },
+    {
+      "eventId": "sample-space-global",
+      "score": 72,
+      "lane": "build",
+      "mechanismId": null,
+      "why": "Your interest in rockets meets international satellite teams at this event, expanding your launch industry…",
+      "friendLine": "Amara, Mei",
+      "withContactId": "c-priya",
+      "withWhy": "Priya likes meeting undergrad founders in deep tech before they have a deck.",
+      "invite": "Hey Priya, there's a satellite teams from six countries event Friday at 6 PM in Luce Hall. Thought it might spark some founder stories for you."
+    },
+    {
+      "eventId": "sample-balloon",
+      "score": 68,
+      "lane": "build",
+      "mechanismId": null,
+      "why": "Your astronomy course and trail running let you track the high-altitude balloon payload to 30 km, an…",
+      "friendLine": "Lena, Rafael",
+      "withContactId": null,
+      "withWhy": null,
+      "invite": null
+    }
+  ],
+  "trajectory": "This week: wire test stands, pitch CubeSat ideas, meet international satellite teams. This semester: join YUAA propulsion and CubeSat projects with Theo and…",
+  "bakedAt": "2026-11-18T00:09:59.494Z"
+}

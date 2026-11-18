@@ -1,1 +1,72 @@
-{"picks":[],"trajectory":null,"bakedAt":null}
+{
+  "picks": [
+    {
+      "eventId": "sample-teststand",
+      "score": 85,
+      "lane": "build",
+      "mechanismId": null,
+      "why": "Your CPSC 3230 systems work is exactly what this team needs on its flight computer.",
+      "friendLine": "Theo, Amara",
+      "withContactId": "c-theo",
+      "withWhy": "Theo builds CubeSat radios and wants a team.",
+      "invite": "Hey Theo, want to join me at the propulsion test-stand build night tonight at 7:30? Would be fun to meet more people there."
+    },
+    {
+      "eventId": "sample-space-global",
+      "score": 80,
+      "lane": "build",
+      "mechanismId": null,
+      "why": "Your astronomy interest and ASTR 3200 background let you talk payloads with international satellite teams.",
+      "friendLine": "Amara, Mei",
+      "withContactId": null,
+      "withWhy": null,
+      "invite": null
+    },
+    {
+      "eventId": "yaleconnect-8nffu7",
+      "score": 75,
+      "lane": "build",
+      "mechanismId": null,
+      "why": "Your MENG 2511 thermodynamics knowledge helps you ask sharp questions on climate engineering approaches.",
+      "friendLine": null,
+      "withContactId": null,
+      "withWhy": null,
+      "invite": null
+    },
+    {
+      "eventId": "sample-cubesat-review",
+      "score": 70,
+      "lane": "build",
+      "mechanismId": null,
+      "why": "Your Yale Undergraduate Aerospace Association membership gives you real ideas to pitch for next year's launch.",
+      "friendLine": "Theo, Amara",
+      "withContactId": "c-theo",
+      "withWhy": "Theo is new to campus clubs and wants a team.",
+      "invite": "Hey Theo, heading to the CubeSat design review on Thursday at 6? Let's go pitch ideas together."
+    },
+    {
+      "eventId": "sample-founder-dinner",
+      "score": 65,
+      "lane": "build",
+      "mechanismId": null,
+      "why": "Your ECON 2121 microeconomics lens is useful when student founders discuss acquiring first customers.",
+      "friendLine": "Jonah, Kofi",
+      "withContactId": "c-priya",
+      "withWhy": "Priya likes meeting undergrad founders before they have a deck.",
+      "invite": "Hey Priya, there's a founder dinner tomorrow at 6 about your first ten customers. Want to come?"
+    },
+    {
+      "eventId": "sample-balloon",
+      "score": 60,
+      "lane": "build",
+      "mechanismId": null,
+      "why": "Your rockets and propulsion interest connects directly to the high-altitude balloon launch mechanics.",
+      "friendLine": "Lena, Rafael",
+      "withContactId": null,
+      "withWhy": null,
+      "invite": null
+    }
+  ],
+  "trajectory": "This week: join propulsion and satellite events with non-CS/Econ students plus one climate panel. This semester: build cross-major teams in YUAA and space…",
+  "bakedAt": "2026-11-18T00:10:12.738Z"
+}

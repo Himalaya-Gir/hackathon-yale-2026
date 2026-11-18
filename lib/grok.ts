@@ -25,7 +25,7 @@ export function smartModel(): string | null {
 function client(): OpenAI {
   const apiKey = process.env.XAI_API_KEY;
   if (!apiKey) throw new Error('XAI_API_KEY missing');
-  return new OpenAI({ apiKey, baseURL: BASE_URL });
+  return new OpenAI({ apiKey, baseURL: BASE_URL, timeout: 40_000, maxRetries: 0 });
 }
 
 const sleep = (ms: number, signal?: AbortSignal) =>

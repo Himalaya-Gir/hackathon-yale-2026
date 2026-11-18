@@ -1,18 +1,11 @@
 {
- "total": 80,
- "sources": [
-  {
-   "name": "yale-calendar",
-   "count": 35
-  },
-  {
-   "name": "yaleconnect",
-   "count": 10
-  },
-  {
-   "name": "sample",
-   "count": 35
-  }
- ],
- "bakedAt": "2026-11-18T00:21:31.783Z"
+  "total": 96,
+  "sources": [
+    { "name": "yale-calendar", "count": 35 },
+    { "name": "yaleconnect", "count": 10 },
+    { "name": "sample", "count": 35 },
+    { "name": "luma", "count": 4 },
+    { "name": "hand-checked", "count": 12 }
+  ],
+  "bakedAt": "2026-11-18T00:21:31.783Z"
 }

@@ -77,7 +77,7 @@ OUTPUT: exactly 3 lines, each one compact JSON object on a single line. No traje
 
 RULES
 ${COMMON.replace('%WHY%', ' when it fits naturally, and say concretely what the evening will be like')}
-- mechanismId: only an id from the "allowed mechanisms" column of THAT event. The 3 picks use 3 different mechanism ids.
+- mechanismId: copy an id from the "allowed mechanisms" column of THAT event. Never invent one and never use a kind name (build, learn, move) unless that exact id is in the column. The 3 lines must use 3 different ids. If the events that best match the GOAL all share one id, swap one of them for an event whose column lists a different id.
 - lane: "both" when the event also serves the long-term GOAL (prefer those), otherwise "feel".
 - Prefer events happening tonight, then tomorrow.
 - Tact: never name the mood, never write "since you are sad" or "since you are…", "to cheer you up", "depression", or anything clinical or dramatic. Sound like a thoughtful friend proposing a plan.

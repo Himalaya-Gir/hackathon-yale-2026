@@ -19,7 +19,11 @@ try { process.loadEnvFile('.env.local'); } catch { /* missing file: treated as n
 
 type Run = { model: string; ttft: number; firstPick: number; total: number; valid: number; trajectory: boolean; error?: string };
 
-function median(xs: number[]): number {
+function log(line: string) {
+  console.log(line);
+  try { fs.appendFileSync('/tmp/orbit-bench.log', line + '\n'); } catch { /* ignore */ }
+}
+  function median(xs: number[]): number {
   if (xs.length === 0) return Number.POSITIVE_INFINITY;
   const s = [...xs].sort((a, b) => a - b);
   const i = Math.floor(s.length / 2);
@@ -38,12 +42,16 @@ async function once(model: string): Promise<Run> {
   let firstPick = 0;
   let valid = 0;
   let trajectory = false;
+  const ac = new AbortController();
+  const killer = setTimeout(() => ac.abort(), 35_000);
+  log(`  ${model}: start pool ${pool.length}`);
   try {
     for await (const line of grokLines({
       model,
       system: systemPrompt('week', profile),
       user: userPrompt({ mode: 'week', goal: GOAL, ref, pool, going }),
-      onFirstToken: () => { if (!ttft) ttft = Date.now() - t0; },
+      signal: ac.signal,
+      onFirstToken: () => { if (!ttft) { ttft = Date.now() - t0; log(`  ${model}: first token ${ttft} ms`); } },
     })) {
       const p = parseGrokLine(line);
       if (p?.kind === 'pick' && ids.has(p.pick.eventId)) {
@@ -53,8 +61,13 @@ async function once(model: string): Promise<Run> {
       if (p?.kind === 'trajectory') trajectory = true;
     }
   } catch (e) {
-    const status = typeof e === 'object' && e && 'status' in e ? String((e as { status: unknown }).status) : '';
-    return { model, ttft, firstPick, total: Date.now() - t0, valid, trajectory, error: `${(e as Error).name || 'Error'}${status ? ` ${status}` : ''}` };
+    const aborted = ac.signal.aborted && valid >= 4 && trajectory;
+    if (!aborted) {
+      const status = typeof e === 'object' && e && 'status' in e ? String((e as { status: unknown }).status) : '';
+      return { model, ttft, firstPick, total: Date.now() - t0, valid, trajectory, error: `${(e as Error).name || 'Error'}${status ? ` ${status}` : ''}` };
+    }
+  } finally {
+    clearTimeout(killer);
   }
   return { model, ttft, firstPick, total: Date.now() - t0, valid, trajectory };
 }
@@ -71,16 +84,17 @@ function writeFast(model: string) {
 
 async function main() {
   if (!process.env.XAI_API_KEY) {
-    console.log('XAI_API_KEY missing — live bench skipped');
+    log('XAI_API_KEY missing — live bench skipped');
     return;
   }
+  try { fs.writeFileSync('/tmp/orbit-bench.log', ''); } catch { /* ignore */ }
   const runs: Run[] = [];
   for (const model of MODELS) {
     for (let i = 0; i < RUNS; i++) {
       const r = await once(model);
       runs.push(r);
-      if (r.error) console.log(`  ${model} run ${i + 1}: ERROR ${r.error}`);
-      else console.log(`  ${model} run ${i + 1}: first token ${r.ttft} ms · first pick ${r.firstPick} ms · total ${r.total} ms · valid ${r.valid} · trajectory ${r.trajectory}`);
+      if (r.error) log(`  ${model} run ${i + 1}: ERROR ${r.error}`);
+      else log(`  ${model} run ${i + 1}: first token ${r.ttft} ms · first pick ${r.firstPick} ms · total ${r.total} ms · valid ${r.valid} · trajectory ${r.trajectory}`);
     }
   }
   const scored = MODELS.map((model) => {
@@ -88,14 +102,14 @@ async function main() {
     return { model, ok: ok.length, ttft: median(ok.map((r) => r.ttft)), total: median(ok.map((r) => r.total)) };
   }).filter((s) => s.ok > 0);
   if (scored.length === 0) {
-    console.log('No model returned 4 valid picks and a trajectory. XAI_MODEL_FAST left unchanged.');
+    log('No model returned 4 valid picks and a trajectory. XAI_MODEL_FAST left unchanged.');
     return;
   }
   scored.sort((a, b) => a.ttft - b.ttft || a.total - b.total);
   const winner = scored[0].model;
   writeFast(winner);
-  console.log(`winner ${winner} · median first token ${Math.round(scored[0].ttft)} ms · correct runs ${scored[0].ok}/${RUNS}`);
-  console.log(`XAI_MODEL_FAST=${winner}`);
+  log(`winner ${winner} · median first token ${Math.round(scored[0].ttft)} ms · correct runs ${scored[0].ok}/${RUNS}`);
+  log(`XAI_MODEL_FAST=${winner}`);
 }
 
 main();

@@ -1,1 +1,28 @@
-{"picks":[],"trajectory":null,"bakedAt":null}
+{
+  "picks": [
+    {
+      "eventId": "sample-teststand",
+      "score": 85,
+      "lane": "both",
+      "mechanismId": "weak-ties",
+      "why": "Your CPSC 3230 systems programming is exactly what Theo needs on the test stand's flight computer tonight.",
+      "friendLine": "Theo",
+      "withContactId": "c-theo",
+      "withWhy": "Theo is new to campus clubs and wants a team for his CubeSat radios.",
+      "invite": "Hey Theo, want to join me at the propulsion test-stand build night in Mason Lab tonight at 7:30? Could use your radio expertise."
+    },
+    {
+      "eventId": "sample-launch-watch",
+      "score": 80,
+      "lane": "both",
+      "mechanismId": "strangers",
+      "why": "Your astronomy interest and Y/CS club experience will help you chat propulsion with the crowd on the…",
+      "friendLine": "Lena, Theo, Rafael",
+      "withContactId": "c-theo",
+      "withWhy": "Theo builds CubeSat radios for fun and is looking for a team.",
+      "invite": "Hey Theo, heading to the launch watch party on the observatory lawn tonight at 9:30, want to come watch with me?"
+    }
+  ],
+  "trajectory": null,
+  "bakedAt": "2026-11-18T00:10:19.087Z"
+}

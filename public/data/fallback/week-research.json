@@ -1,1 +1,72 @@
-{"picks":[],"trajectory":null,"bakedAt":null}
+{
+  "picks": [
+    {
+      "eventId": "sample-robot-lab",
+      "score": 85,
+      "lane": "build",
+      "mechanismId": null,
+      "why": "Your CPSC 3230 systems work is exactly what the robot learning lab needs when undergrads join to run grasp…",
+      "friendLine": "Mei, Kofi",
+      "withContactId": "c-theo",
+      "withWhy": "Theo builds CubeSat radios and wants a team; this is a low-pressure way to…",
+      "invite": "Hey Theo, want to check out the robot learning lab open bench afternoon tomorrow at 4 PM? Could be a good spot to talk about teaming up on something."
+    },
+    {
+      "eventId": "sample-ai-mixer",
+      "score": 80,
+      "lane": "build",
+      "mechanismId": null,
+      "why": "Your ECON 2121 modeling skills transfer directly when you ask the ten AI labs about spring research openings…",
+      "friendLine": "Mei, Kofi",
+      "withContactId": "c-priya",
+      "withWhy": "Priya likes meeting undergrad founders before they have a deck; this mixer is…",
+      "invite": "Hey Priya, there's an AI research mixer on Friday at 5:30 PM where undergrads meet the labs. Want to come with me?"
+    },
+    {
+      "eventId": "sample-paper-club",
+      "score": 75,
+      "lane": "build",
+      "mechanismId": null,
+      "why": "Your Algorithms course gives you the grounding to argue the planning agents paper at the AI paper club on…",
+      "friendLine": "Mei",
+      "withContactId": null,
+      "withWhy": null,
+      "invite": null
+    },
+    {
+      "eventId": "sample-gpu-tour",
+      "score": 70,
+      "lane": "build",
+      "mechanismId": null,
+      "why": "Your CPSC 3230 experience lets you ask concrete questions about how students get compute time on the GPU…",
+      "friendLine": "Kofi",
+      "withContactId": null,
+      "withWhy": null,
+      "invite": null
+    },
+    {
+      "eventId": "yaleconnect-8nffu7",
+      "score": 65,
+      "lane": "build",
+      "mechanismId": null,
+      "why": "Your MENG 2511 thermodynamics background helps you follow the climate engineering panel's technical…",
+      "friendLine": null,
+      "withContactId": "c-prof",
+      "withWhy": "Prof. Gomez works on combustion; the panel's engineering focus gives a natural…",
+      "invite": "Professor Gomez, there's a YCNCC panel on the rise of climate engineering tomorrow at 4 PM. Would you be interested in attending together?"
+    },
+    {
+      "eventId": "sample-wright-open",
+      "score": 60,
+      "lane": "build",
+      "mechanismId": null,
+      "why": "Your ASTR 3200 physical processes knowledge connects to the detectors and dark matter you will see at the…",
+      "friendLine": "Mei",
+      "withContactId": null,
+      "withWhy": null,
+      "invite": null
+    }
+  ],
+  "trajectory": "This week: attend robot lab, AI mixer, paper club, GPU tour, climate panel, Wright open house. This semester: join one AI research group via direct lab…",
+  "bakedAt": "2026-11-18T00:10:08.869Z"
+}
