@@ -517,6 +517,37 @@ Goal: a dataset on which the app looks and behaves like production, with no depe
 
 **Check**: with the stub route, a 1280 × 720 screenshot showing extruded buildings, 6 gold beams with photos and friend stacks, the trajectory line, the blue dots. No console errors. Clicking a marker flies the camera. Clicking two goals in a row leaves no ghost beam. Tonight mode shows 3 light-blue beams over dimmed gold ones.
 
+#### Package B2 — Map navigation (branch `map-navigation`, file `components/map/navigation.ts`)
+
+Goal: the 3D campus should be as easy to move around as Google Maps, using MapLibre's own controls rather than new code.
+
+**Added**
+- MapLibre `NavigationControl`: zoom in and out, compass with tilt shown (a click on the compass resets north and tilt).
+- "Back to campus" button: flies back to `HOME_VIEW` (same padding as the pick cards).
+- "Find a building": a magnifier opens a field that searches `public/data/buildings.json` by name or address (arrows and Enter, or the mouse). It flies to the building (zoom 17.4, pitch 60) and drops a white labelled pin.
+- Scale in feet, and the title and time of an unpicked event when the mouse is over its blue dot (MapLibre `Popup`).
+- Keyboard, right-drag rotate and tilt, and pinch rotate are enabled explicitly (they are MapLibre defaults).
+
+**Placement rule**: the controls sit at the right edge of the free strip between the panels: `right: 412px` (16 + 380 + 16), `top: 196px` (under the trajectory banner). If the panels or the banner move, update `.maplibregl-ctrl-top-right` in `NAV_CSS`.
+
+**Considered and rejected**
+- Switching library (deck.gl, Mapbox, Google Maps JS with photorealistic 3D tiles): Mapbox and Google need a key and billing, and the whole scene would have to be rewritten; deck.gl adds a dependency without helping navigation (§6.2 stays).
+- MapLibre terrain: New Haven is flat, no visible gain.
+- Another OpenFreeMap style (liberty, positron, bright): the recolored `dark` style already fits the night art direction; the 3D buildings come from the same `openmaptiles` source.
+- `GeolocateControl`: indoor demo with sample data, not useful.
+- Cooperative gestures: full-screen app, they would only get in the way.
+
+**Known limits**
+- On the welcome screen the controls are almost hidden under the dark gradient behind the goal question; they show once a goal runs.
+- They can cover a marker that lands at the far right of the free strip.
+- Clicking a blue dot does nothing (only the hover label).
+- Search covers buildings only, not events or courses.
+- Below about 900 px wide the controls go under the right panel.
+
+**Checked**: `next build` passes; at 1280 × 720 no console error, beams, markers and trajectory unchanged, a pick card click still flies the camera, search and back to campus work. Not checked: trackpad pinch and keyboard by hand, other screen sizes, Vercel, and the merge with the latest interface on `main`.
+
+**Merge**: `git fetch origin && git merge origin/map-navigation`, then build and deploy.
+
 ### Package C — The brain (`app/api/plan/`, `lib/grok.ts`, `lib/prompts.ts`, `lib/schedule.ts`, `lib/match.ts`)
 
 Build **week mode first**, end to end with fallback, before touching tonight mode.
