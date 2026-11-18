@@ -38,4 +38,6 @@ Each `yale-*.jpg` is the event's own photo from the official Yale calendar (even
 - `s-greenhouse.jpg` → File:RO Bucharest Botanical Garden new greenhouse 02.jpg. Whitepixels CC0. https://commons.wikimedia.org/wiki/File:RO_Bucharest_Botanical_Garden_new_greenhouse_02.jpg
 - `s-meditation.jpg` → File:A group meditation session in a park in a yoga asana.jpg. Konstantin Stepanov from Moscow, Россия CC BY 2.0. https://commons.wikimedia.org/wiki/File:A_group_meditation_session_in_a_park_in_a_yoga_asana.jpg
 - `s-trivia.jpg` → File:Pub quiz Finnish championships in March 2025 starting.jpg. JIP CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Pub_quiz_Finnish_championships_in_March_2025_starting.jpg
+- `s-open-table.jpg` → File:Memorial Day on the Russian River - 51217612380.jpg. Fabrice Florin CC BY-SA 2.0. https://commons.wikimedia.org/wiki/File:Memorial_Day_on_the_Russian_River_-_51217612380.jpg
+- `s-chess-tea.jpg` → File:Chess club slivnitsa.jpg. Biser Todorov CC BY 4.0. https://commons.wikimedia.org/wiki/File:Chess_club_slivnitsa.jpg
 - `s-tree-planting.jpg` → File:DUSAFO planting trees.jpg. Christian Anold Mosha CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:DUSAFO_planting_trees.jpg

@@ -2430,6 +2430,70 @@
   "durationMin": 90
  },
  {
+  "id": "sample-open-table",
+  "title": "Open table: grad and undergrad dinner, sit with someone new",
+  "start": "",
+  "end": null,
+  "dayOffset": 1,
+  "time": "18:00",
+  "locationName": "Pierson College, dining hall",
+  "building": "Pierson College",
+  "lat": 41.309948,
+  "lng": -72.932815,
+  "source": "sample",
+  "sourceUrl": "",
+  "host": "Pierson College",
+  "summary": "One long table, no assigned seats, conversation cards if you want them. Come alone: that is the point.",
+  "tracks": [
+   "social"
+  ],
+  "kinds": [
+   "food-together",
+   "social-small"
+  ],
+  "future": false,
+  "free": true,
+  "food": true,
+  "rsvpUrl": null,
+  "photoUrl": "/img/events/s-open-table.jpg",
+  "sample": true,
+  "online": false,
+  "solo": false,
+  "durationMin": 75
+ },
+ {
+  "id": "sample-chess-tea",
+  "title": "Chess and tea at the Slifka Center",
+  "start": "",
+  "end": null,
+  "dayOffset": 0,
+  "time": "20:00",
+  "locationName": "Slifka Center, lounge",
+  "building": "Slifka Center",
+  "lat": 41.310085,
+  "lng": -72.925011,
+  "source": "sample",
+  "sourceUrl": "",
+  "host": "Yale Chess Club",
+  "summary": "Boards set up, tea poured, players of every level. Sit down at any open board and ask for a game.",
+  "tracks": [
+   "social"
+  ],
+  "kinds": [
+   "social-small",
+   "calm"
+  ],
+  "future": false,
+  "free": true,
+  "food": true,
+  "rsvpUrl": null,
+  "photoUrl": "/img/events/s-chess-tea.jpg",
+  "sample": true,
+  "online": false,
+  "solo": false,
+  "durationMin": 90
+ },
+ {
   "id": "sample-tree-planting",
   "title": "Plant 50 trees in Fair Haven",
   "start": "",

@@ -9,9 +9,7 @@
   "status": "friend",
   "reason": null,
   "goingTo": [
-   "grokathon-yale-2026",
-   "sample-hardware-hack",
-   "sample-demo-night"
+   "grokathon-yale-2026"
   ]
  },
  {
@@ -31,7 +29,8 @@
    "sample-balloon",
    "sample-scifi-film",
    "sample-meditation",
-   "sample-trivia"
+   "sample-trivia",
+   "sample-open-table"
   ]
  },
  {
@@ -105,7 +104,8 @@
    "sample-wright-open",
    "sample-space-global",
    "sample-robot-lab",
-   "sample-paper-club"
+   "sample-paper-club",
+   "sample-open-table"
   ]
  },
  {
@@ -163,7 +163,8 @@
    "sample-hardware-hack",
    "sample-demo-night",
    "sample-robot-lab",
-   "sample-gpu-tour"
+   "sample-gpu-tour",
+   "sample-chess-tea"
   ]
  },
  {
