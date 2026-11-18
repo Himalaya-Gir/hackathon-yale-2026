@@ -46,7 +46,7 @@ async function call(body: unknown): Promise<{ source: string; picks: GrokPick[];
     if (!line.startsWith('{')) continue;
     let ev: PlanEvent;
     try { ev = JSON.parse(line) as PlanEvent; } catch { continue; }
-    if (ev.type === 'pick') picks.push(slim(ev));
+    if (ev.type === 'pick') picks.push(slim(ev.pick));
     else if (ev.type === 'trajectory') trajectory = ev.text;
     else if (ev.type === 'done') source = ev.source;
   }
