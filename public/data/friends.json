@@ -30,7 +30,8 @@
    "sample-scifi-film",
    "sample-meditation",
    "sample-trivia",
-   "sample-open-table"
+   "sample-open-table",
+   "sample-list-dumplings"
   ]
  },
  {
@@ -50,7 +51,8 @@
    "sample-hotfire",
    "sample-mission-sim",
    "sample-cubesat-review",
-   "sample-scifi-film"
+   "sample-scifi-film",
+   "sample-list-launch-trip"
   ]
  },
  {
@@ -69,6 +71,7 @@
    "sample-cubesat-review",
    "sample-space-global",
    "sample-scifi-film",
+   "sample-list-launch-trip",
    "sample-tree-planting"
   ]
  },
@@ -105,7 +108,8 @@
    "sample-space-global",
    "sample-robot-lab",
    "sample-paper-club",
-   "sample-open-table"
+   "sample-open-table",
+   "sample-list-mission-ops"
   ]
  },
  {
@@ -125,7 +129,8 @@
    "sample-mission-sim",
    "sample-balloon",
    "sample-hardware-hack",
-   "sample-trivia"
+   "sample-trivia",
+   "sample-list-dumplings"
   ]
  },
  {
@@ -143,6 +148,7 @@
    "sample-cofounder-match",
    "sample-greenhouse",
    "sample-meditation",
+   "sample-list-dumplings",
    "sample-tree-planting"
   ]
  },
@@ -164,7 +170,8 @@
    "sample-demo-night",
    "sample-robot-lab",
    "sample-gpu-tour",
-   "sample-chess-tea"
+   "sample-chess-tea",
+   "sample-list-mission-ops"
   ]
  },
  {

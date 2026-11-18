@@ -2494,6 +2494,107 @@
   "durationMin": 90
  },
  {
+  "id": "sample-list-dumplings",
+  "title": "Late-night dumpling folding in the Pierson kitchen",
+  "start": "",
+  "end": null,
+  "dayOffset": 0,
+  "time": "21:00",
+  "locationName": "Pierson College, the college kitchen",
+  "building": "Pierson College",
+  "lat": 41.310082,
+  "lng": -72.932345,
+  "source": "sample",
+  "sourceUrl": "",
+  "host": "Pierson College mailing list",
+  "summary": "Flour, fillings and forty people. Fold, steam, eat together. Announced on the Pierson list this morning.",
+  "tracks": [
+   "social"
+  ],
+  "kinds": [
+   "food-together",
+   "social-big",
+   "create"
+  ],
+  "future": false,
+  "free": true,
+  "food": true,
+  "rsvpUrl": null,
+  "photoUrl": "/img/events/s-list-dumplings.jpg",
+  "sample": true,
+  "online": false,
+  "solo": false,
+  "durationMin": 60
+ },
+ {
+  "id": "sample-list-launch-trip",
+  "title": "Road trip to a launch site: info session and sign-ups",
+  "start": "",
+  "end": null,
+  "dayOffset": 1,
+  "time": "18:30",
+  "locationName": "Mason Laboratory, room 107",
+  "building": "Mason Laboratory",
+  "lat": 41.312125,
+  "lng": -72.923771,
+  "source": "sample",
+  "sourceUrl": "",
+  "host": "YUAA mailing list",
+  "summary": "Twelve seats in two vans to watch a launch up close this winter. Costs, dates and how the seats are picked.",
+  "tracks": [
+   "space",
+   "career"
+  ],
+  "kinds": [
+   "learn",
+   "social-small",
+   "awe"
+  ],
+  "future": true,
+  "free": true,
+  "food": true,
+  "rsvpUrl": null,
+  "photoUrl": "/img/events/s-list-launch-trip.jpg",
+  "sample": true,
+  "online": false,
+  "solo": false,
+  "durationMin": 45
+ },
+ {
+  "id": "sample-list-mission-ops",
+  "title": "Alumni in mission operations: open Q&A",
+  "start": "",
+  "end": null,
+  "dayOffset": 2,
+  "time": "17:00",
+  "locationName": "Kline Tower, 9th floor lounge",
+  "building": "Kline Tower",
+  "lat": 41.317341,
+  "lng": -72.922843,
+  "source": "sample",
+  "sourceUrl": "",
+  "host": "CS majors mailing list",
+  "summary": "Three alumni who run spacecraft operations answer anything: the job, the hours, how they got in from a CS degree.",
+  "tracks": [
+   "space",
+   "career",
+   "ai"
+  ],
+  "kinds": [
+   "learn",
+   "social-small"
+  ],
+  "future": true,
+  "free": true,
+  "food": false,
+  "rsvpUrl": null,
+  "photoUrl": "/img/events/s-list-mission-ops.jpg",
+  "sample": true,
+  "online": false,
+  "solo": false,
+  "durationMin": 60
+ },
+ {
   "id": "sample-tree-planting",
   "title": "Plant 50 trees in Fair Haven",
   "start": "",

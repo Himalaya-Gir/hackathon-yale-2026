@@ -40,4 +40,7 @@ Each `yale-*.jpg` is the event's own photo from the official Yale calendar (even
 - `s-trivia.jpg` → File:Pub quiz Finnish championships in March 2025 starting.jpg. JIP CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Pub_quiz_Finnish_championships_in_March_2025_starting.jpg
 - `s-open-table.jpg` → File:Memorial Day on the Russian River - 51217612380.jpg. Fabrice Florin CC BY-SA 2.0. https://commons.wikimedia.org/wiki/File:Memorial_Day_on_the_Russian_River_-_51217612380.jpg
 - `s-chess-tea.jpg` → File:Chess club slivnitsa.jpg. Biser Todorov CC BY 4.0. https://commons.wikimedia.org/wiki/File:Chess_club_slivnitsa.jpg
+- `s-list-dumplings.jpg` → File:Memorial Day on the Russian River - 51217303369.jpg. Fabrice Florin CC BY-SA 2.0. https://commons.wikimedia.org/wiki/File:Memorial_Day_on_the_Russian_River_-_51217303369.jpg
+- `s-list-launch-trip.jpg` → CLPS IM-2 Launch. NASA/Cory S Huston NASA, public domain. https://images.nasa.gov/details/KSC-20250226-PH-CSH01_0002
+- `s-list-mission-ops.jpg` → Artemis II Science Officers -- jsc2026e000831. James Blair - NASA - JSC NASA, public domain. https://images.nasa.gov/details/jsc2026e000831
 - `s-tree-planting.jpg` → File:DUSAFO planting trees.jpg. Christian Anold Mosha CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:DUSAFO_planting_trees.jpg
